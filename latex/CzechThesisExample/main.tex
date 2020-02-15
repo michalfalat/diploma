@@ -7,6 +7,7 @@
 \usepackage{subfig} % makra pro "podobrazky" a "podtabulky"
 \usepackage{verbatim}
 \usepackage{cite}
+\bibliographystyle{unsrt}
 \nocite{*}
 % Zadame pozadovane vstupy pro generovani titulnich stran.
 \ThesisAuthor{Michal Falát}
@@ -73,40 +74,79 @@ V dnešnom modernom svete sú autá takmer každodennou súčasťou života ľud
 \section{Detekcia a analýza ľudského tela v obrazoch}
 \label{sec:human body decection}
 
-História detekcie postáv v obrazoch siaha až do polovice 20. storočia.  Mnoho ľudí už videlo obrovský potenciál detekcie napríklad v oblastiach medicíny , priemyslu, dopravy a mnoho ďalších. S nárastom technických možností postupne rástla aj motivácia využiť detekciu obrazu. Jeden z prvých vedeckých článkov v oblasti spracávaania obrazu \cite{rosenfeld1969}
+História detekcie postáv v obrazoch siaha až do polovice 20. storočia.  Mnoho inžinierov videlo obrovský potenciál detekcie obrazu napríklad v oblastiach medicíny, priemyslu, dopravy a mnohých ďalších oblastiach. S nárastom technických možností postupne rástla aj motivácia využiť detekciu obrazu aj v praxi. Jeden z prvých vedeckých článkov v oblasti spracovania obrazu \cite{rosenfeld1969} rozoberal napríklad jednoduchú analýzu  obrazu a spracovanie obrazov s dostupnými prostriedkami.  Postupom času sa však počítačová technika vylepšovala a bolo možné pracovať na vývoji metód pre analýzu  a detekciu objektov v obrazoch. Na detekciu chodcov alebo iných ľubovolných objektov existuje mnoho metód. Veľkým fenoménom v posledných rokoch sa stali neurónové siete. Okrém neurónových sietí však stále existujú aj tradičné metódy, ktoré fungujú aj bez trénovacích dát. Vo svojej práci som pracoval hlavne s metódami Haar a HOG, ktoré sa radia medzi najpoužívanejšie tradičné metódy a sú im venované samostatné podkapitoly \ref{Haar} a \ref{HOG}.\par
+Každý obraz sa skladá z pixelov. Analýza obrazu však nespočíva v prehľadávani jednodlivých pixelov, ale v hľadaní jednotlivých objektov v obraze. Tieto objekty je možné  určovať do  samostatných tried. Triedy nám určujú, aký druh objektu sa v obraze nachádza (Napríklad chodec, vozidlo, dopravná značka a podobne). Aby bolo možné tieto objekty (v našom prípade ľudí) nájsť, bolo potrebné nájsť spoľahlivý spôsob detekcie. 
 
 
-\newpage
-\subsection{Detekcia tváre}
-Haar
+\subsection{Haar}
+\label{Haar}
+Táto metóda bola popísaná autormi Viola a Jones.\cite{viola2001rapid}. Medzi jej hlavné výhody patrí vysoká rýchlosť  a spoľahlivá detekcia. Metóda funguje na porovnavaní celých blokov pixelov. Tieto bloky môžu mať rôzne tvary, veľkosť a natočenie. Tieto bloky môžu nadobúdať rôzne tvary ale vo všeobecnosti sa používajú 3 hlavné typy príznakov:
+\begin{itemize}
+  \item \textbf{Dvoj-obdĺžnikové} \textit{(angl. two-rectangle)} - porovnávajú sumu pixlov v obdĺžnikových oblastiach, ktoré sa
+nachádzajú vedľa seba, vodorovne, alebo zvislo
+  \item \textbf{Troj-obdĺžnikové} \textit{(angl. three-rectangle)} - porovnávajú sumu obdĺžnikových oblastí, ktoré sa nachádzajú po
+oboch stranách aktuálnej oblasti a sumu aktuálnej oblasti.
+  \item \textbf{Štvor-obdĺžnikové} \textit{(angl. four-rectangle)} - počítajú rozdiel medzi dvoma aktuálnymi obdĺžnikovými oblasťami,
+ktoré sa dotýkajú svojimi rohmi, a obdĺžnikovými oblasťami medzi nimi
+  
+ \end{itemize}
+  Znázornenie jednotlivých typov môžeme vidieť na obrázku \ref{fig:Haar1}. Jednotlivé príznaky môže byť použité dostatočne efektívne. Efektivita klesá pri aplikácii príznaku na celý obraz. Vhodným riešením je preto skombinovať menšie množstvo príznakov. Pre výber príznakov existuje mnoho algoritmov. Je
+použití na celý obrázok sa efektivita stráca. Na vytvorenie efektívneho klasifikátora je potrebné
+skombinovať veľmi malé množstvo príznakov. Na vybratie správnych efektívnych príznakov sa
+používajú špeciálne algoritmy. Jedným s najpoužívanejších algoritmov  pre zvýšenie efektivity je  AdaBoost\cite{freund1995desicion}, ktorý vytvoril profesor Yoav Freund. 
+Kvôli rýchlemu prístupu k dátam na obraze a rýchlym výpočtom obdĺžnikových príznakov
+sa zaviedol pojem Integrálny obraz. Integrálny obraz je reprezentáciou pôvodného obrazu. V
+umiestnení x, y obsahuje sumu pixlov nahor a naľavo od x, y, vrátane (viď. Rovnica 3)
+
+  \begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/haar1.png}
+	\caption{Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite{viola2001robust}}
+	\label{fig:Haar1}
+\end{figure}
+
+\begin{equation}
+ii(x,y)=\sum_{x^{\prime}\leq x,y^{\prime}\leq y}i(x^{\prime},y^{\prime}),
+\label{eq:Výpočet integrálneho obrazu}
+\end{equation}
 
 
 \newpage
 \subsection{HOG}
-Obrazy obsahují různé objekty, které lze zařadit do jednotlivých tříd (jablko, obličej, chodec,
-automobil, znaky abecedy atd.). Účelem příznakového rozpoznávání je extrahovat příznaky pro
-popis těchto objektů, které vykazují určité hodnoty. Hodnoty těchto objektů se musí natolik lišit,
-aby klasifikátor dokázal správně rozlišit, do které třídy objekt patří. V této práci pro extrakci
-příznaků a jejích klasifikaci je použito několik metod.
-2.1 Histogramy orientovaných gradientů
-Příznakovou metodu HOG vytvořili Navneed Dalal a Bill Triggs v [1], kteří vyvinuli a otestovali
-několik variant HOG deskriptorů. Ve své práci vyzkoušeli různé normalizační metody,
-různé druhy gradientních operátorů a ukázali jak správně nastavit další parametry této detekční
-metody v aplikaci detekování chodců.
-Hlavní myšlenka metody HOG je, že objekt v obraze může být pomocí vzhledu a tvaru
-charakterizován směrem hran, nebo intenzitou gradientů. Obraz se rozdělí na malé prostorové
-oblasti tzv. buňky, a pro každou buňku se sestaví histogram orientovaných gradientů, který
-je vypočítán ze všech pixelů z buňky. Je vhodné obraz před započetím výpočtů normalizovat,
-například kontrastní normalizací, nebo normalizací osvětlení. Toho lze docílit shromažďováním
-informací do histogramu nejen z jedné konkrétní buňky, ale z větší oblasti okolních buněk. Těchto
-několik buněk dá dohromady tzv. blok.
-
-\begin{equation}
-\left(\sum_{n=1}^{\infty}a_{n}b_{n}\right)^{2} \leq
-\sum_{n=1}^{\infty}a_{n}^{2} \cdot \sum_{n=1}^{\infty}b_{n}^{2}
-\label{eq:A}
+\label{HOG}
+S nápadom  vylepšiť detekciu objektov použitím príznakov prišli v roku 2005 Navneed Dalal a Bill Triggs \cite{dalal2005}, kde postupne vyskúšali niekoľko typov deskriptorov.  V práci taktiež podobne rozobrali  možnosti a spôsoby ako správne určiť parametre ich detekčnej metódy pre správne fungovanie detekcie jednotlivých tried. Podstatou ich metódy je, že objekt môže byť  charakterizovaný  viacerými spôsobmi. Táto metóda je rozdelená do niekoľkých samostatných krokov (Obr. \ref{fig:HOG1}):
+\begin{itemize}
+  \item \textbf{Úprava obrazu} - v tomto kroku je potrebné  v obraze upraviť konktrast a jas , ktoré by mohli spôsobovať  problémy v nasledujúcich krokoch. Okrem tejto úpravy  je možné  obraz urpaviť napríklad gamma filtrom.
+  \item \textbf{Výpočet gradientov} - veľkosť gradientov sa počíta na základe vstupného obrazu a masky. Masky, ktoré sa používaju v tomto kroku sú \textit{[-1, 0, 1]} alebo \textit{[-1, 0, 1] \textsuperscript{T}}. Gradienty je nutné vypočítať v obidvoch osách, čím získame \textit{I\textsubscript{x}} a \textit{I\textsubscript{y}}. Po získaní gradientov je potrebné vypočítať veľkosť gradientov \textit{m(x,y)} a ich smer \textit{$\theta(x, y)$}.
+  
+  \begin{equation}
+m(x,y)= \sqrt{I_{x}^{2} + I_{y}^{2}}
+\label{eq:Výpočet veľkosti gradientu}
 \end{equation}
-OBRAZOK
+
+  \begin{equation}
+\theta(x, y) = \left(\frac{I_{y}}{I_{x}}\right)
+\label{eq:Výpočet smeru gradientu}
+\end{equation}
+  \item \textbf{Normalizácia} -  Pre správne fungovanie je potrebné obraz normalizovať, aby sa minimalizovali rozdiely medzi jednotlivými bunkami. Tento krok spočíva v skladaní viacerých buniek, čím následne vznikajú bloky. 
+   \item \textbf{Deskriptor} -  Je vytvorený zo vstupného obrazu do jednotlivých blokov. Jednotlivé bloky sa posúvajú a prekrývajú o daný počet pixelov. Výsledok desktiproru je odovzdaný  klasifikátoru, ktorý následne určuje do akej triedy objekt patrí. Jeden z často používaných klasifikátorov je Support vector machine (SVM), ktorý napríklad používali autori práce na efektívnu detekciu chodcov.\cite{pang2011efficient}
+ \end{itemize}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/hog.png}
+	\caption{HOG - séria krokov \cite{dalal2005}}
+	\label{fig:HOG1}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/hog3.png}
+	\caption{HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítaný histogram (e). \cite{bertozzi2007pedestrian}}
+	\label{fig:HOG2}
+\end{figure}
+
 
 \newpage
 \section{Detekcia pozície vodiča}
@@ -147,6 +187,14 @@ Maximálne rozlíšenie (Video)	4K  30fps
 Maximálne rozlíšenie (Fotografia)	14.5MP (5376x2688px)
 Svetelnosť	f2.0
 Vnútorná pamäť	19GB
+
+
+\begin{equation}
+\left(\sum_{n=1}^{\infty}a_{n}b_{n}\right)^{2} \leq
+\sum_{n=1}^{\infty}a_{n}^{2} \cdot \sum_{n=1}^{\infty}b_{n}^{2}
+\label{eq:A}
+\end{equation}
+
 
 
 \newpage
@@ -222,7 +270,6 @@ Zhrnutie vysledkov
 
 
 \bibliography{literatura}
-\bibliographystyle{plain}
 
 
 
