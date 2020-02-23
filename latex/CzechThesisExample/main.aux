@@ -36,70 +36,106 @@
 \citation{viola2001robust}
 \citation{dalal2005}
 \citation{bertozzi2007pedestrian}
+\citation{cao2018openpose}
+\citation{cocoDataset}
+\citation{bmw2019assistent}
 \@writefile{toc}{\contentsline {section}{Zoznam obr\'azkov}{8}{Doc-Start}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1}Úvod}{9}{section.1}\protected@file@percent }
-\newlabel{sec:Introduction}{{1}{9}{Úvod}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{Zoznam výpisov zdrojového kódu}{9}{Doc-Start}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Úvod}{10}{section.1}\protected@file@percent }
+\newlabel{sec:Introduction}{{1}{10}{Úvod}{section.1}{}}
 \citation{rosenfeld1969}
 \citation{viola2001rapid}
-\citation{freund1995desicion}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Detekcia a analýza ľudského tela v obrazoch}{10}{section.2}\protected@file@percent }
-\newlabel{sec:human body decection}{{2}{10}{Detekcia a analýza ľudského tela v obrazoch}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Haar}{10}{subsection.2.1}\protected@file@percent }
-\newlabel{Haar}{{2.1}{10}{Haar}{subsection.2.1}{}}
-\citation{viola2001robust}
-\citation{viola2001robust}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite  {viola2001robust}\relax }}{11}{figure.caption.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Detekcia a analýza ľudského tela v obrazoch}{11}{section.2}\protected@file@percent }
+\newlabel{sec:human body decection}{{2}{11}{Detekcia a analýza ľudského tela v obrazoch}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Haar}{11}{subsection.2.1}\protected@file@percent }
+\newlabel{Haar}{{2.1}{11}{Haar}{subsection.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }}{11}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:Haar1}{{1}{11}{Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite {viola2001robust}\relax }{figure.caption.1}{}}
-\newlabel{eq:Výpočet integrálneho obrazu}{{1}{11}{Haar}{equation.2.1}{}}
+\newlabel{fig:integralImage}{{1}{11}{Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }{figure.caption.1}{}}
+\citation{viola2001robust}
+\citation{viola2001robust}
+\citation{freund1995desicion}
+\newlabel{eq:integral}{{1}{12}{Haar}{equation.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite  {viola2001robust}\relax }}{12}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:Haar1}{{2}{12}{Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite {viola2001robust}\relax }{figure.caption.2}{}}
 \citation{dalal2005}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Haar - detekcia tváre v slabých svetelných podmienkach\relax }}{13}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:Haar2}{{3}{13}{Haar - detekcia tváre v slabých svetelných podmienkach\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}HOG}{13}{subsection.2.2}\protected@file@percent }
+\newlabel{HOG}{{2.2}{13}{HOG}{subsection.2.2}{}}
+\newlabel{eq:Výpočet veľkosti gradientu}{{2}{13}{HOG}{equation.2.2}{}}
+\newlabel{eq:Výpočet smeru gradientu}{{3}{13}{HOG}{equation.2.3}{}}
 \citation{pang2011efficient}
 \citation{dalal2005}
 \citation{dalal2005}
 \citation{bertozzi2007pedestrian}
 \citation{bertozzi2007pedestrian}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}HOG}{12}{subsection.2.2}\protected@file@percent }
-\newlabel{HOG}{{2.2}{12}{HOG}{subsection.2.2}{}}
-\newlabel{eq:Výpočet veľkosti gradientu}{{2}{12}{HOG}{equation.2.2}{}}
-\newlabel{eq:Výpočet smeru gradientu}{{3}{12}{HOG}{equation.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces HOG - séria krokov \cite  {dalal2005}\relax }}{12}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:HOG1}{{2}{12}{HOG - séria krokov \cite {dalal2005}\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítaný histogram (e). \cite  {bertozzi2007pedestrian}\relax }}{13}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:HOG2}{{3}{13}{HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítaný histogram (e). \cite {bertozzi2007pedestrian}\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Detekcia pozície vodiča}{14}{section.3}\protected@file@percent }
-\newlabel{sec:Pose detection}{{3}{14}{Detekcia pozície vodiča}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}OpenPOSE}{15}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}TensorFlow}{16}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Ostatné metódy}{17}{subsection.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Využitie sférických kamier v automobiloch}{18}{section.4}\protected@file@percent }
-\newlabel{sec:Spherical cameras}{{4}{18}{Využitie sférických kamier v automobiloch}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Technické parametre}{18}{subsection.4.1}\protected@file@percent }
-\newlabel{eq:A}{{4}{18}{Technické parametre}{equation.4.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Použitie v analýze videa}{19}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Program}{20}{section.5}\protected@file@percent }
-\newlabel{sec:Program}{{5}{20}{Program}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Požiadavky a návrh programu}{21}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Pozícia vodiča}{22}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Detekcia}{23}{subsubsection.5.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Neurónová sieť}{24}{subsubsection.5.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Orientácia hlavy}{25}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Výstup programu}{26}{subsection.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Porovnanie výsledkov}{27}{subsection.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Využitie zozbieraných dát}{28}{subsection.5.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Používateľská príručka}{29}{subsection.5.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Možnosti vylepšenia detekcie}{30}{section.6}\protected@file@percent }
-\newlabel{sec:Možnosti vylepšenia detekcie}{{6}{30}{Možnosti vylepšenia detekcie}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces HOG - séria krokov \cite  {dalal2005}\relax }}{14}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:HOG1}{{4}{14}{HOG - séria krokov \cite {dalal2005}\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite  {bertozzi2007pedestrian}\relax }}{14}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:HOG2}{{5}{14}{HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite {bertozzi2007pedestrian}\relax }{figure.caption.5}{}}
+\citation{cao2018openpose}
+\citation{githubOpenpose}
+\citation{cao2018openpose}
+\citation{cao2018openpose}
+\citation{jia2014caffe}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}OpenPose}{15}{subsection.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite  {cao2018openpose}\relax }}{15}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:openposeOverall}{{6}{15}{OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite {cao2018openpose}\relax }{figure.caption.6}{}}
+\citation{lin2014microsoft}
+\citation{cocoDataset}
+\citation{cocoDataset}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Mapa spoľahlivosti}{16}{subsubsection.2.3.1}\protected@file@percent }
+\newlabel{eq:confidencemap}{{4}{16}{Mapa spoľahlivosti}{equation.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite  {cocoDataset}\relax }}{16}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:cocoDataset}{{7}{16}{COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Part afinity fields (PAF)}{17}{subsubsection.2.3.2}\protected@file@percent }
+\newlabel{eq:pafmap}{{5}{17}{Part afinity fields (PAF)}{equation.2.5}{}}
+\newlabel{src:coco_pairs}{{1}{17}{Množina párov končatín v datasete COCO}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Množina párov končatín v datasete COCO}{17}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}TensorFlow}{18}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Ostatné metódy}{19}{subsection.2.5}\protected@file@percent }
+\citation{smith2003determining}
+\citation{bmw2019assistent}
+\citation{bmw2019assistent}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Detekcia vodiča vo vozidle}{20}{section.3}\protected@file@percent }
+\newlabel{sec:Pose detection}{{3}{20}{Detekcia vodiča vo vozidle}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite  {bmw2019assistent}\relax }}{20}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:bmwAssistent}{{8}{20}{BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Využitie sférických kamier na detekciu obrazu}{21}{section.4}\protected@file@percent }
+\newlabel{sec:Spherical cameras}{{4}{21}{Využitie sférických kamier na detekciu obrazu}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Použitie v analýze videa}{22}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Technické parametre}{22}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Program}{23}{section.5}\protected@file@percent }
+\newlabel{sec:Program}{{5}{23}{Program}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Požiadavky a návrh programu}{24}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Detekcia vodiča}{25}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Neurónová sieť}{26}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Orientácia hlavy}{27}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Výstup programu}{28}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Porovnanie výsledkov}{29}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Využitie zozbieraných dát}{30}{subsection.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Používateľská príručka}{31}{subsection.5.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Možnosti vylepšenia detekcie}{32}{section.6}\protected@file@percent }
+\newlabel{sec:Možnosti vylepšenia detekcie}{{6}{32}{Možnosti vylepšenia detekcie}{section.6}{}}
 \bibdata{literatura}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Záver}{31}{section.7}\protected@file@percent }
-\newlabel{sec:Zaver}{{7}{31}{Záver}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Záver}{33}{section.7}\protected@file@percent }
+\newlabel{sec:Zaver}{{7}{33}{Záver}{section.7}{}}
 \bibcite{viola2001robust}{1}
 \bibcite{dalal2005}{2}
 \bibcite{bertozzi2007pedestrian}{3}
-\bibcite{rosenfeld1969}{4}
-\bibcite{viola2001rapid}{5}
-\bibcite{freund1995desicion}{6}
-\bibcite{pang2011efficient}{7}
-\expandafter\ifx\csname c@figure@totc\endcsname\relax\newcounter{figure@totc}\fi\setcounter{figure@totc}{3}
+\bibcite{cao2018openpose}{4}
+\bibcite{cocoDataset}{5}
+\bibcite{bmw2019assistent}{6}
+\bibcite{rosenfeld1969}{7}
+\bibcite{viola2001rapid}{8}
+\bibcite{freund1995desicion}{9}
+\bibcite{pang2011efficient}{10}
+\bibcite{githubOpenpose}{11}
+\bibcite{jia2014caffe}{12}
+\@writefile{toc}{\contentsline {section}{Literatúra}{34}{section.7}\protected@file@percent }
+\bibcite{lin2014microsoft}{13}
+\bibcite{smith2003determining}{14}
+\expandafter\ifx\csname c@figure@totc\endcsname\relax\newcounter{figure@totc}\fi\setcounter{figure@totc}{8}
 \expandafter\ifx\csname c@table@totc\endcsname\relax\newcounter{table@totc}\fi\setcounter{table@totc}{0}
-\expandafter\ifx\csname c@lstlisting@totc\endcsname\relax\newcounter{lstlisting@totc}\fi\setcounter{lstlisting@totc}{0}
-\@writefile{toc}{\contentsline {section}{Literatúra}{32}{section.7}\protected@file@percent }
+\expandafter\ifx\csname c@lstlisting@totc\endcsname\relax\newcounter{lstlisting@totc}\fi\setcounter{lstlisting@totc}{1}

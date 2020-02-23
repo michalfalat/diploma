@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  16 FEB 2020 00:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  23 FEB 2020 17:33
 entering extended mode
 **./main.tex
 (main.tex
@@ -657,6 +657,24 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count302
+\float@exts=\toks50
+\float@box=\box55
+\@float@everytoks=\toks51
+\@floatcapt=\box56
+)
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.s
+ty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks52
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
 \citation{*}
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -664,30 +682,30 @@ Package csquotes Info: ... found 'babel' package.
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend
 -pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count302
-\l__pdf_internal_box=\box55
+\l__kernel_color_stack_int=\count303
+\l__pdf_internal_box=\box57
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 60
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 70
 .
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
@@ -731,17 +749,17 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
+\scratchcounter=\count304
 \scratchdimen=\dimen183
-\scratchbox=\box56
-\nofMPsegments=\count304
-\nofMParguments=\count305
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count306
+\scratchbox=\box58
+\nofMPsegments=\count305
+\nofMParguments=\count306
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count307
 \MPscratchDim=\dimen184
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks51
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
+\everyMPtoPDFconversion=\toks54
 )
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
 df-base.sty"
@@ -749,15 +767,16 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-\c@lstlisting=\count309
+\c@lstlisting=\count310
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring ON on input line 60.
+\AtBeginShipoutBox=\box59
+Package hyperref Info: Link coloring ON on input line 70.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.st
 y"
@@ -771,11 +790,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count310
+\c@section@level=\count311
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -805,39 +824,49 @@ File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 
 ] (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-1.
+2.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-1.
+2.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-11.
+12.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-11.
+12.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 11.
+(Font)              <10.95> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 11.
+(Font)              <8> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 11.
+(Font)              <6> on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
+
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write5
 \openout5 = `main.toc'.
-
 
 [6
 
@@ -852,74 +881,173 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [8
 
 
-] [9
+] (main.lol)
+\tf@lol=\write7
+\openout7 = `main.lol'.
+
+ [9
+
+
+] [10
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-5.
+<Figures/integralImage.png, id=211, 735.49782pt x 380.17032pt>
+File: Figures/integralImage.png Graphic file (type png)
+<use Figures/integralImage.png>
+Package pdftex.def Info: Figures/integralImage.png  used on input line 98.
+(pdftex.def)             Requested size: 227.62206pt x 117.65434pt.
+ [11
+
+ <./Figures/integralImage.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+12.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-[10
-
-]
-<Figures/haar1.png, id=193, 749.80125pt x 674.52pt>
+<Figures/haar1.png, id=220, 749.80125pt x 674.52pt>
 File: Figures/haar1.png Graphic file (type png)
 <use Figures/haar1.png>
-Package pdftex.def Info: Figures/haar1.png  used on input line 103.
-(pdftex.def)             Requested size: 318.66948pt x 286.67235pt.
- [11 <./Figures/haar1.png>]
-<Figures/hog.png, id=211, 617.30624pt x 42.1575pt>
+Package pdftex.def Info: Figures/haar1.png  used on input line 119.
+(pdftex.def)             Requested size: 273.14923pt x 245.72945pt.
+
+[12 <./Figures/haar1.png>]
+<Figures/haar2.png, id=237, 335.75438pt x 213.79875pt>
+File: Figures/haar2.png Graphic file (type png)
+<use Figures/haar2.png>
+Package pdftex.def Info: Figures/haar2.png  used on input line 128.
+(pdftex.def)             Requested size: 273.14923pt x 173.93288pt.
+ [13 <./Figures/haar2.png>]
+<Figures/hog.png, id=250, 617.30624pt x 42.1575pt>
 File: Figures/hog.png Graphic file (type png)
 <use Figures/hog.png>
-Package pdftex.def Info: Figures/hog.png  used on input line 138.
+Package pdftex.def Info: Figures/hog.png  used on input line 158.
 (pdftex.def)             Requested size: 455.24411pt x 31.09055pt.
-<Figures/hog3.png, id=215, 617.30624pt x 237.13594pt>
+<Figures/hog3.png, id=255, 617.30624pt x 237.13594pt>
 File: Figures/hog3.png Graphic file (type png)
 <use Figures/hog3.png>
-Package pdftex.def Info: Figures/hog3.png  used on input line 145.
-(pdftex.def)             Requested size: 364.19667pt x 139.90898pt.
- [12 <./Figures/hog.png>] [13 <./Figures/hog3.png>] [14
+Package pdftex.def Info: Figures/hog3.png  used on input line 168.
+(pdftex.def)             Requested size: 455.24411pt x 174.88441pt.
+ [14 <./Figures/hog.png> <./Figures/hog3.png>]
+<Figures/openposePipeline.png, id=267, 1286.8075pt x 286.06876pt>
+File: Figures/openposePipeline.png Graphic file (type png)
+<use Figures/openposePipeline.png>
+Package pdftex.def Info: Figures/openposePipeline.png  used on input line 181.
+(pdftex.def)             Requested size: 455.24411pt x 101.20372pt.
+ [15 <./Figures/openposePipeline.png (PNG copy)>]
 
-] [15] [16] [17] [18
+LaTeX Warning: Command \v invalid in math mode on input line 202.
 
-] [19] [20
 
-] [21] [22] [23] [24] [25] [26] [27]
-[28] [29] [30
+LaTeX Warning: Command \v invalid in math mode on input line 202.
 
-] (main.bbl [31
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 287.
- [32
+LaTeX Warning: Command \' invalid in math mode on input line 202.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 202.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 202.
+
+<Figures/cocoDataset.png, id=284, 388.45125pt x 679.53876pt>
+File: Figures/cocoDataset.png Graphic file (type png)
+<use Figures/cocoDataset.png>
+Package pdftex.def Info: Figures/cocoDataset.png  used on input line 208.
+(pdftex.def)             Requested size: 136.57462pt x 238.9205pt.
+[16 <./Figures/cocoDataset.png (PNG copy)>]
+
+LaTeX Warning: Command \v invalid in math mode on input line 220.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 220.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 220.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 220.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 220.
+
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+ty"
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+25.
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [17] [18] [19]
+<Figures/bmw.jpg, id=318, 624.83438pt x 327.47343pt>
+File: Figures/bmw.jpg Graphic file (type jpg)
+<use Figures/bmw.jpg>
+Package pdftex.def Info: Figures/bmw.jpg  used on input line 260.
+(pdftex.def)             Requested size: 273.14923pt x 143.15935pt.
+ [20
+
+ <./Figures/bmw.jpg>] [21
+
+] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 297--300
+
+ []
+
+[23
+
+] [24] [25] [26] [27] [28] [29] [30] [31] [32
+
+] (main.bbl [33
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
+Underfull \hbox (badness 7944) in paragraph at lines 29--33
+[]\T1/lmr/m/n/10.95 Bryan Chung.  Open-pose in pro-ces-sing and opencv (dnn), 2
+018.  [On-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--33
+\T1/lmr/m/n/10.95 line; Ci-to-vané 23.02.2020 z [][]$\T1/lmtt/m/n/10.95 http : 
+/ / www . magicandlove . com / blog / 2018 / 08 / 06 /
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 35--39
+[]\T1/lmr/m/n/10.95 Gabriel Nica.  Bmw as-sis-ted dri-ving view lo-oks cool and
+ use-ful, 2019.  [On-
+ []
+
+[34
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
+ [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 287.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 287.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 311C2BFF3DA6473F11D33BC45C540F57;3621.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 287.
+(rerunfilecheck)             Checksum: B4C38F8FE36E6699E11FFB589AF98A32;3873.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
  ) 
 Here is how much of TeX's memory you used:
- 18390 strings out of 481567
- 272134 string characters out of 2914666
- 730916 words of memory out of 3000000
- 33228 multiletter control sequences out of 15000+200000
- 577312 words of font info for 47 fonts, out of 3000000 for 9000
+ 19085 strings out of 481567
+ 280122 string characters out of 2914666
+ 755033 words of memory out of 3000000
+ 33872 multiletter control sequences out of 15000+200000
+ 578866 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,6n,60p,3343b,2341s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy
-.enc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.
-enc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.e
+ 52i,11n,60p,3343b,2341s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
+}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.
+enc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
+nc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
 nc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
 t.enc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
-thex.enc}{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm
--ts1.enc}<C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm
+thex.enc}<C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm
 /lmbx10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /lm/lmbx12.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/lm/lmex10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
@@ -932,10 +1060,12 @@ nts/type1/public/lm/lmri10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/lm/lmri8.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Asus/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (32 pages, 397101 bytes).
+TeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Asus/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Asus/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (35 pages, 1208036 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 220 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 487 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 
