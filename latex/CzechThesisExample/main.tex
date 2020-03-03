@@ -54,11 +54,17 @@
 \AddAcronym{FPS}{Frames per second}
 \AddAcronym{GPU}{Graphical processing unit}
 \AddAcronym{HOG}{Histogram oriented gradients}
-\AddAcronym{IR} {Infra Red}
-\AddAcronym{LED} {Light Emitting Diode}
-\AddAcronym{OpenCV} {Open Source Computer Vision}
-\AddAcronym{PAF}{Part Afinity Fields}
+\AddAcronym{IR} {Infra red}
+\AddAcronym{LED} {Light emitting diode}
+\AddAcronym{NMS} {Non maximum suppression}
+\AddAcronym{OpenCV} {Open source computer vision}
+\AddAcronym{PAF}{Part afinity fields}
 \AddAcronym{PX}{Pixel}
+\AddAcronym{RCNN}{Region convolutional neural network} 
+\AddAcronym{SPPE}{Single-person pose estimator}
+\AddAcronym{SSTN}{Symmetric spatial transformer network}
+\AddAcronym{TF}{Tensorflow}
+\AddAcronym{VR}{Virtual reality}
 
 
 
@@ -201,7 +207,7 @@ OpenPose, ktorý bol vyvinutý výskumníkmi na univerzite Carnegie Mellon Unive
 & S\in\mathbb{R}^{w \times  h},\nonumber\\
 & j\in \left \{1,\: J  \right \}, kde\: J\: je\: počet\: všetkých\: častí\: tela\nonumber
 \end{eqnarray}
-Počet častí tela závisí od množiny datasetov, s ktorými je program OpenPose trénovaný. Pokiaľ ide napríklad o súbor datasetu COCO\cite{lin2014microsoft}, \textit{J = 19}, pretože existuje 18 rôznych kľúčových bodov tela + 1 pozadie. Obrázok \ref{fig:cocoDataset} zobrazuje rôzne časti tela s prideleným ID pre súbor údajov COCO. Pre model trénovaný s dátovým súborom COCO bude sada \textit{S} obsahovať prvky \textit{S1, S2, S3,…, S19}. V tomto príklade predpokladáme, že prvok \textit{S1} zodpovedá mape spoľahlivosti pre kľúčový bod s číslom 0 ktorý zodpovedá nosu (Obr. \ref{fig:cocoDataset}).\par Pre ľahšiu predstavu predpokladáme, že celý obraz má šírku a výšku 5px, čo vedie k vytvoreniu  mapy spoľahlivosti o veľkosti 5 X 5. Vo vstupnom obrázku sa nachádza iba jedna tvár. Preto pre mapu spoľahlivosti \textit{S1} (zodpovedajúca za detekciu nosa) vidíme hodnoty s vysokou spoľahlivosťou iba v oblasti, kde sa nos nachádza.\bigskip
+Počet častí tela závisí od množiny datasetov, s ktorými je program OpenPose trénovaný. Pokiaľ ide napríklad o súbor datasetu COCO\cite{lin2014microsoft}, \textit{J = 19}, pretože existuje 18 rôznych kľúčových bodov tela + 1 pozadie. Obrázok \ref{fig:cocoDataset} zobrazuje rôzne časti tela s prideleným ID pre súbor údajov COCO. Pre model trénovaný s dátovým súborom COCO bude sada \textit{S} obsahovať prvky \textit{S1, S2, S3,…, S19}. V tomto príklade predpokladáme, že prvok \textit{S1} zodpovedá mape spoľahlivosti pre kľúčový bod s číslom 0 ktorý zodpovedá nosu (Obr. \ref{fig:cocoDataset}).\par Pre ľahšiu predstavu predpokladáme, že celý obraz má šírku a výšku 5px, čo vedie k vytvoreniu  mapy spoľahlivosti o veľkosti \textit{$5\times 5$}. Vo vstupnom obrázku sa nachádza iba jedna tvár. Preto pre mapu spoľahlivosti \textit{S1} (zodpovedajúca za detekciu nosa) vidíme hodnoty s vysokou spoľahlivosťou iba v oblasti, kde sa nos nachádza.\bigskip
 
 \begin{figure}[H]
 	\centering
@@ -242,18 +248,91 @@ Okrem Datasetu COCO Dokáže OpenPose pracovať aj s mnohými ďalšími dataset
 
 
 \newpage
-\subsection{TensorFlow}
-tensorflow
+\subsection{TF Pose Estimation}
+Tento framework pre detekciu postáv bol implementovaný pomocou knižnice Tensorflow. Poskytuje tiež niekoľko variantov, ktoré sa odlišujú najmä v zmenách pre spracovanie v reálnom čase na CPU alebo zariadení s nízkou spotrebou. Z tohto dôvodu je  možné používať napríklad na mobilných zariadeniach alebo internetových prehladiačoch použitím knižnice tensorflow.js. Tensrflow Pose estimation používa na detekciu  vlastný model s názvom PoseNet. PoseNet sa dá použiť na odhad jednej pozície alebo viacerých pozícií  v obraze súčasne. To znamená, že existuje verzia algoritmu, ktorý dokáže detekovať iba jednu osobu v obraze a druhá verzia, ktorá dokáže zistiť viac osôb v obraze. Hlavnou výhodou použitím detekcie jednej osoby je rýchlejšie spracovanie   a nižší výpočtový výkon. Podstatnou nevýhodou však je, že vyžaduje iba jeden objekt prítomný na obrázku. Pri súčasnej pozícii viacerých osôb v obraze tento algoritmus nedokáže zdetekovať správne ani jednu osobu. Je preto potrebné sa zamyslieť sa  hneď na začiatku, koľko ôsob sa reálne môže v obraze nachádzať. Hlavná myšlienka tohto algoritmu sa skladá z dvoch krokov podobne ako pri knižnici OpenPose.
 
+\begin{itemize}
+\item \textbf{Detekcia pozície} - na najvyššej úrovni modelu PoseNet sa vráti objekt, ktorá obsahuje zoznam kľúčových bodov a skóre spoľahlivosti pre každú detekovanú osobu.
+\item \textbf{Výpočet spoľahlivosti pozície} - skóre spoľahlivosti určuje celkovú dôveru v odhadovaní pozície. Je v rozsahu od 0 až 1. Môže sa použiť na skrytie pozícií, ktoré sa nepovažujú za dostatočne výrazné.
+\item \textbf{Výpočet kľúčových bodov} - odhadované časti tela osoby, ako napríklad nos, pravé ucho, ľavé koleno, pravá noha atď. Obsahuje pozíciu a spoľahlivosť kľúčového bodu. PoseNet štandardne zisťuje 17 kľúčových bodov.
+\item \textbf{Poloha kľúčového bodu} - pozostáva z 2D súradníc  v pôvodnom vstupnom obrázku, kde bol zistený kľúčový bod.
+\end{itemize}
+
+
+Model PoseNet je nezávislý na veľkosti vstupného obrazu. To znamená, že môže predikovať polohy pozícií v rovnakom rozlíšení ako pôvodný obrázok bez ohľadu na to, či je obraz zmenšený. PoseNet môže byť nakonfigurovaný tak, aby mal vyššiu presnosť na úkor rýchlosti detekcie nastavením výstupného kroku. Výstupný krok určuje, do akej miery zmenšujeme výstup vzhľadom na veľkosť vstupného obrázka. To ovplyvňuje veľkosť jednotlivých vrstiev a výstupy modelu. Čím vyšší je výstupný krok, tým menší je počet vrstiev v sieti a výstupoch a tým aj ich presnosť. V základnej implementácii môže mať výstupný krok hodnoty 8, 16 alebo 32. Inými slovami, výstupný krok 32 bude mať za následok najrýchlejší výkon, ale najnižšiu presnosť, zatiaľ čo 8 bude mať najvyššiu presnosť, ale najpomalší čas detekcie.
+
+
+\subsubsection{Výstup}
+Keď PoseNet spracováva obraz, v skutočnosti vytvára tepelnú mapa \textit{(angl. Heatmap)} spolu s ofsetovými vektormi, ktoré je možné dekódovať, aby sa v obraze našli oblasti s vysokou spoľahlivosťou. Veľkou výhodou pri detekcii postáv v obraze cez Tensorflow je teda to, že spolu s vektormi výstupného modelu dostávame aj štruktorované dáta pravdepodobnosti jednotlivých častí postavy, ktoré môžeme využiť na ďalšie spracovanie, alebo znázorniť\textit{(Obr. \ref{fig:tfPoseHeatmap})}.
+
+\subsubsection{Tepelná mapa}
+Každá pozícia v tejto tepelnej mape má určité skóre spoľahlivosti. Tento údaj vyjadruje pravdepodobnosť, že v danom umiestnení existuje určitá časť daného typu. Dá sa to považovať za rozdelenie pôvodného obrázka do mriežky \textit{$15\times 15$}, kde skóre v termografickej mape poskytuje klasifikáciu pravdepodobnosti, že každý kľúčový bod existuje v každom štvorci mriežky.
+
+\subsubsection{Výstupný vektor}
+Každý ofsetový vektor je 3D vektor, ktorý má veľkosť \textit{$Šírka obrazu \times výška obrazu \times 34$}. Číslo 34 je dvojnásobok kľúčových bodov( 2 * 17). Tepelné mapy sú iba aproximáciou toho, kde sa skutočné kľúčové body nachádzajú, pričom výstupné vektory zodpovedajú svojou polohou bodom tepelnej mapy a používajú sa na predpovedanie presnej polohy jednotlivých častí ľudského tela. Prvých 17 rezov výstupného vektora obsahuje x-ovú súradnicu vektora a posledných 17 rezov y-ovú súradnicu. Veľkosti výstupného vektora sú v rovnakej mierke ako pôvodný vstupný obrázok.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/tfPose1.png}
+	\caption{Tepelná mapa  - vstupný obraz (a), tepelná mapa postavy (b)}
+	\label{fig:tfPoseHeatmap}
+\end{figure}
+
+\subsection{AlphaPose}
+AlphaPose\cite{fang2017rmpe} je framework, ktorý vznikol v roku 2017. Je zameraný na detekciu ľudských postáv  v čo najpresnejšej miere. Tento framework pracuje na princípe používania ohraničovacích boxov \textit{(angl. bounding box)}. Pre efektívne fungovanie algoritmu je použitý najmodernejší detektor objektov. Autori práce použili natrénovaný model Faster RCNN\cite{ren2015faster} a model pre detekciu postáv v obraze\cite{newell2016stacked}, ktorý je zameraný na SPPE detekciu. Primárna myšlienka práce spočíva v riešení dvoch hlavných problémov, ktoré pri takejto detekcii vznikajú:
+\begin{itemize}
+\item \textbf{Problém lokalizačnej chyby} - skutočnosti je SPPE dosť náchylný na chyby pri spočívajúce v použití ohraničovacích boxov. Aj v prípadoch, keď sú ohraničovacie rámčeky
+sú považované za správne a majú dostatočne vysokú spoľahlivosť \textit{$(I_oU > 0,5)$}, zistené ľudské pozície môžu byť stále nesprávne. 
+\item \textbf{Redundantná detekcia} - SPPE vytvára pózu pre každý ohraničovací box, čo vo výsledku vedie k duplicitnej detekcii rovnakej osoby (Obr.\ref{fig:alphaPoseRedundant})
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Figures/alphaPoseRedundant.png}
+	\caption{Problém redundantnej detekcie s použitím metódy bounding box\cite{fang2017rmpe}}
+	\label{fig:alphaPoseRedundant}
+\end{figure}
+
+Na vyriešenie uvedených problémov je použitý model na regionálnu detekciu viacerých postáv (RMPE). Vďaka tomu
+framework vylepšuje výkon algoritmov na odhadovanie ľudských postojov založených na SPPE. Autori práce tiež navrhli novú
+symetrickú sieť pre priestorovú detekciu (SSTN), ktorá je pripojená k SPPE na extrakciu jednotlivej osoby z
+oblasti nepresného ohraničovacieho boxu. Na optimalizáciu tejto siete je zavedená ďalšia paralelná vetva SPPE. Na riešenie problému redundantnej detekcie, je použitý parametrický NMS, ktorý eliminuje nadbytočné pózy pomocou novej metriky vzdialenosti a porovnanie podobnosti pózy. Prístup založený na údajoch je
+aplikovaný na optimalizáciu parametrov metriky vzdialenosti. RMPE je navrhnutý veľmi všeobecne a práve vďaka tomu je použiteľný pre rôzne ľudské detektory a ďalšie knižnice, ktoré pracujú na princípe single-person detection. AlphaPose používa dataset MPII , s ktorým prekonáva najmodernejšie metódy ako OpenPose. Tento model a zdrojové kódy\cite{githubAlphaPose} sú verejne dostupné a určené primárne pre vedu a výskum.
 
 \newpage
 \subsection{Ostatné metódy}
-WrnchAI je pomerne novy framwework, nieje  opensource
+Okrem  najpoužívajenších metód ako OpenPose a TF pose estiamtion, či AlphaPose existuje aj mnoho ďalších riešení. Tieto riešenia často vychádzajú zo základného princípu detekcie postáv, ktoré používajú aj tieto hlavné knižnice. Hlavný rozdiel je však použitie upravenej neurónovej siete alebo zmena rôznych parametrov. Vďaka takejto úprave je možné dosiahnúť v špecifických prípadoch vyššiu úspešnosť a presnosť detekcie alebo dokonca znížiť výpočtový čas potrebný na detekciu a spracovanie. Tieto riešenia sú však často obmedzované najmä chýbajúcou dokumentáciou , nedostatočnou implementáciou vo viacerých jazykoch, alebo nemožnosťou jednoduchej zmeny konfigurácie. Okrem voľne dostupných riešení existuje aj mnoho projektov, ktoré nie sú OpenSource, čo môže mnoho používateľov zo začiatku odradiť. V nasledujúcom odseku sú zhrnuté a v krátkosti rozpísané ďalšie knižnice, ktoré sa používajú na detekciu postáv v obrazoch.
+
+
+
+\subsubsection{WrnchAI}
+WrnchAI je framwork, ktorý bol vytvorený už v roku 2014. S myšlienkou využiť umelú inteligenciou a založiť projekt pre detekciu postáv prišiel Paul Kruszewski. Napriek tomu, že tento framework  existuje už niekoľko rokov a v niektorých článkoch\cite{openposeVsWrnchAI} dokázal dokonca získať lepší čas detekcie oproti iným metódam,  nestal sa natoľko populárnym medzi vývojarmi. Jedným z hlavných dôvodov je to, že knižnica nie je voľne dostupná pre vývojárov a jedná sa o platený projekt bez voľného prístupu k zdrojovému kódu. Súčasná cenová politika základnej verzie sa pohybuje na úrovni \$500 za mesiac používania s možnosťou vyskúšania trial verzie na 1. mesiac zadarmo. Trial verzia však funguje v obmedzenom režime  bez prístupu ku všetkým platformám. Pre bežného človeka sa táto cena môže zdať privysoká, avšak vzhľadom na jeho široké možnosti využitia  v rôznych oblastiach sa jedná o adekvátnu cenu. WrnchAI však našiel svoje uplatnenie možnosťou využitia na rôznych typoch zariadení, ktoré sa prispôsobujú konkrétnym podmienkam. V súčasnosti WrnchAI poskytuje 4 hlavné platformy:
+\begin{itemize}
+\item \textbf{wrnchPC} - umožňuje zachytiť ľudský pohyb od toľkých ľudí, koľko chcete, bez toho, aby ste museli nosiť ťažkopádne senzory. Náš tretí AI motor je agnostický fotoaparát, hardvérový AI hardvér, vyrobený tak, aby sa ľahko integroval do všetkých aplikácií. Používame spoľahlivé modely hlbokého učenia, aby sme zabezpečili spoľahlivé zachytenie ľudského pohybu pre všetky činnosti a v akomkoľvek prostredí
+
+
+\item \textbf{wrnchCloud} - detekuje ľudský postoj a pohyb z akéhokoľvek video vstupu. WrnchCloud je nákladovo veľmi efektívne riešenie, pretože nepotreje žiadne vysoké hardwarové nároky okrem bežného počítača s pripojením na internet. Celý proces detekcie prebieha na serveri, čo odbremenuje zákaznika od nákupu drahých grafických kariet a podobne. Toto riešenie je škálovateľné s možnosťou spracovania viacerých vstupov súčasne. Využitie cloudového riešenie zároveň pomáha držať krok moderných trendov v internetových technológiách.
+
+\item \textbf{wrnchMobile } - umožňuje využiť mobilné zariadenia na vytvorenie programu snímania postáv v reálnom čase. Taktiež dokáže spolupracovať s mobilnými operačnými systémami ako Android alebo IOS. Jeho základnym princípom je efektívne využitie výpočtového výkonu  na malých prenosných zariadeniách ako sú napríklad mobilné telefóny. Tento druh platformy taktiež dokáže pracovať aj s dalšími pokročilými vecami ako je napríklad rozšírená realita. S touto pomocou rozšírenej reality dokáže wrnchMobile snímanú postavu detekovať a zároveň zobrazovať napríklad do VR okuliarov.
+
+
+\item \textbf{wrnchEmbedded} - poskytuje možnosť detekovať postavy na rôznych automatizovaných zariadeniach ako napríklad roboty,  samoriadiace vozidlá, aby mohli v reálnom čase vidieť a interagovať s ľuďmi a ich pohybom. WrnchEmbedded pomáha zariadeniam predvídať ľudské správanie a najlepšie reagovať vo všetkých situáciách. Ich program je optimalizovaný najmä na rôzne priemyselné platformy a počítače, vďaka ktorým by mala byť ich integrácia s platformou Wrnch veľmi jednoduchá. V Súčasnsnoti je však táto časť platformy stále v aktívnom vývoji a nie je dostupná. 
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/wrnchAI.png}
+	\caption{WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchAICloud(b)}
+	\label{fig:wrnchAICloud}
+\end{figure}
+
+Na obrázku \ref{fig:wrnchAICloud} môžeme vidieť výsledok metódy cloudovej platformy WrnchAI. Táto platforma  funguje dostatočne spoľahlivo aj aj pri atypických polohách ľudského tela, ako je napríklad sedavá poloha vodiča za volantom. WrnchAI okrem polohy tela poskytuje aj detekciu kľúčových bodov tváre a kľúčové body rúk a prstov. Oproti ostatným knižniciam a frameworkom je možnost použiť WrnchAI ako komplexne riešenie na detekciu celého ľudského tela, čo napríklad pri OpenPose nieje bez použitia dalších rozšírené možné. V skúšobnej trial verzii  taktiež nieje možné odstrániť vodoznak firmy, ktorý sa nachádzav pravom dolnom rohu výstupného obrázka.
+
 
 \newpage
 \section{Detekcia vodiča vo vozidle}
 \label{sec:Pose detection}
-Detekcia objektov v uzavretom priestore (v našom prípade vo vozidle) sa od bežnej detekcie v základných princípoch nelíši. Obmedzenia nastávaju najmä nevhodnou pozíciou alebo natočením kamery. Ak je kamera nesprávne umiestnená, alebo má nedostatočný uhol záberu, nemusí byť zdetekovaný celý snímaný objekt, čo môže viesť k chybe pri jeho detekcii. Autori v práci \cite{smith2003determining}, kde sa zameriavali na oblasť tváre vodiča použili kameru umiestnenú v oblasti stredu palubnej dosky. Tým dosiahli takmer priame natočenie kamery na vodiča , bez toho, aby ho táto kamera výraznejšie obmedzovala vo výhľade. Keďže táto práca bola zameraná hlavne na detekciu  očí a úst, nebolo potrebné  používať kameru s vysokým uhlom záberu. Mnoho podobných riešení zameraných na snímanie aktivity vodiča sa snaží zaviesť mnoho výrobcov automobilov. Príkladom môže byť vyrobca  automobilov značky BMW, ktorý v príplatkovej výbave ponúka kameru na snímanie správania vodiča. Táto kamera dokáže reagovať napríklad na únavu alebo zatvorenie očí vodiča. Tento systém dokáže dokonca reagovať aj na to, že vodič má otočenú hlavu a nesleduje premávku. V každom takomto prípade je vodič upozornenený zvukovým znamením. Kamera je umiestnená na mieste, odkiaľ je na tvár vodiča priamy výhľad (Obr. \ref{fig:bmwAssistent}). Okrem jej vhodného umiestnenia je navyše vybavená aj IR LED diódami, vďaka ktorým kamera funguje aj za znížených svetelných podimenok a v noci, kedy sa vyskytuje najväčší počet mikrospánkov u vodičov vozidiel.
+Detekcia objektov v uzavretom priestore (v našom prípade vo vozidle) sa od bežnej detekcie v základných princípoch nelíši. Obmedzenia nastávaju najmä nevhodnou pozíciou alebo natočením kamery. Ak je kamera nesprávne umiestnená, alebo má nedostatočný uhol záberu, nemusí byť zdetekovaný celý snímaný objekt, čo môže viesť k chybe pri jeho detekcii. Autori v práci \cite{smith2003determining}, kde sa zameriavali na oblasť tváre vodiča použili kameru umiestnenú v oblasti stredu palubnej dosky. Tým dosiahli takmer priame natočenie kamery na vodiča , bez toho, aby ho táto kamera výraznejšie obmedzovala vo výhľade. Keďže táto práca bola zameraná primárne na detekciu očí a úst, nebolo potrebné  používať kameru s vysokým uhlom záberu. Mnoho podobných riešení zameraných na snímanie aktivity vodiča sa snažia zaviesť aj výrobcovia automobilov. Príkladom môže byť vyrobca  automobilov značky BMW, ktorý v príplatkovej výbave ponúka kameru na snímanie správania vodiča. Táto kamera dokáže reagovať napríklad na únavu alebo zatvorenie očí vodiča. Vo všeobecnosti tento systém dokáže dokonca reagovať aj na to, že vodič má otočenú hlavu a nesleduje premávku, čo môže viesť k nebezpečnej situácii. V každom takomto prípade je vodič upozornenený zvukovým znamením. Kamera je umiestnená v prístrjovej doske na mieste, odkiaľ je na tvár vodiča priamy výhľad (Obr. \ref{fig:bmwAssistent}). Okrem jej vhodného umiestnenia je navyše vybavená aj IR LED diódami, vďaka ktorým kamera funguje aj za znížených svetelných podimenok a v noci, kedy sa vyskytuje najväčší počet mikrospánkov u vodičov všetkých vozidiel. Vďaka takémuto riešeniu sa dokáže predísť mnohým nebezpečným situáciám a dopravným nehodám.
 
 \begin{figure}[H]
 	\centering
@@ -273,6 +352,8 @@ Detekcia objektov v uzavretom priestore (v našom prípade vo vozidle) sa od be�
 \newpage
 \section{Využitie sférických kamier na detekciu obrazu}
 \label{sec:Spherical cameras}
+
+Výstup z kamery je reprezentovaný 2D snímkou, ktorá však zachytáva obraz z celého svojho okolia. Medzi najznámejšie projekcie na zachytenie 3D obrazu patrí equirectangular panorama projection, ktoré je definované dvomi uhlami: latitude  $ \omega \in [-90^\circ , +90^\circ ]$ a longitude $\lambda \in [-180^\circ , +180^\circ ]. $
 
 \newpage
 \subsection{Použitie v analýze videa}

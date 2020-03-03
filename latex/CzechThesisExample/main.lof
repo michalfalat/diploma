@@ -11,4 +11,7 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite {bertozzi2007pedestrian}\relax }}{14}{figure.caption.5}%
 \contentsline {figure}{\numberline {6}{\ignorespaces OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite {cao2018openpose}\relax }}{15}{figure.caption.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }}{16}{figure.caption.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }}{19}{figure.caption.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Problém redundantnej detekcie s použitím metódy bounding box\cite {fang2017rmpe}\relax }}{20}{figure.caption.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchAICloud(b)\relax }}{22}{figure.caption.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }}{23}{figure.caption.11}%
