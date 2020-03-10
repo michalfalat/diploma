@@ -13,5 +13,9 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }}{16}{figure.caption.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }}{19}{figure.caption.8}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Problém redundantnej detekcie s použitím metódy bounding box\cite {fang2017rmpe}\relax }}{20}{figure.caption.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchAICloud(b)\relax }}{22}{figure.caption.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }}{23}{figure.caption.11}%
+\contentsline {figure}{\numberline {10}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }}{22}{figure.caption.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }}{24}{figure.caption.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Model sférickej projekcie.\cite {li2006full}\relax }}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces GoPro Omni - séria synchronizovaných kamier pre zachytenie sférickej fotografie.\cite {goproOmni}\relax }}{27}{figure.caption.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Znázornenie sférických projekcií - kubické zobrazenie (a), ekvidistantné zobrazenie (b)\relax }}{28}{figure.caption.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Rovnaká sférická fotografia v rôznych zobrazeniach - kubické zobrazenie (a), ekvidistantné zobrazenie (b)\relax }}{28}{figure.caption.15}%
