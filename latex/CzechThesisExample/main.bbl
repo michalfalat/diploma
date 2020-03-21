@@ -53,11 +53,6 @@ GoPro, 2016.
 \newblock [Online; Citované 6.03.2020 z
   \url{https://gopro.com/en/cz/news/vr_spherical_omni_rig_shipping}.
 
-\bibitem{sphereFormats}
-Aakanksha Rana, Cagri Ozcinar, and Aljosa Smolic.
-\newblock Towards generating ambisonics using audio-visual cue for virtual
-  reality, 08 2019.
-
 \bibitem{rosenfeld1969}
 Azriel Rosenfeld.
 \newblock Picture processing by computer.
@@ -134,5 +129,35 @@ Paul Smith, Mubarak Shah, and Niels da~Vitoria~Lobo.
 \newblock Determining driver visual attention with one camera.
 \newblock {\em IEEE transactions on intelligent transportation systems},
   4(4):205--218, 2003.
+
+\bibitem{dlib09}
+Davis~E. King.
+\newblock Dlib-ml: A machine learning toolkit.
+\newblock {\em Journal of Machine Learning Research}, 10:1755--1758, 2009.
+
+\bibitem{tensorflow2015-whitepaper}
+Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
+  Craig Citro, Greg~S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin,
+  Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard,
+  Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh
+  Levenberg, Dan Man\'{e}, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah,
+  Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar,
+  Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\'{e}gas, Oriol
+  Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang
+  Zheng.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock Software available from tensorflow.org.
+
+\bibitem{chollet2015keras}
+Fran\c{c}ois Chollet et~al.
+\newblock Keras.
+\newblock \url{https://github.com/fchollet/keras}, 2015.
+
+\bibitem{theano}
+{Theano Development Team}.
+\newblock {Theano: A {Python} framework for fast computation of mathematical
+  expressions}.
+\newblock {\em arXiv e-prints}, abs/1605.02688, May 2016.
 
 \end{thebibliography}

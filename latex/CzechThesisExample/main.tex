@@ -50,13 +50,16 @@
 \AddAcronym{2D}{2-dimensional}
 \AddAcronym{3D}{3-dimensional}
 \AddAcronym{CNN}{Convolutional neural network}
+\AddAcronym{CNTK}{Microsoft cognitive toolkit}
 \AddAcronym{CPU}{Central processing unit}
 \AddAcronym{FOV}{Field of view}
 \AddAcronym{FPS}{Frames per second}
+\AddAcronym{GB}{Gigabyte}
 \AddAcronym{GPU}{Graphical processing unit}
 \AddAcronym{HOG}{Histogram oriented gradients}
 \AddAcronym{IR} {Infra red}
 \AddAcronym{LED} {Light emitting diode}
+\AddAcronym{MP}{Megapixel}
 \AddAcronym{NMS} {Non maximum suppression}
 \AddAcronym{OpenCV} {Open source computer vision}
 \AddAcronym{PAF}{Part afinity fields}
@@ -406,7 +409,7 @@ Na rozdiel od cylindrického pohľadu, sférické projekcie majú vertikálny uh
 	\centering
 	\includegraphics[width=0.9\textwidth]{Figures/sphericalModel2.png}
 	\caption{Znázornenie sférických projekcií - kubické zobrazenie (a), ekvidistantné zobrazenie (b)}
-	\label{fig:sphericalModel}
+	\label{fig:sphericalModel2}
 \end{figure}
 
 Konverzia rovnostranného obrázka na kubickú mapu sa najčastejšie používa pre niektoré riešenia virtuálneho prostredia alebo pri úprave severných a južných pólov sférických panorám.
@@ -423,50 +426,120 @@ Rovnostranné obrázky sú roztiahnuté v horizontálnom smere. Je to dôvod na 
 
 
 \newpage
-\section{Program}
-\label{sec:Program}
-- Popis programu\\
-- jazyk Python\\
-- pouzite kniznice\\
+\section{Vlastná implementácia}
+\label{sec:Vlastná implementácia}
 
+\subsection{Popis programu}
+Táto kapitola je zameraná na  popis implementácie vlastného programu. Hlavnou podstatouvýsledného programu je detekcia vodiča z videa alebo z jednotlivých obrázkov nahratých kamerou z interiéru vozidla. V kapitole sú tiež detailné popísané možnosti, problémy a riešenia nahrávania samotných videí z interiéru vozidla pri rôznych problematických podmienkach. Z dôvôdu technickej náročnosti sú tieto videá spracované až dodatočne po ich stiahnutí do počítača, kde sú následne spracované  programom. Riešenie teda neumožňuje spracovanie videa v reálnom čase počas jazdy. To však neznamená, že taká možnosť neexistuje. Tento program môže poslúžiť ako inšpirácia pre budúce riešenia, ktoré by sa zameriavali na spracovanie podobného druhu aj v reálnom čase.\par
+Program  by mal byť schopný detekovať vodičove správanie a znázorňovať stav daného vodiča s vyhodnotením situácie. Medzi takúto detekciu patrí napríklad analýza posedu v aute, umiestnenie rúk alebo natočenie hlavy. Program musí podporovať použitie viacerých frameworkov na detekciu ľudských postáv a umožniť porovnanie medzi sebou formou vhodného výstupu. Základné metódy, ktoré musí program podporovať sú Tensorflow pose Estimation a OpenPose. Tieto frameworky boli zvolené najmä z dôvodu, že sa jedná o najviac používanie metódy na detekciu postáv v súčasnosti. Okrem toho majú výborne zdokumentované zdrojové kódy a dostatočné množstvo informácii pre vlastnú implementáciu. Okrem základnej detekcie postáv program umožňuje aj rozšírený mód. Tento rozšírený mód sa zameriava na detekciu ďalších vlastnosti šoféra vozidla ako napríklad zapnutie bezpečnostného pásu, alebo natočenie hlavy. Z týchto informácii je potom možná ďalšia analýza vodičovho správania a vyhodnotenie rizík. Program je rozdelený do jednotlivých samostatných celkov, ktoré sú na sebe nezávislé. Každý z týchto celkov spracováva konkrétnu časť:
+\begin{itemize}
+\item \textbf{Detekcia vodiča} (Kapitola \ref{sec:driverDetection}) - základným prvkom programu je  analýza vodičovho posedu.  V kapitole je popísané využitie jednotlivých frameworkov na detekciu a analýza ľudského tela zo zozbieraných údajov pomocou jednotlivých frameworkov.
+
+\item \textbf{Otočenie hlavy} (Kapitola \ref{sec:headOrientation}) - je zameraná na rotáciu a natočenie hlavy vodiča pomocou detekcie tvárových landmarkov a knižnice dlib\cite{dlib09}. 
+
+\item \textbf{Bezpečnostný pás} (Kapitola \ref{sec:safeBelt}) - táto kapitola je zameraná  predovšetkým na problematiku snímania bezbečnostného pásu pri rôznych nepriaznivých podmienkach.
+
+
+\item \textbf{Neurónová sieť} (Kapitola \ref{sec:neuralNetwork}) - vo výslednej časti je popísaná implementácia neurónovej siete, ktorá vyhodnocuje jednotlivé výstupy predchádzajúcich častí.
+
+\end{itemize}
 
 \newpage
 \subsection{Požiadavky a návrh programu}
-- poziadavky \\
-- Architekruta programu , schemy
+Každý vyvíjaný program, by mal  spĺnať určité očakávania. Tieto očakávania a požiadavky by mali byť správne zadefinované ešte samotným vývojom. Tieto požiadavky okrem toho, že určia samotnú funkcionalitu programu, zároveň umožňujú analyzovať splnenie jednotlivých bodov. Požiadavky by mali byť priebežne spracované. Pri správnej analýze ešte pred samotným vývojom programu je potom jednoduché kontrolovať splnenie jednotlivých bodov. Program, ktorý je navrhnutý v tejto diplomovej práci obsahuje niekoľko dôležitých podmienok, ktoré zaručia dostatočnú kvalitu výstupu programu a jeho použitie. Jednotlivé požiadavky sú zhrnuté v nasledujúcich bodoch:
+\begin{itemize}
+\item \textbf{Jednoduché používanie} - program  musí byť jednoduchý na používanie. To znamená, že by mal obsahovať  iba určitú funkcionalitu, ktorej výsledok je požadovaný a zrejmý. Ku programu by mala byť zároveň vytvorená jednoduchá dokumentácia, ktorá by obsahovala jednotlivé príkazy a popis parametrov.
 
-\subsection{Technické parametre kamier}
-Go PRO:
+\item \textbf{CLI podpora} - pre univerzálnosť použitia by mal program byť spustitelný z príkazového riadku. Jednotlivé časti programu by mali byť jednoducho používané pomocou voliteľných parametrov.
 
-THETA:
+\item \textbf{Nezávislosť na použitej kamere} - program by  mal byť schopný spracovať  akékoľvek video, ktoré bude nahraté z interiéru vozidla. Nemal by byť závislý na formáte, ani type samotných videí.
 
-Senzor	FishEye CMOS 2x12MPix
-Maximálne rozlíšenie (Video)	4K  30fps
-Maximálne rozlíšenie (Fotografia)	14.5MP (5376x2688px)
-Svetelnosť	f2.0
-Vnútorná pamäť	19GB
+\item \textbf{Podpora  viacerých frameworkov na detekciu postáv} - program musí podporovať aspoň 2 rôzne frameworky, ktoré slúžia na detekciu postáv v obraze.Ich  použitie by nemalo byť závislé na type videa alebo použití inej funkcionality. Táto podmienka vyžaduje zjednotenie vstupov a výstupov pre jednotlivé frameworky na detekciu postáv v obraze.
+\item \textbf{Znázornenie výsledku detekcie} - pre program by mal umožnovať výpis jednotlivých časti programov priamo do obrazu.
+\item \textbf{Štatistické údaje} - program by po svojom úspešnom skončení mal byť schopný  zozbierať a vyhodnotiť údaje z celeho behu programu. Dôležité údaje sú čas spracovania jednej snímky, celková úspešnosť a celková doba programu. 
+\item \textbf{Univerzálnosť} -  aby bolo jednoduché použiť program na viacerých operačných systémov, je potrebné ho napísať tak, aby  nevyužíval žiadnu funkconalitu, ktorá je závisla na konkrétnom operačnom systéme. 
+\end{itemize}
+
+\newpage
+\subsection{Použité technológie}
+
+\subsubsection*{Programovací jazyk}
+Samotný program je napísaný v jazyku Python. Tento jazyk bol použitý z dôvodu výnikajúcej dostupnosti knižníc na spracovanie obrazu, ale aj knižníc na prácu s neurónovými sieťami. Okrem toho je jazyk Python veľmi dobre zdokumentovaný a má vybudovanú širokú komunitu medzi programátormi. Okrem jazyka Python taktiež bolo zvažované použitie jazyka C++.  Napriek mnohým nesporným výhodam jazyka C++ padlo rozhodnutie na jazyk Python najmä po dôkladnom zvážení nasledujúcich dôvodov:
+\begin{itemize}
+\item \textbf{Automatická správa pamäte} - python má narozdiel od C++  implicitne  vyriešenú automatickú alokáciu a dealokáciu pamäte. To dáva programátorovi výhodu v ušetrení času za cenu malého zníženia výkonu aplikácie.
+\item \textbf{Široká podpora knižníc} - v súčasnosti pre jazyk Python existuje obrovské množstvo voľne dostupných knižníc, ktoré uľahčujú prácu pri vývoji softvéru. Jedná sa najmä o knižnice zamerané na prácu s neuronovými sieťamia spracovanie obrazu.
+\item \textbf{Jednoduchosť jazyka} - Python je narozdiel od C++ jednoduchší a pohodlnejší  na používanie. Poskytuje mnohé výhody, ktoré jazyk C++ nepodporuje ako napríklad dynamické dátové typy, jednoduchá inštalácia a použitie potrebných baličkov v programe.
+\end{itemize}
+
+\subsubsection*{OpenCV}
+OpenCV je multiplatformová knižnica, ktorá obsahuje funkcie pre spracovanie a manipuláciu s obrazom v reálnom čase. Vďaka licencii BSD je možné používáť OpenCV zadarmo  nielen pre akademické, ale aj pre komerčné účely. S jej využitím je možné sa stretnúť pri analýze a spracovanie snímok z rôznych oblastí. Aplikácie, ktoré sú napísané a optimalizované v C/C++, potom môžu pre svoj beh využívať viacjadrové procesory. V súčasnosti sa výrazne rozšírila podpora aj pre jazyk Python a CUDA pre spracovanei na grafickom procesore. V programe je OpenCV využité  na základnú prácu s obrazmi ako načítanie snímky z videa, zmena veľkosti, detekcia hrán a podobne.
+
+
+\subsubsection*{TensorFlow}
+TensorFlow\cite{tensorflow2015-whitepaper} bol pôvodne vyvinutý výskumníkmi a inžiniermi pracujúcimi v tíme Google Brain v rámci organizácie Google Research Intelligence Research na vykonávanie strojového učenia a výskumu neurónových sietí. Framework je dostatočne všeobecný na to, aby sa dal použiť aj v mnohých ďalších doménach. TensorFlow poskytuje stabilné API Python a C++, ako aj nezaručené spätne kompatibilné API pre iné jazyky. V programe je Tensorflow využitý najmä na detekciu postáv a prácu s neuronovými sieťami.
+
+
+
+\subsubsection*{Keras}
+Keras\cite{chollet2015keras} je framework pre hĺbkové učenie pôvodne vyvinutý pre jazyk Python. Poskytuje pohodlný spôsob, ako definovať a trénovať takmer akýkoľvek druh hlbokého učenia. Keras je vysokoúrovňové API pre neurónové siete, ktoré je schopné pracovať s inými knižnicami ako napríklad nad Tensorflow, Theano\cite{theano} a CNTK. V aplikácii je Keras využitý na vytvorenie modelu a jednotlivých vrstiev neurónovej siete.
+
+
+
+\subsection{Vytvorenie a spracovanie videa}
+V tejto sekcii je postupne spísaný postup a problematika, ktorá sa týka nahrávania videí potrebných pre analýzu vodiča v tejto diplomovej práci. Samotný program je pôvodne navrhnutý na spracovanie videa v 360 stupňovom formáte. Implementácia však nie je žiadnym spôsobom limitovaná a program je schopný spracovať aj obyčajné video nahraté bežne dostupnou kamerou. Hlavným dôvôdom použitia  sférickej kamery je jej uhol záberu. Vďaka širokouhlému obrazu je možné získať obraz celého vodiča sediaceho za volantom. Získanie takéhoto obrazu umožňuje analyzovať jednotlivé časti tela, tvár, ale aj vodičovo správanie.\par
+ Počas vypracovania práce boli k dispozícii dve širokouhlé kamery od rôznych výrobcov. Na kamerách je umiestnené minimálne množstvo tlačidiel, ktoré slúžia prímárne iba na zapnutie a vypnutie kamery. Celé ovládanie je cez intuitívnu mobilnú aplikáciu, ktoré sú dostupné na stiahnutie na stránkach výrobcov pre všetky bežne mobilné platformy v súčasnosti. Obidve kamery obsahujú 2 objektivy tzv. fish eye, s ktorými sa vytvára sférický záber okolitej scény. Kamery majú odlišné parametre a vlastnosti, ktoré sú zhrnuté v tabuľke \ref{tab:techSpec}. Hlavný rozdiel je možné vidieť najmä v maximálnom rozlíšení, ktoré je pri videu pre kameru GoPro Fusion takmer dvojnásobné oproti rozlíšeniu kamery Ricoh Theta V. Pri spracovaní videa a detekcii vodiča však nemusí rozlíšenie hrať významnú úlohu. Aj napriek tomu, že svetelnosť senzora je totožná, rozdiel v kvalite výstupného videa je ľahko rozpoznateľný najmä pri znížených svetelných podmienkach. Kým za denného svetla sú kvalita aj kontrast obrazu skoro totožné pre obidve kamery, pri tmavých scénach je obraz z kamery Ricoh Theta V nekvalitný a obsahuje vysokú úroveň šumu za cenu vyššej priepustnosti svetelnosti (Obr. \ref{fig:cameraCompare}).
+
+\begin{table}[H]
+\begin{tabular}{|l|c|c|}
+\hline
+                                     & \textbf{GoPro Fusion}  & \textbf{Ricoh Theta V} \\ \hline
+\textbf{Senzor}                      & FishEye CMOS 2×18MP    & FishEye CMOS 2×12MP    \\ \hline
+\textbf{Max. rozlíšenie (foto)}      & 18MP                   & 14.4MP                 \\ \hline
+\textbf{Max. rozlíšenie (video)}     & 13.7MP                 & 7.3MP                  \\ \hline
+\textbf{Sveteľnosť senzora}          &  f/2.0                 & f/2.0                  \\ \hline
+\textbf{Pamäť}                       &  SD karta (256GB)      & 19GB                   \\ \hline
+\end{tabular}
+
+	\caption{Technické parametre sférických kamier}
+	\label{tab:techSpec}
+\end{table}
+\newpage
+Na tomto obrázku zároveň vidieť problém, ktorý nastáva  pri znížených svetelných podmienkach. Keďže ani jedna kamera nie je vybavena infračerveným svetlom, ktoré by pomáhalo v noci, detekcia kamerou  nieje veľmi účinná. 
+Pri spracovaní videí z obidvoch kamier, bolo používané iba video z prednej kamery. Pre potreby tejto práce bol potrebný záber celého tela vodiča za volantom.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/camCompare.png}
+	\caption{Rovnaká sférická fotografia v rôznych zobrazeniach  - kubické zobrazenie (a), ekvidistantné zobrazenie (b)}
+	\label{fig:cameraCompare}
+\end{figure}
+
 
 
 \newpage
 \subsection{Detekcia vodiča}
+\label{sec:driverDetection}
 - umiestnenie kamery, detekcia vodiča\\
  - vyber TF vs OpenPose
-
-
-
-\newpage
-\subsubsection{Neurónová sieť}
--NN klasifikator\\
-- trenovanie \\
-- testovanie
-
-
-
+ 
 \newpage
 \subsection{Orientácia hlavy}
+\label{sec:headOrientation}
 - Haar  priznaky ,\\
 - prevod 2D na 3D \\
 - smerova priamka
+
+\newpage
+\subsection{Bezpečnostný pás}
+\label{sec:safeBelt}
+- bezp. pas
+
+\newpage
+\subsection{Neurónová sieť}
+\label{sec:neuralNetwork}
+-NN klasifikator\\
+- trenovanie \\
+- testovanie
 
 \newpage
 \subsection{Výstup programu}

@@ -4,35 +4,39 @@
 \babel@toc {slovak}{}
 \babel@toc {english}{}
 \babel@toc {slovak}{}
-\contentsline {section}{Zoznam použitých skratiek a symbolov}{7}{Doc-Start}%
-\contentsline {section}{Zoznam obr\'azkov}{8}{Doc-Start}%
-\contentsline {section}{Zoznam výpisov zdrojového kódu}{9}{Doc-Start}%
-\contentsline {section}{\numberline {1}Úvod}{10}{section.1}%
-\contentsline {section}{\numberline {2}Detekcia a analýza ľudského tela v obrazoch}{11}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Haar}{11}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}HOG}{13}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}OpenPose}{15}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Mapa spoľahlivosti}{16}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Part afinity fields (PAF)}{17}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}TF Pose Estimation}{18}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Výstup}{19}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Tepelná mapa}{19}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Výstupný vektor}{19}{subsubsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.5}AlphaPose}{20}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Ostatné metódy}{21}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}WrnchAI}{21}{subsubsection.2.6.1}%
-\contentsline {section}{\numberline {3}Detekcia vodiča vo vozidle}{23}{section.3}%
-\contentsline {section}{\numberline {4}Využitie sférických kamier na detekciu obrazu}{25}{section.4}%
-\contentsline {section}{\numberline {5}Program}{29}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Požiadavky a návrh programu}{30}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Technické parametre kamier}{30}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Detekcia vodiča}{31}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Neurónová sieť}{32}{subsubsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.4}Orientácia hlavy}{33}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Výstup programu}{34}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Porovnanie výsledkov}{35}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Využitie zozbieraných dát}{36}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Používateľská príručka}{37}{subsection.5.8}%
-\contentsline {section}{\numberline {6}Možnosti vylepšenia detekcie}{38}{section.6}%
-\contentsline {section}{\numberline {7}Záver}{39}{section.7}%
-\contentsline {section}{Literatúra}{40}{section.7}%
+\contentsline {section}{Zoznam použitých skratiek a symbolov}{8}{Doc-Start}%
+\contentsline {section}{Zoznam obr\'azkov}{9}{Doc-Start}%
+\contentsline {section}{Zoznam tabuliek}{10}{Doc-Start}%
+\contentsline {section}{Zoznam výpisov zdrojového kódu}{11}{Doc-Start}%
+\contentsline {section}{\numberline {1}Úvod}{12}{section.1}%
+\contentsline {section}{\numberline {2}Detekcia a analýza ľudského tela v obrazoch}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Haar}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}HOG}{15}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}OpenPose}{17}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Mapa spoľahlivosti}{18}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Part afinity fields (PAF)}{19}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}TF Pose Estimation}{20}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Výstup}{21}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Tepelná mapa}{21}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Výstupný vektor}{21}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}AlphaPose}{22}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Ostatné metódy}{23}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}WrnchAI}{23}{subsubsection.2.6.1}%
+\contentsline {section}{\numberline {3}Detekcia vodiča vo vozidle}{25}{section.3}%
+\contentsline {section}{\numberline {4}Využitie sférických kamier na detekciu obrazu}{27}{section.4}%
+\contentsline {section}{\numberline {5}Vlastná implementácia}{31}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Popis programu}{31}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Požiadavky a návrh programu}{32}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Použité technológie}{33}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Vytvorenie a spracovanie videa}{34}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Detekcia vodiča}{36}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Orientácia hlavy}{37}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Bezpečnostný pás}{38}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Neurónová sieť}{39}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Výstup programu}{40}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Porovnanie výsledkov}{41}{subsection.5.10}%
+\contentsline {subsection}{\numberline {5.11}Využitie zozbieraných dát}{42}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.12}Používateľská príručka}{43}{subsection.5.12}%
+\contentsline {section}{\numberline {6}Možnosti vylepšenia detekcie}{44}{section.6}%
+\contentsline {section}{\numberline {7}Záver}{45}{section.7}%
+\contentsline {section}{Literatúra}{46}{section.7}%
