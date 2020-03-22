@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  19 MAR 2020 23:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  22 MAR 2020 23:33
 entering extended mode
 **./main.tex
 (main.tex
@@ -899,7 +899,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-<Figures/integralImage.png, id=270, 735.49782pt x 380.17032pt>
+<Figures/integralImage.png, id=271, 735.49782pt x 380.17032pt>
 File: Figures/integralImage.png Graphic file (type png)
 <use Figures/integralImage.png>
 Package pdftex.def Info: Figures/integralImage.png  used on input line 108.
@@ -913,31 +913,31 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Figures/haar1.png, id=280, 749.80125pt x 674.52pt>
+<Figures/haar1.png, id=281, 749.80125pt x 674.52pt>
 File: Figures/haar1.png Graphic file (type png)
 <use Figures/haar1.png>
 Package pdftex.def Info: Figures/haar1.png  used on input line 129.
 (pdftex.def)             Requested size: 273.14923pt x 245.72945pt.
 
 [14 <./Figures/haar1.png>]
-<Figures/haar2.png, id=297, 335.75438pt x 213.79875pt>
+<Figures/haar2.png, id=298, 335.75438pt x 213.79875pt>
 File: Figures/haar2.png Graphic file (type png)
 <use Figures/haar2.png>
 Package pdftex.def Info: Figures/haar2.png  used on input line 138.
 (pdftex.def)             Requested size: 273.14923pt x 173.93288pt.
  [15 <./Figures/haar2.png>]
-<Figures/hog.png, id=309, 617.30624pt x 42.1575pt>
+<Figures/hog.png, id=310, 617.30624pt x 42.1575pt>
 File: Figures/hog.png Graphic file (type png)
 <use Figures/hog.png>
 Package pdftex.def Info: Figures/hog.png  used on input line 168.
 (pdftex.def)             Requested size: 455.24411pt x 31.09055pt.
-<Figures/hog3.png, id=314, 617.30624pt x 237.13594pt>
+<Figures/hog3.png, id=315, 617.30624pt x 237.13594pt>
 File: Figures/hog3.png Graphic file (type png)
 <use Figures/hog3.png>
 Package pdftex.def Info: Figures/hog3.png  used on input line 178.
 (pdftex.def)             Requested size: 455.24411pt x 174.88441pt.
  [16 <./Figures/hog.png> <./Figures/hog3.png>]
-<Figures/openposePipeline.png, id=326, 1286.8075pt x 286.06876pt>
+<Figures/openposePipeline.png, id=327, 1286.8075pt x 286.06876pt>
 File: Figures/openposePipeline.png Graphic file (type png)
 <use Figures/openposePipeline.png>
 Package pdftex.def Info: Figures/openposePipeline.png  used on input line 191.
@@ -958,7 +958,7 @@ LaTeX Warning: Command \v invalid in math mode on input line 212.
 
 LaTeX Warning: Command \' invalid in math mode on input line 212.
 
-<Figures/cocoDataset.png, id=343, 388.45125pt x 679.53876pt>
+<Figures/cocoDataset.png, id=344, 388.45125pt x 679.53876pt>
 File: Figures/cocoDataset.png Graphic file (type png)
 <use Figures/cocoDataset.png>
 Package pdftex.def Info: Figures/cocoDataset.png  used on input line 218.
@@ -1001,20 +1001,20 @@ LaTeX Warning: Command \' invalid in math mode on input line 276.
 
 LaTeX Warning: Command \v invalid in math mode on input line 276.
 
-<Figures/tfPose1.png, id=372, 1065.9825pt x 521.69907pt>
+<Figures/tfPose1.png, id=375, 1065.9825pt x 521.69907pt>
 File: Figures/tfPose1.png Graphic file (type png)
 <use Figures/tfPose1.png>
 Package pdftex.def Info: Figures/tfPose1.png  used on input line 280.
 (pdftex.def)             Requested size: 455.24411pt x 222.7978pt.
 [21 <./Figures/tfPose1.png>]
-<Figures/alphaPoseRedundant.png, id=384, 846.91406pt x 472.76625pt>
+<Figures/alphaPoseRedundant.png, id=387, 846.91406pt x 472.76625pt>
 File: Figures/alphaPoseRedundant.png Graphic file (type png)
 <use Figures/alphaPoseRedundant.png>
 Package pdftex.def Info: Figures/alphaPoseRedundant.png  used on input line 295
 .
 (pdftex.def)             Requested size: 273.14923pt x 152.47856pt.
  [22 <./Figures/alphaPoseRedundant.png>] [23]
-<Figures/wrnchAI.png, id=402, 1672.74937pt x 879.285pt>
+<Figures/wrnchAI.png, id=405, 1672.74937pt x 879.285pt>
 File: Figures/wrnchAI.png Graphic file (type png)
 <use Figures/wrnchAI.png>
 Package pdftex.def Info: Figures/wrnchAI.png  used on input line 326.
@@ -1023,13 +1023,13 @@ Package pdftex.def Info: Figures/wrnchAI.png  used on input line 326.
 [24 <./Figures/wrnchAI.png>] [25
 
 ]
-<Figures/bmw.jpg, id=416, 624.83438pt x 327.47343pt>
+<Figures/bmw.jpg, id=419, 624.83438pt x 327.47343pt>
 File: Figures/bmw.jpg Graphic file (type jpg)
 <use Figures/bmw.jpg>
 Package pdftex.def Info: Figures/bmw.jpg  used on input line 349.
 (pdftex.def)             Requested size: 318.66948pt x 167.01424pt.
  [26 <./Figures/bmw.jpg>]
-<Figures/sphericalModel.png, id=424, 621.07031pt x 486.31688pt>
+<Figures/sphericalModel.png, id=427, 621.07031pt x 486.31688pt>
 File: Figures/sphericalModel.png Graphic file (type png)
 <use Figures/sphericalModel.png>
 Package pdftex.def Info: Figures/sphericalModel.png  used on input line 366.
@@ -1037,19 +1037,19 @@ Package pdftex.def Info: Figures/sphericalModel.png  used on input line 366.
  [27
 
  <./Figures/sphericalModel.png>]
-<Figures/goproOmni.jpg, id=432, 803.0pt x 602.25pt>
+<Figures/goproOmni.jpg, id=435, 803.0pt x 602.25pt>
 File: Figures/goproOmni.jpg Graphic file (type jpg)
 <use Figures/goproOmni.jpg>
 Package pdftex.def Info: Figures/goproOmni.jpg  used on input line 392.
 (pdftex.def)             Requested size: 136.57462pt x 102.4271pt.
  [28]
-<Figures/sphericalModel2.png, id=439, 910.90312pt x 357.58594pt>
+<Figures/sphericalModel2.png, id=442, 910.90312pt x 357.58594pt>
 File: Figures/sphericalModel2.png Graphic file (type png)
 <use Figures/sphericalModel2.png>
 Package pdftex.def Info: Figures/sphericalModel2.png  used on input line 410.
 (pdftex.def)             Requested size: 409.71692pt x 160.84125pt.
  [29 <./Figures/goproOmni.jpg>]
-<Figures/cubemapVsEcti.png, id=444, 2469.225pt x 974.13937pt>
+<Figures/cubemapVsEcti.png, id=447, 2469.225pt x 974.13937pt>
 File: Figures/cubemapVsEcti.png Graphic file (type png)
 <use Figures/cubemapVsEcti.png>
 Package pdftex.def Info: Figures/cubemapVsEcti.png  used on input line 420.
@@ -1057,14 +1057,16 @@ Package pdftex.def Info: Figures/cubemapVsEcti.png  used on input line 420.
  [30 <./Figures/sphericalModel2.png> <./Figures/cubemapVsEcti.png>] [31
 
 ] [32] [33] [34]
-<Figures/camCompare.png, id=481, 1102.87032pt x 527.72156pt>
+<Figures/camCompare.png, id=484, 1102.87032pt x 527.72156pt>
 File: Figures/camCompare.png Graphic file (type png)
 <use Figures/camCompare.png>
-Package pdftex.def Info: Figures/camCompare.png  used on input line 512.
+Package pdftex.def Info: Figures/camCompare.png  used on input line 511.
 (pdftex.def)             Requested size: 455.24411pt x 217.83276pt.
- [35 <./Figures/camCompare.png>] [36] [37] [38] [39] [40] [41] [42] [43] [44
+ [35 <./Figures/camCompare.png>] [36] (SourceCodes/poseUnifier.py) [37] [38] [3
+9] [40] [41]
+[42] [43] [44] [45] [46
 
-] (main.bbl [45
+] (main.bbl [47
 
 ]
 Underfull \hbox (badness 7944) in paragraph at lines 29--33
@@ -1090,36 +1092,36 @@ Underfull \hbox (badness 1694) in paragraph at lines 52--55
 t/m/n/10.95 https : / / gopro . com / en / cz / news / vr _
  []
 
-[46
+[48
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
 []\T1/lmr/m/n/10.95 Vikas Gupta.  Pose de-tec-tion com-pa-ri-son : wrn-chai vs 
 open-pose,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
 \T1/lmr/m/n/10.95 2019.  [On-line; Ci-to-vané 03.03.2020 z [][]$\T1/lmtt/m/n/10
 .95 https : / / www . learnopencv . com /
  []
 
-[47])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 596.
- [48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 596.
+[49])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 611.
+ [50]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 611.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 596.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 596.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 611.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 611.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7044153E753BC08FE57301CC1D79C7DD;4677.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 596.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 611.
  ) 
 Here is how much of TeX's memory you used:
- 19209 strings out of 481567
- 282533 string characters out of 2914666
- 757987 words of memory out of 3000000
- 33945 multiletter control sequences out of 15000+200000
+ 19366 strings out of 481567
+ 284581 string characters out of 2914666
+ 896070 words of memory out of 3000000
+ 34065 multiletter control sequences out of 15000+200000
  578866 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,11n,60p,3455b,2341s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1145,9 +1147,9 @@ X 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Asus/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Asus/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Asus/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (48 pages, 10054575 bytes).
+Output written on main.pdf (50 pages, 10065167 bytes).
 PDF statistics:
- 654 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
+ 699 PDF objects out of 1000 (max. 8388607)
+ 160 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

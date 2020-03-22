@@ -237,7 +237,7 @@ COCO_PAIRS = [(1, 2), (1, 5), (2, 3), (3, 4), (5, 6), (6, 7), (1, 8), (8, 9), (9
 \end{lstlisting}
 
 \bigskip
-Okrem Datasetu COCO Dokáže OpenPose pracovať aj s mnohými ďalšími datasetmi. OpenPose bol skúšaný a trénovaný napríklad s datasetmi MPI, BODY\_25 alebo BODY\_25b. Datasety sa líšia vo veľkosti, rýchlosti, ale napríklad  aj v presnosti samotnej detekcie. Jednotlivé datasety majú medzi sebou nasledujúce rozdiely:
+Okrem Datasetu COCO Dokáže OpenPose pracovať aj s mnohými ďalšími datasetmi. OpenPose bol skúšaný a trénovaný napríklad s datasetmi MPI\cite{andriluka14cvpr}, BODY\_25 alebo BODY\_25b. Datasety sa líšia vo veľkosti, rýchlosti, ale napríklad  aj v presnosti samotnej detekcie. Jednotlivé datasety majú medzi sebou nasledujúce rozdiely:
 
 
 \begin{itemize}
@@ -464,9 +464,9 @@ Každý vyvíjaný program, by mal  spĺnať určité očakávania. Tieto očak�
 \subsection{Použité technológie}
 
 \subsubsection*{Programovací jazyk}
-Samotný program je napísaný v jazyku Python. Tento jazyk bol použitý z dôvodu výnikajúcej dostupnosti knižníc na spracovanie obrazu, ale aj knižníc na prácu s neurónovými sieťami. Okrem toho je jazyk Python veľmi dobre zdokumentovaný a má vybudovanú širokú komunitu medzi programátormi. Okrem jazyka Python taktiež bolo zvažované použitie jazyka C++.  Napriek mnohým nesporným výhodam jazyka C++ padlo rozhodnutie na jazyk Python najmä po dôkladnom zvážení nasledujúcich dôvodov:
+Hlavný program je napísaný v jazyku Python. Tento jazyk bol použitý z dôvodu výnikajúcej dostupnosti knižníc na spracovanie obrazu, ale aj knižníc na prácu s neurónovými sieťami. Okrem toho je jazyk Python veľmi dobre zdokumentovaný a má vybudovanú širokú komunitu medzi programátormi. Okrem jazyka Python taktiež bolo zvažované použitie jazyka C++.  Napriek mnohým nesporným výhodam jazyka C++ padlo rozhodnutie pre jazyk Python najmä po dôkladnom zvážení nasledujúcich možností:
 \begin{itemize}
-\item \textbf{Automatická správa pamäte} - python má narozdiel od C++  implicitne  vyriešenú automatickú alokáciu a dealokáciu pamäte. To dáva programátorovi výhodu v ušetrení času za cenu malého zníženia výkonu aplikácie.
+\item \textbf{Automatická správa pamäte} - Python má narozdiel od C++  implicitne  vyriešenú automatickú alokáciu a dealokáciu pamäte. To dáva programátorovi výhodu v ušetrení času za cenu malého zníženia výkonu aplikácie.
 \item \textbf{Široká podpora knižníc} - v súčasnosti pre jazyk Python existuje obrovské množstvo voľne dostupných knižníc, ktoré uľahčujú prácu pri vývoji softvéru. Jedná sa najmä o knižnice zamerané na prácu s neuronovými sieťamia spracovanie obrazu.
 \item \textbf{Jednoduchosť jazyka} - Python je narozdiel od C++ jednoduchší a pohodlnejší  na používanie. Poskytuje mnohé výhody, ktoré jazyk C++ nepodporuje ako napríklad dynamické dátové typy, jednoduchá inštalácia a použitie potrebných baličkov v programe.
 \end{itemize}
@@ -476,7 +476,7 @@ OpenCV je multiplatformová knižnica, ktorá obsahuje funkcie pre spracovanie a
 
 
 \subsubsection*{TensorFlow}
-TensorFlow\cite{tensorflow2015-whitepaper} bol pôvodne vyvinutý výskumníkmi a inžiniermi pracujúcimi v tíme Google Brain v rámci organizácie Google Research Intelligence Research na vykonávanie strojového učenia a výskumu neurónových sietí. Framework je dostatočne všeobecný na to, aby sa dal použiť aj v mnohých ďalších doménach. TensorFlow poskytuje stabilné API Python a C++, ako aj nezaručené spätne kompatibilné API pre iné jazyky. V programe je Tensorflow využitý najmä na detekciu postáv a prácu s neuronovými sieťami.
+TensorFlow\cite{tensorflow2015-whitepaper} bol pôvodne vyvinutý výskumníkmi a inžiniermi pracujúcimi v tíme Google Brain v rámci organizácie Google Research Intelligence Research na vykonávanie strojového učenia a výskumu neurónových sietí. Framework je dostatočne všeobecný na to, aby sa dal použiť aj v mnohých ďalších doménach. TensorFlow poskytuje stabilné API  pre jazyky Python a C++, ako aj nezaručené kompatibilné API pre iné jazyky. V programe je Tensorflow využitý najmä na detekciu postáv a prácu s neuronovými sieťami.
 
 
 
@@ -487,7 +487,7 @@ Keras\cite{chollet2015keras} je framework pre hĺbkové učenie pôvodne vyvinut
 
 \subsection{Vytvorenie a spracovanie videa}
 V tejto sekcii je postupne spísaný postup a problematika, ktorá sa týka nahrávania videí potrebných pre analýzu vodiča v tejto diplomovej práci. Samotný program je pôvodne navrhnutý na spracovanie videa v 360 stupňovom formáte. Implementácia však nie je žiadnym spôsobom limitovaná a program je schopný spracovať aj obyčajné video nahraté bežne dostupnou kamerou. Hlavným dôvôdom použitia  sférickej kamery je jej uhol záberu. Vďaka širokouhlému obrazu je možné získať obraz celého vodiča sediaceho za volantom. Získanie takéhoto obrazu umožňuje analyzovať jednotlivé časti tela, tvár, ale aj vodičovo správanie.\par
- Počas vypracovania práce boli k dispozícii dve širokouhlé kamery od rôznych výrobcov. Na kamerách je umiestnené minimálne množstvo tlačidiel, ktoré slúžia prímárne iba na zapnutie a vypnutie kamery. Celé ovládanie je cez intuitívnu mobilnú aplikáciu, ktoré sú dostupné na stiahnutie na stránkach výrobcov pre všetky bežne mobilné platformy v súčasnosti. Obidve kamery obsahujú 2 objektivy tzv. fish eye, s ktorými sa vytvára sférický záber okolitej scény. Kamery majú odlišné parametre a vlastnosti, ktoré sú zhrnuté v tabuľke \ref{tab:techSpec}. Hlavný rozdiel je možné vidieť najmä v maximálnom rozlíšení, ktoré je pri videu pre kameru GoPro Fusion takmer dvojnásobné oproti rozlíšeniu kamery Ricoh Theta V. Pri spracovaní videa a detekcii vodiča však nemusí rozlíšenie hrať významnú úlohu. Aj napriek tomu, že svetelnosť senzora je totožná, rozdiel v kvalite výstupného videa je ľahko rozpoznateľný najmä pri znížených svetelných podmienkach. Kým za denného svetla sú kvalita aj kontrast obrazu skoro totožné pre obidve kamery, pri tmavých scénach je obraz z kamery Ricoh Theta V nekvalitný a obsahuje vysokú úroveň šumu za cenu vyššej priepustnosti svetelnosti (Obr. \ref{fig:cameraCompare}).
+ Počas vypracovania práce boli k dispozícii dve širokouhlé kamery od rôznych výrobcov. Na kamerách je umiestnené minimálne množstvo tlačidiel, ktoré slúžia prímárne iba na zapnutie a vypnutie kamery. Celé ovládanie je cez intuitívne mobilné aplikácie, ktoré sú dostupné na stiahnutie na stránkach výrobcov pre všetky mobilné platformy používané v súčasnosti. Obidve kamery obsahujú 2 objektivy tzv. fish eye, s ktorými sa vytvára sférický záber okolitej scény. Kamery majú odlišné parametre a vlastnosti, ktoré sú zhrnuté v tabuľke \ref{tab:techSpec}. Hlavný rozdiel je možné vidieť najmä v maximálnom rozlíšení, ktoré je pri videu pre kameru GoPro Fusion takmer dvojnásobné oproti rozlíšeniu kamery Ricoh Theta V. Pri spracovaní videa a detekcii vodiča však nemusí rozlíšenie hrať významnú úlohu. Pri detekcii objektov sférickou kamerou zhorávajú úlohu aj ostatné parametre ako napríklad svetelnsoť použitých senzorov.
 
 \begin{table}[H]
 \begin{tabular}{|l|c|c|}
@@ -504,13 +504,12 @@ V tejto sekcii je postupne spísaný postup a problematika, ktorá sa týka nahr
 	\label{tab:techSpec}
 \end{table}
 \newpage
-Na tomto obrázku zároveň vidieť problém, ktorý nastáva  pri znížených svetelných podmienkach. Keďže ani jedna kamera nie je vybavena infračerveným svetlom, ktoré by pomáhalo v noci, detekcia kamerou  nieje veľmi účinná. 
-Pri spracovaní videí z obidvoch kamier, bolo používané iba video z prednej kamery. Pre potreby tejto práce bol potrebný záber celého tela vodiča za volantom.
+ Hlavný rozdiel je možné vidieť najmä v maximálnom rozlíšení, ktoré je pri videu pre kameru GoPro Fusion takmer dvojnásobné oproti rozlíšeniu kamery Ricoh Theta V. Pri spracovaní videa a detekcii vodiča však nemusí rozlíšenie hrať významnú úlohu. Pri detekcii objektov sférickou kamerou zhorávajú úlohu aj ostatné parametre ako napríklad svetelnsoť použitých senzorov. Aj napriek tomu, že svetelnosť senzora je totožná pri obidvoch kamerách, rozdiel v kvalite výstupného videa je ľahko rozpoznateľný najmä pri znížených svetelných podmienkach. Kým za denného svetla sú kvalita aj kontrast obrazu skoro totožné pre obidve kamery, pri tmavých scénach je obraz z kamery Ricoh Theta V nekvalitný a obsahuje vysokú úroveň šumu za cenu vyššej priepustnosti svetelnosti (Obr. \ref{fig:cameraCompare}). Pri natáčaní tmavých scén bolo použité na obidvoch kamerách ISO 1600. Napriek rovnakým nastaveniam je z obrázku vidieť, že výstup z kamery GoPro Fusion je značne tmavší. Na tomto obrázku zároveň vidieť problém, ktorý nastáva  pri znížených svetelných podmienkach. Keďže ani jedna kamera nie je vybavená infračerveným svetlom, ktoré by pomáhalo v noci, detekcia kamerou  nie je veľmi účinná. Svetelnosť scény je možné upraviť zvýšenim ISO ale za cenu vyššieho šumu v obraze. Z tohto dôvodu bolo na kamerých nastavené vždy autoamtické ISO, ktoré sa prispôsobovalo okolitým svetelným podmienkam. Hlavne z tohto dôvôdu väčšinou prebiehal zber záberov počas denného svetla. Pri  použití kamery v noci by bolo potrebné nájsť rozumný spôsob, ako scénu nasvetliť aby postava vodiča bola vidideľná. Pri spracovaní videí z obidvoch kamier, bolo používané iba video z prednej kamery. Pre potreby tejto práce bol potrebný záber celého tela vodiča za volantom. Z dôvôdu, že táto práca je zameraná iba na detekciu vodiča je záber jedným objektívom postačujúci a nemá zmysel spracovávať výstup z druhého objektívu. Takýmto spôsobom bolo vytvorených približne 15 minút záznamov z každej kamery v rôznych podmienkach.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figures/camCompare.png}
-	\caption{Rovnaká sférická fotografia v rôznych zobrazeniach  - kubické zobrazenie (a), ekvidistantné zobrazenie (b)}
+	\caption{Porovnanie výstupu z kamier (ISO 1600) - GoPro Fusion(a), Ricoh Theta V(b)}
 	\label{fig:cameraCompare}
 \end{figure}
 
@@ -519,8 +518,24 @@ Pri spracovaní videí z obidvoch kamier, bolo používané iba video z prednej 
 \newpage
 \subsection{Detekcia vodiča}
 \label{sec:driverDetection}
-- umiestnenie kamery, detekcia vodiča\\
- - vyber TF vs OpenPose
+Po úspešnom vytvorení testovacích videí prichádza na rad detekcia vodiča. Pred samotnou detekciou je nutné video najskôr upraviť, aby bolo podľa možnosti v čo najvhodnejšej forme pre jednotlivé frameworky. Dôležitá úprava, ktorú je potrebné urobiť je zmena rozlíšenia. Všetky frameworky na detekciu postáv v obrazoch pracujú odlišne vzhľadom na zvolené rozlíšenie. Úpravou rozlíšenia je tiež možné možné ľahšie testovať a hľadať najvhodnejšie parametre pre dosiahnutie  najvyššej úspešnosti. Na úpravu rozlíšenia je vytvorená funkcia, ktorá na základe požadovanej výšky  snímky  zmení veľkosť  snímky tak, aby bol zachovaný správny pomer strán. Tým je zabezpečené, že obraz nebude žiadnym spôsobom deformovaný a výsledné rozlíšenie je ľahko nastaviteľné. Táto funkcia bude využívaná aj v ďalších častiach práce.\par
+Obidva použité frameworky pracujú na odlišných princípoch. Preto bolo potrebné naštudovanie dokumentácie a príprava implementácie. Okrem toho používajú odlišné datasety, ktoré sa dajú parametrizovať a vybrať ten najvhodnejší. Každý framework  vyžaduje správny postup krokov pre použitie vo vývojárskom prostredí. Po správnej inštálácii vštkých potrebných knižníc a balíčkov  je potrebné ich správne nakonfigurovať. Openpose ponúka na výber mnoho parametrov. Jedným z dôležitých parametrov pri detekcii postáv v obraze je použitý dataset.
+
+\subsubsection*{OpenPose}
+ Pri implementácii OpenPose bol použitý dataset MPI a dataset COCO. Výber datasetu je možný cez parameter. Openpose podporuje aj použitie moderného a presnejšieho datasetu BODY\_25, avšak z dôvodu nepostačujúceho výpočtového výkonu nebol v tejto práci používaný.// TODO
+
+\subsubsection*{TF Pose}
+- TODO
+
+
+\subsubsection*{Zjednotenie výstupov}
+- TODO
+- fasada\\
+- graf
+
+
+\newpage
+\lstinputlisting[label=src:poseUnifier,caption={Mapovanie častí ľudského tela rôznych frameworkov}]{SourceCodes/poseUnifier.py}
  
 \newpage
 \subsection{Orientácia hlavy}

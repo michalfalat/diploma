@@ -98,6 +98,13 @@ Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva
 \newblock In {\em European conference on computer vision}, pages 740--755.
   Springer, 2014.
 
+\bibitem{andriluka14cvpr}
+Mykhaylo Andriluka, Leonid Pishchulin, Peter Gehler, and Bernt Schiele.
+\newblock 2d human pose estimation: New benchmark and state of the art
+  analysis.
+\newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, June 2014.
+
 \bibitem{ren2015faster}
 Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
 \newblock Faster r-cnn: Towards real-time object detection with region proposal
