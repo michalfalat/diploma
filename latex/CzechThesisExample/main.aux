@@ -33,13 +33,13 @@
     {1}{17.475pt}\LT@entry 
     {1}{330.66948pt}}
 \@writefile{toc}{\contentsline {section}{Zoznam použitých skratiek a symbolov}{8}{Doc-Start}\protected@file@percent }
+\citation{bmw2019assistent}
 \citation{viola2001robust}
 \citation{dalal2005}
 \citation{bertozzi2007pedestrian}
 \citation{cao2018openpose}
 \citation{cocoDataset}
 \citation{fang2017rmpe}
-\citation{bmw2019assistent}
 \citation{li2006full}
 \citation{goproOmni}
 \@writefile{toc}{\contentsline {section}{Zoznam obr\'azkov}{9}{Doc-Start}\protected@file@percent }
@@ -47,84 +47,83 @@
 \@writefile{toc}{\contentsline {section}{Zoznam výpisov zdrojového kódu}{11}{Doc-Start}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {1}Úvod}{12}{section.1}\protected@file@percent }
 \newlabel{sec:Introduction}{{1}{12}{Úvod}{section.1}{}}
+\citation{smith2003determining}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Detekcia vodiča vo vozidle}{13}{section.2}\protected@file@percent }
+\newlabel{sec:Pose detection}{{2}{13}{Detekcia vodiča vo vozidle}{section.2}{}}
+\citation{bmw2019assistent}
+\citation{bmw2019assistent}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite  {bmw2019assistent}\relax }}{14}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:bmwAssistent}{{1}{14}{BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }{figure.caption.1}{}}
 \citation{rosenfeld1969}
 \citation{viola2001rapid}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Detekcia a analýza ľudského tela v obrazoch}{13}{section.2}\protected@file@percent }
-\newlabel{sec:human body decection}{{2}{13}{Detekcia a analýza ľudského tela v obrazoch}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Haar}{13}{subsection.2.1}\protected@file@percent }
-\newlabel{Haar}{{2.1}{13}{Haar}{subsection.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }}{13}{figure.caption.1}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:integralImage}{{1}{13}{Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Detekcia a analýza ľudského tela v obrazoch}{15}{section.3}\protected@file@percent }
+\newlabel{sec:human body decection}{{3}{15}{Detekcia a analýza ľudského tela v obrazoch}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Príznakové rozpoznávanie}{15}{subsection.3.1}\protected@file@percent }
+\newlabel{Príznakové rozpoznávanie}{{3.1}{15}{Príznakové rozpoznávanie}{subsection.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }}{15}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:integralImage}{{2}{15}{Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }{figure.caption.2}{}}
 \citation{viola2001robust}
 \citation{viola2001robust}
 \citation{freund1995desicion}
-\newlabel{eq:integral}{{1}{14}{Haar}{equation.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite  {viola2001robust}\relax }}{14}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:Haar1}{{2}{14}{Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite {viola2001robust}\relax }{figure.caption.2}{}}
+\newlabel{eq:integral}{{1}{16}{}{equation.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite  {viola2001robust}\relax }}{16}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:Haar1}{{3}{16}{Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite {viola2001robust}\relax }{figure.caption.3}{}}
 \citation{dalal2005}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Haar - detekcia tváre v slabých svetelných podmienkach\relax }}{15}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:Haar2}{{3}{15}{Haar - detekcia tváre v slabých svetelných podmienkach\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}HOG}{15}{subsection.2.2}\protected@file@percent }
-\newlabel{HOG}{{2.2}{15}{HOG}{subsection.2.2}{}}
-\newlabel{eq:Výpočet veľkosti gradientu}{{2}{15}{HOG}{equation.2.2}{}}
-\newlabel{eq:Výpočet smeru gradientu}{{3}{15}{HOG}{equation.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Haar - detekcia tváre v slabých svetelných podmienkach\relax }}{17}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:Haar2}{{4}{17}{Haar - detekcia tváre v slabých svetelných podmienkach\relax }{figure.caption.4}{}}
+\newlabel{HOG}{{3.1}{17}{}{figure.caption.4}{}}
+\newlabel{eq:Výpočet veľkosti gradientu}{{2}{17}{}{equation.3.2}{}}
+\newlabel{eq:Výpočet smeru gradientu}{{3}{17}{}{equation.3.3}{}}
 \citation{pang2011efficient}
 \citation{dalal2005}
 \citation{dalal2005}
 \citation{bertozzi2007pedestrian}
 \citation{bertozzi2007pedestrian}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces HOG - séria krokov \cite  {dalal2005}\relax }}{16}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:HOG1}{{4}{16}{HOG - séria krokov \cite {dalal2005}\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite  {bertozzi2007pedestrian}\relax }}{16}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:HOG2}{{5}{16}{HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite {bertozzi2007pedestrian}\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces HOG - séria krokov \cite  {dalal2005}\relax }}{18}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:HOG1}{{5}{18}{HOG - séria krokov \cite {dalal2005}\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite  {bertozzi2007pedestrian}\relax }}{18}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:HOG2}{{6}{18}{HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite {bertozzi2007pedestrian}\relax }{figure.caption.6}{}}
 \citation{cao2018openpose}
 \citation{githubOpenpose}
 \citation{cao2018openpose}
 \citation{cao2018openpose}
 \citation{jia2014caffe}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}OpenPose}{17}{subsection.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite  {cao2018openpose}\relax }}{17}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:openposeOverall}{{6}{17}{OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite {cao2018openpose}\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}OpenPose}{19}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite  {cao2018openpose}\relax }}{19}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:openposeOverall}{{7}{19}{OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite {cao2018openpose}\relax }{figure.caption.7}{}}
 \citation{lin2014microsoft}
 \citation{cocoDataset}
 \citation{cocoDataset}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Mapa spoľahlivosti}{18}{subsubsection.2.3.1}\protected@file@percent }
-\newlabel{eq:confidencemap}{{4}{18}{Mapa spoľahlivosti}{equation.2.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite  {cocoDataset}\relax }}{18}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:cocoDataset}{{7}{18}{COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Mapa spoľahlivosti}{20}{subsubsection.3.2.1}\protected@file@percent }
+\newlabel{eq:confidencemap}{{4}{20}{Mapa spoľahlivosti}{equation.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite  {cocoDataset}\relax }}{20}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:cocoDataset}{{8}{20}{COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }{figure.caption.8}{}}
 \citation{andriluka14cvpr}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Part afinity fields (PAF)}{19}{subsubsection.2.3.2}\protected@file@percent }
-\newlabel{eq:pafmap}{{5}{19}{Part afinity fields (PAF)}{equation.2.5}{}}
-\newlabel{src:coco_pairs}{{1}{19}{Množina párov končatín v datasete COCO}{lstlisting.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Množina párov končatín v datasete COCO}{19}{lstlisting.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}TF Pose Estimation}{20}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Part afinity fields (PAF)}{21}{subsubsection.3.2.2}\protected@file@percent }
+\newlabel{eq:pafmap}{{5}{21}{Part afinity fields (PAF)}{equation.3.5}{}}
+\newlabel{src:coco_pairs}{{1}{21}{Množina párov končatín v datasete COCO}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Množina párov končatín v datasete COCO}{21}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}TF Pose Estimation}{22}{subsection.3.3}\protected@file@percent }
 \citation{fang2017rmpe}
 \citation{ren2015faster}
 \citation{newell2016stacked}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Výstup}{21}{subsubsection.2.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Tepelná mapa}{21}{subsubsection.2.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Výstupný vektor}{21}{subsubsection.2.4.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }}{21}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:tfPoseHeatmap}{{8}{21}{Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Výstup}{23}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Tepelná mapa}{23}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Výstupný vektor}{23}{subsubsection.3.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }}{23}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:tfPoseHeatmap}{{9}{23}{Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }{figure.caption.9}{}}
 \citation{fang2017rmpe}
 \citation{fang2017rmpe}
 \citation{githubAlphaPose}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}AlphaPose}{22}{subsection.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Problém redundantnej detekcie s použitím metódy bounding box\cite  {fang2017rmpe}\relax }}{22}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:alphaPoseRedundant}{{9}{22}{Problém redundantnej detekcie s použitím metódy bounding box\cite {fang2017rmpe}\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}AlphaPose}{24}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Problém redundantnej detekcie s použitím metódy bounding box\cite  {fang2017rmpe}\relax }}{24}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:alphaPoseRedundant}{{10}{24}{Problém redundantnej detekcie s použitím metódy bounding box\cite {fang2017rmpe}\relax }{figure.caption.10}{}}
 \citation{openposeVsWrnchAI}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Ostatné metódy}{23}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}WrnchAI}{23}{subsubsection.2.6.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }}{24}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:wrnchAICloud}{{10}{24}{WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }{figure.caption.10}{}}
-\citation{smith2003determining}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Detekcia vodiča vo vozidle}{25}{section.3}\protected@file@percent }
-\newlabel{sec:Pose detection}{{3}{25}{Detekcia vodiča vo vozidle}{section.3}{}}
-\citation{bmw2019assistent}
-\citation{bmw2019assistent}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite  {bmw2019assistent}\relax }}{26}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:bmwAssistent}{{11}{26}{BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Ostatné metódy}{25}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}WrnchAI}{25}{subsubsection.3.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }}{26}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:wrnchAICloud}{{11}{26}{WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }{figure.caption.11}{}}
 \citation{li2006full}
 \citation{li2006full}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Využitie sférických kamier na detekciu obrazu}{27}{section.4}\protected@file@percent }
@@ -155,50 +154,71 @@
 \newlabel{fig:cameraCompare}{{16}{35}{Porovnanie výstupu z kamier (ISO 1600) - GoPro Fusion(a), Ricoh Theta V(b)\relax }{figure.caption.17}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Detekcia vodiča}{36}{subsection.5.5}\protected@file@percent }
 \newlabel{sec:driverDetection}{{5.5}{36}{Detekcia vodiča}{subsection.5.5}{}}
-\newlabel{src:poseUnifier}{{2}{37}{Mapovanie častí ľudského tela rôznych frameworkov}{lstlisting.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Mapovanie častí ľudského tela rôznych frameworkov}{37}{lstlisting.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Orientácia hlavy}{39}{subsection.5.6}\protected@file@percent }
-\newlabel{sec:headOrientation}{{5.6}{39}{Orientácia hlavy}{subsection.5.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Bezpečnostný pás}{40}{subsection.5.7}\protected@file@percent }
-\newlabel{sec:safeBelt}{{5.7}{40}{Bezpečnostný pás}{subsection.5.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Neurónová sieť}{41}{subsection.5.8}\protected@file@percent }
-\newlabel{sec:neuralNetwork}{{5.8}{41}{Neurónová sieť}{subsection.5.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Výstup programu}{42}{subsection.5.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Porovnanie výsledkov}{43}{subsection.5.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}Využitie zozbieraných dát}{44}{subsection.5.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.12}Používateľská príručka}{45}{subsection.5.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Možnosti vylepšenia detekcie}{46}{section.6}\protected@file@percent }
-\newlabel{sec:Možnosti vylepšenia detekcie}{{6}{46}{Možnosti vylepšenia detekcie}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Natívny výstup metódy OpenPose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }}{37}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:op_result}{{17}{37}{Natívny výstup metódy OpenPose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Natívny výstup metódy TF pose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }}{39}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:tfResult}{{18}{39}{Natívny výstup metódy TF pose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }{figure.caption.19}{}}
+\newlabel{sec:intersect}{{5.5}{39}{}{figure.caption.19}{}}
+\newlabel{src:poseUnifier}{{2}{40}{Mapovanie častí ľudského tela OpenPose a TF pose estimation}{lstlisting.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Mapovanie častí ľudského tela OpenPose a TF pose estimation}{40}{lstlisting.2}\protected@file@percent }
+\newlabel{sec:compare}{{5.5}{41}{}{lstnumber.2.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Úspešnosť detekcie OpenPose - slabé svetelné podmienky, model COCO\relax }}{41}{table.caption.20}\protected@file@percent }
+\newlabel{tab:openpose1}{{2}{41}{Úspešnosť detekcie OpenPose - slabé svetelné podmienky, model COCO\relax }{table.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Úspešnosť detekcie OpenPose, slabé svetelné podmienky, model MPI \relax }}{41}{table.caption.21}\protected@file@percent }
+\newlabel{tab:openpose2}{{3}{41}{Úspešnosť detekcie OpenPose, slabé svetelné podmienky, model MPI \relax }{table.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Úspešnosť detekcie TF Pose estimation, dataset \textit  {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 432 $\times $ 368\relax }}{42}{table.caption.22}\protected@file@percent }
+\newlabel{tab:tf1}{{4}{42}{Úspešnosť detekcie TF Pose estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 432 $\times $ 368\relax }{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Úspešnosť detekcie TF Pose estimation, dataset \textit  {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 216 $\times $ 184\relax }}{42}{table.caption.23}\protected@file@percent }
+\newlabel{tab:tf2}{{5}{42}{Úspešnosť detekcie TF Pose estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 216 $\times $ 184\relax }{table.caption.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Úspešnosť detekcie TF Pose estimation, dataset \textit  {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 192 $\times $ 144\relax }}{43}{table.caption.24}\protected@file@percent }
+\newlabel{tab:tf3}{{6}{43}{Úspešnosť detekcie TF Pose estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 192 $\times $ 144\relax }{table.caption.24}{}}
+\citation{mccartt1996scope}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Orientácia hlavy}{44}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:headOrientation}{{5.6}{44}{Orientácia hlavy}{subsection.5.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Detekcia tváre pomocou landmarkov. Označenie bodov (a), detekcia na reálnej tvári vodiča (b)\relax }}{45}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:landmarks}{{19}{45}{Detekcia tváre pomocou landmarkov. Označenie bodov (a), detekcia na reálnej tvári vodiča (b)\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov (c)\relax }}{46}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:landmarkPoints}{{20}{46}{Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov (c)\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Bezpečnostný pás}{47}{subsection.5.7}\protected@file@percent }
+\newlabel{sec:safeBelt}{{5.7}{47}{Bezpečnostný pás}{subsection.5.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Neurónová sieť}{48}{subsection.5.8}\protected@file@percent }
+\newlabel{sec:neuralNetwork}{{5.8}{48}{Neurónová sieť}{subsection.5.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Výstup programu}{49}{subsection.5.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Využitie zozbieraných dát}{50}{subsection.5.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}Používateľská príručka}{51}{subsection.5.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Možnosti vylepšenia detekcie}{52}{section.6}\protected@file@percent }
+\newlabel{sec:Možnosti vylepšenia detekcie}{{6}{52}{Možnosti vylepšenia detekcie}{section.6}{}}
 \bibdata{literatura}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Záver}{47}{section.7}\protected@file@percent }
-\newlabel{sec:Zaver}{{7}{47}{Záver}{section.7}{}}
-\bibcite{viola2001robust}{1}
-\bibcite{dalal2005}{2}
-\bibcite{bertozzi2007pedestrian}{3}
-\bibcite{cao2018openpose}{4}
-\bibcite{cocoDataset}{5}
-\bibcite{fang2017rmpe}{6}
-\bibcite{bmw2019assistent}{7}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Záver}{53}{section.7}\protected@file@percent }
+\newlabel{sec:Zaver}{{7}{53}{Záver}{section.7}{}}
+\bibcite{bmw2019assistent}{1}
+\bibcite{viola2001robust}{2}
+\bibcite{dalal2005}{3}
+\bibcite{bertozzi2007pedestrian}{4}
+\bibcite{cao2018openpose}{5}
+\bibcite{cocoDataset}{6}
+\bibcite{fang2017rmpe}{7}
 \bibcite{li2006full}{8}
 \bibcite{goproOmni}{9}
-\bibcite{rosenfeld1969}{10}
-\bibcite{viola2001rapid}{11}
-\bibcite{freund1995desicion}{12}
-\bibcite{pang2011efficient}{13}
-\@writefile{toc}{\contentsline {section}{Literatúra}{48}{section.7}\protected@file@percent }
-\bibcite{githubOpenpose}{14}
-\bibcite{jia2014caffe}{15}
-\bibcite{lin2014microsoft}{16}
-\bibcite{andriluka14cvpr}{17}
-\bibcite{ren2015faster}{18}
-\bibcite{newell2016stacked}{19}
-\bibcite{githubAlphaPose}{20}
-\bibcite{openposeVsWrnchAI}{21}
-\bibcite{smith2003determining}{22}
+\bibcite{smith2003determining}{10}
+\bibcite{rosenfeld1969}{11}
+\bibcite{viola2001rapid}{12}
+\bibcite{freund1995desicion}{13}
+\@writefile{toc}{\contentsline {section}{Literatúra}{54}{section.7}\protected@file@percent }
+\bibcite{pang2011efficient}{14}
+\bibcite{githubOpenpose}{15}
+\bibcite{jia2014caffe}{16}
+\bibcite{lin2014microsoft}{17}
+\bibcite{andriluka14cvpr}{18}
+\bibcite{ren2015faster}{19}
+\bibcite{newell2016stacked}{20}
+\bibcite{githubAlphaPose}{21}
+\bibcite{openposeVsWrnchAI}{22}
 \bibcite{dlib09}{23}
 \bibcite{tensorflow2015-whitepaper}{24}
 \bibcite{chollet2015keras}{25}
 \bibcite{theano}{26}
-\expandafter\ifx\csname c@figure@totc\endcsname\relax\newcounter{figure@totc}\fi\setcounter{figure@totc}{16}
-\expandafter\ifx\csname c@table@totc\endcsname\relax\newcounter{table@totc}\fi\setcounter{table@totc}{1}
+\bibcite{mccartt1996scope}{27}
+\expandafter\ifx\csname c@figure@totc\endcsname\relax\newcounter{figure@totc}\fi\setcounter{figure@totc}{20}
+\expandafter\ifx\csname c@table@totc\endcsname\relax\newcounter{table@totc}\fi\setcounter{table@totc}{6}
 \expandafter\ifx\csname c@lstlisting@totc\endcsname\relax\newcounter{lstlisting@totc}\fi\setcounter{lstlisting@totc}{2}

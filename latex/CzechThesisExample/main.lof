@@ -4,19 +4,23 @@
 \babel@toc {slovak}{}
 \babel@toc {english}{}
 \babel@toc {slovak}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }}{13}{figure.caption.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite {viola2001robust}\relax }}{14}{figure.caption.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Haar - detekcia tváre v slabých svetelných podmienkach\relax }}{15}{figure.caption.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces HOG - séria krokov \cite {dalal2005}\relax }}{16}{figure.caption.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite {bertozzi2007pedestrian}\relax }}{16}{figure.caption.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite {cao2018openpose}\relax }}{17}{figure.caption.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }}{18}{figure.caption.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }}{21}{figure.caption.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Problém redundantnej detekcie s použitím metódy bounding box\cite {fang2017rmpe}\relax }}{22}{figure.caption.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }}{24}{figure.caption.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }}{26}{figure.caption.11}%
+\contentsline {figure}{\numberline {1}{\ignorespaces BMW driving assistent - umiestnenie kamery na snímanie vodiča.\cite {bmw2019assistent}\relax }}{14}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)\relax }}{15}{figure.caption.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite {viola2001robust}\relax }}{16}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Haar - detekcia tváre v slabých svetelných podmienkach\relax }}{17}{figure.caption.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces HOG - séria krokov \cite {dalal2005}\relax }}{18}{figure.caption.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces HOG - vstupný obraz (a), normalizácia gradientu (b), orientácia gradientu (c), rozdelenie do buniek (d) vypočítané histogramy (e). \cite {bertozzi2007pedestrian}\relax }}{18}{figure.caption.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces OpenPose - odhad viacerých ôsob v reálnom čase pomocou polí afinity filtra.\cite {cao2018openpose}\relax }}{19}{figure.caption.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces COCO - označenie častí tela v COCO datasete.\cite {cocoDataset}\relax }}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Tepelná mapa - vstupný obraz (a), tepelná mapa postavy (b)\relax }}{23}{figure.caption.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Problém redundantnej detekcie s použitím metódy bounding box\cite {fang2017rmpe}\relax }}{24}{figure.caption.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces WrnchAI - vstupný obraz (a), výsledok spracovania na platforme WrnchCloud(b)\relax }}{26}{figure.caption.11}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Model sférickej projekcie.\cite {li2006full}\relax }}{27}{figure.caption.12}%
 \contentsline {figure}{\numberline {13}{\ignorespaces GoPro Omni - séria synchronizovaných kamier pre zachytenie sférickej fotografie.\cite {goproOmni}\relax }}{29}{figure.caption.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Znázornenie sférických projekcií - kubické zobrazenie (a), ekvidistantné zobrazenie (b)\relax }}{30}{figure.caption.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Rovnaká sférická fotografia v rôznych zobrazeniach - kubické zobrazenie (a), ekvidistantné zobrazenie (b)\relax }}{30}{figure.caption.15}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Porovnanie výstupu z kamier (ISO 1600) - GoPro Fusion(a), Ricoh Theta V(b)\relax }}{35}{figure.caption.17}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Natívny výstup metódy OpenPose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }}{37}{figure.caption.18}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Natívny výstup metódy TF pose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }}{39}{figure.caption.19}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Detekcia tváre pomocou landmarkov. Označenie bodov (a), detekcia na reálnej tvári vodiča (b)\relax }}{45}{figure.caption.25}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov (c)\relax }}{46}{figure.caption.26}%

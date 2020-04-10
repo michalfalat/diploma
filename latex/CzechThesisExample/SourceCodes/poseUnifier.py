@@ -1,4 +1,4 @@
-    if(poseType == "OP_POSE"):
+    if(pose_type == "OP_POSE"):
         head = (int(human[0][0]), int((human[0][1] + human[1][1])/2))
         neck = (int(human[1][0]), int(human[1][1]))
         shoulder_left = (int(human[5][0]), int(human[5][1]))
@@ -9,9 +9,7 @@
         elbow_right = (int(human[3][0]), int(human[3][1]))
         wrist_left = (int(human[7][0]), int(human[7][1]))
         wrist_right = (int(human[4][0]), int(human[4][1]))
-        knee_left = (int(human[12][0]), int(human[12][1]))
-        knee_right = (int(human[9][0]), int(human[9][1]))
-    elif (poseType == "TF_POSE"):
+    elif (pose_type == "TF_POSE"):
 		head = (int(human.body_parts[0].x * image_w + 0.5), int(human.body_parts[0].y * image_h + 0.5))
 		neck = (int(human.body_parts[1].x * image_w + 0.5), int(human.body_parts[1].y * image_h + 0.5))
 		shoulder_left = (int(human.body_parts[5].x * image_w + 0.5), int(human.body_parts[5].y * image_h + 0.5))
@@ -22,6 +20,4 @@
 		elbow_right = (int(human.body_parts[3].x * image_w + 0.5), int(human.body_parts[3].y * image_h + 0.5))
 		wrist_left = (int(human.body_parts[7].x * image_w + 0.5), int(human.body_parts[7].y * image_h + 0.5))
 		wrist_right = (int(human.body_parts[4].x * image_w + 0.5), int(human.body_parts[4].y * image_h + 0.5))
-		knee_left = (int(human.body_parts[12].x * image_w + 0.5), int(human.body_parts[12].y * image_h + 0.5))
-		knee_right = (int(human.body_parts[9].x * image_w + 0.5), int(human.body_parts[9].y * image_h + 0.5))
 	return [head, neck, shoulder_left, shoulder_right, hip_left, hip_right, elbow_left, elbow_right, wrist_left, wrist_right, knee_left, knee_right]

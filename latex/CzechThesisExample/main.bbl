@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{bmw2019assistent}
+Gabriel Nica.
+\newblock Bmw assisted driving view looks cool and useful, 2019.
+\newblock [Online; Citované 16.02.2020 z
+  \url{https://cdn.bmwblog.com/wp-content/uploads/2019/09/bmw-assisted-driving-view.jpg}.
+
 \bibitem{viola2001robust}
 Paul Viola, Michael Jones, et~al.
 \newblock Robust real-time object detection.
@@ -36,12 +42,6 @@ Hao-Shu Fang, Shuqin Xie, Yu-Wing Tai, and Cewu Lu.
 \newblock Rmpe - regional multi-person pose estimation.
 \newblock In {\em ICCV}, 2017.
 
-\bibitem{bmw2019assistent}
-Gabriel Nica.
-\newblock Bmw assisted driving view looks cool and useful, 2019.
-\newblock [Online; Citované 16.02.2020 z
-  \url{https://cdn.bmwblog.com/wp-content/uploads/2019/09/bmw-assisted-driving-view.jpg}.
-
 \bibitem{li2006full}
 Shigang Li.
 \newblock Full-view spherical image camera.
@@ -52,6 +52,12 @@ Shigang Li.
 GoPro, 2016.
 \newblock [Online; Citované 6.03.2020 z
   \url{https://gopro.com/en/cz/news/vr_spherical_omni_rig_shipping}.
+
+\bibitem{smith2003determining}
+Paul Smith, Mubarak Shah, and Niels da~Vitoria~Lobo.
+\newblock Determining driver visual attention with one camera.
+\newblock {\em IEEE transactions on intelligent transportation systems},
+  4(4):205--218, 2003.
 
 \bibitem{rosenfeld1969}
 Azriel Rosenfeld.
@@ -131,12 +137,6 @@ Vikas Gupta.
 \newblock [Online; Citované 03.03.2020 z
   \url{https://www.learnopencv.com/pose-detection-comparison-wrnchai-vs-openpose/}.
 
-\bibitem{smith2003determining}
-Paul Smith, Mubarak Shah, and Niels da~Vitoria~Lobo.
-\newblock Determining driver visual attention with one camera.
-\newblock {\em IEEE transactions on intelligent transportation systems},
-  4(4):205--218, 2003.
-
 \bibitem{dlib09}
 Davis~E. King.
 \newblock Dlib-ml: A machine learning toolkit.
@@ -166,5 +166,10 @@ Fran\c{c}ois Chollet et~al.
 \newblock {Theano: A {Python} framework for fast computation of mathematical
   expressions}.
 \newblock {\em arXiv e-prints}, abs/1605.02688, May 2016.
+
+\bibitem{mccartt1996scope}
+Anne~T McCartt, Stephen~A Ribner, Allan~I Pack, and Mark~C Hammer.
+\newblock The scope and nature of the drowsy driving problem in new york state.
+\newblock {\em Accident Analysis \& Prevention}, 28(4):511--517, 1996.
 
 \end{thebibliography}
