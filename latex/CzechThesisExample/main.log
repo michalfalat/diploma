@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  11 APR 2020 00:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  13 APR 2020 23:43
 entering extended mode
 **./main.tex
 (main.tex
@@ -675,6 +675,66 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty
+"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip67
+
+For additional information on amsmath, use the `?' option.
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty
+"
+Package: amstext 2000/06/29 v2.01 AMS text
+ ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks53
+\ex@=\dimen183
+))
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen184
+) ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
+y"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count303
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count304
+\leftroot@=\count305
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count306
+\DOTSCASE@=\count307
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box57
+\strutbox@=\box58
+\big@size=\dimen185
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count308
+\c@MaxMatrixCols=\count309
+\dotsspace@=\muskip17
+\c@parentequation=\count310
+\dspbrk@lvl=\count311
+\tag@help=\toks54
+\row@=\count312
+\column@=\count313
+\maxfields@=\count314
+\andhelp@=\toks55
+\eqnshift@=\dimen186
+\alignsep@=\dimen187
+\tagshift@=\dimen188
+\tagwidth@=\dimen189
+\totwidth@=\dimen190
+\lineht@=\dimen191
+\@envbody=\toks56
+\multlinegap=\skip68
+\multlinetaggap=\skip69
+\mathdisplay@stack=\toks57
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
 \citation{*}
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -682,30 +742,30 @@ Package csquotes Info: ... found 'babel' package.
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend
 -pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count303
-\l__pdf_internal_box=\box57
+\l__kernel_color_stack_int=\count315
+\l__pdf_internal_box=\box59
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 81
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 83
 .
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
@@ -749,25 +809,33 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen183
-\scratchbox=\box58
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen184
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count316
+\scratchdimen=\dimen192
+\scratchbox=\box60
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks58
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen193
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks59
 )
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
 df-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grfext\grfext.sty"
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 )
-\c@lstlisting=\count310
+\c@lstlisting=\count322
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -775,8 +843,8 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring ON on input line 81.
+\AtBeginShipoutBox=\box61
+Package hyperref Info: Link coloring ON on input line 83.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.st
 y"
@@ -790,11 +858,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count311
+\c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 81.
-LaTeX Info: Redefining \pageref on input line 81.
-LaTeX Info: Redefining \nameref on input line 81.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -848,10 +916,10 @@ File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figures/Assignment1.jpg, id=120, 957.5775pt x 1352.05125pt>
+<Figures/Assignment1.jpg, id=112, 957.5775pt x 1352.05125pt>
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 <use Figures/Assignment1.jpg>
-Package pdftex.def Info: Figures/Assignment1.jpg  used on input line 84.
+Package pdftex.def Info: Figures/Assignment1.jpg  used on input line 86.
 (pdftex.def)             Requested size: 589.55688pt x 834.63214pt.
  [2
 
@@ -943,8 +1011,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-9.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+01.
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -952,83 +1020,88 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 [13
 
 ]
-<Figures/bmw.jpg, id=292, 624.83438pt x 327.47343pt>
+<Figures/bmw.jpg, id=289, 624.83438pt x 327.47343pt>
 File: Figures/bmw.jpg Graphic file (type jpg)
 <use Figures/bmw.jpg>
-Package pdftex.def Info: Figures/bmw.jpg  used on input line 109.
+Package pdftex.def Info: Figures/bmw.jpg  used on input line 111.
 (pdftex.def)             Requested size: 318.66948pt x 167.01424pt.
  [14 <./Figures/bmw.jpg>]
-<Figures/integralImage.png, id=304, 735.49782pt x 380.17032pt>
+<Figures/integralImage.png, id=301, 735.49782pt x 380.17032pt>
 File: Figures/integralImage.png Graphic file (type png)
 <use Figures/integralImage.png>
-Package pdftex.def Info: Figures/integralImage.png  used on input line 134.
+Package pdftex.def Info: Figures/integralImage.png  used on input line 136.
 (pdftex.def)             Requested size: 182.09486pt x 94.12pt.
  [15
 
  <./Figures/integralImage.png>]
-<Figures/haar1.png, id=312, 749.80125pt x 674.52pt>
+Overfull \hbox (1.52519pt too wide) in paragraph at lines 151--152
+[]\T1/lmr/bx/n/10.95 Troj-obd¨ºnikové \T1/lmr/m/n/10.95 (angl. three-rectangle)
+ - po-rov-ná-vajú sumu ob-d¨º-ni-ko-vých ob-lastí, ktoré
+ []
+
+<Figures/haar1.png, id=309, 749.80125pt x 674.52pt>
 File: Figures/haar1.png Graphic file (type png)
 <use Figures/haar1.png>
-Package pdftex.def Info: Figures/haar1.png  used on input line 155.
+Package pdftex.def Info: Figures/haar1.png  used on input line 157.
 (pdftex.def)             Requested size: 227.62206pt x 204.76596pt.
-<Figures/haar2.png, id=317, 335.75438pt x 213.79875pt>
+<Figures/haar2.png, id=314, 335.75438pt x 213.79875pt>
 File: Figures/haar2.png Graphic file (type png)
 <use Figures/haar2.png>
-Package pdftex.def Info: Figures/haar2.png  used on input line 164.
+Package pdftex.def Info: Figures/haar2.png  used on input line 166.
 (pdftex.def)             Requested size: 318.66948pt x 202.92169pt.
- [16 <./Figures/haar1.png>] [17 <./Figures/haar2.png>]
-<Figures/hog.png, id=340, 617.30624pt x 42.1575pt>
+[16 <./Figures/haar1.png>] [17 <./Figures/haar2.png>]
+<Figures/hog.png, id=337, 617.30624pt x 42.1575pt>
 File: Figures/hog.png Graphic file (type png)
 <use Figures/hog.png>
-Package pdftex.def Info: Figures/hog.png  used on input line 194.
+Package pdftex.def Info: Figures/hog.png  used on input line 196.
 (pdftex.def)             Requested size: 455.24411pt x 31.09055pt.
-<Figures/hog3.png, id=345, 617.30624pt x 237.13594pt>
+<Figures/hog3.png, id=342, 617.30624pt x 237.13594pt>
 File: Figures/hog3.png Graphic file (type png)
 <use Figures/hog3.png>
-Package pdftex.def Info: Figures/hog3.png  used on input line 204.
+Package pdftex.def Info: Figures/hog3.png  used on input line 206.
 (pdftex.def)             Requested size: 455.24411pt x 174.88441pt.
  [18 <./Figures/hog.png> <./Figures/hog3.png>]
-<Figures/openposePipeline.png, id=357, 1286.8075pt x 286.06876pt>
+<Figures/openposePipeline.png, id=354, 1286.8075pt x 286.06876pt>
 File: Figures/openposePipeline.png Graphic file (type png)
 <use Figures/openposePipeline.png>
-Package pdftex.def Info: Figures/openposePipeline.png  used on input line 217.
+Package pdftex.def Info: Figures/openposePipeline.png  used on input line 219.
 (pdftex.def)             Requested size: 455.24411pt x 101.20372pt.
  [19 <./Figures/openposePipeline.png (PNG copy)>]
 
-LaTeX Warning: Command \v invalid in math mode on input line 238.
+LaTeX Warning: Command \v invalid in math mode on input line 240.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 238.
+LaTeX Warning: Command \v invalid in math mode on input line 240.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 238.
+LaTeX Warning: Command \' invalid in math mode on input line 240.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 238.
+LaTeX Warning: Command \v invalid in math mode on input line 240.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 238.
+LaTeX Warning: Command \' invalid in math mode on input line 240.
 
-<Figures/cocoDataset.png, id=375, 388.45125pt x 679.53876pt>
+<Figures/cocoDataset.png, id=372, 388.45125pt x 679.53876pt>
 File: Figures/cocoDataset.png Graphic file (type png)
 <use Figures/cocoDataset.png>
-Package pdftex.def Info: Figures/cocoDataset.png  used on input line 244.
+Package pdftex.def Info: Figures/cocoDataset.png  used on input line 246.
 (pdftex.def)             Requested size: 136.57462pt x 238.9205pt.
 [20 <./Figures/cocoDataset.png (PNG copy)>]
 
-LaTeX Warning: Command \v invalid in math mode on input line 256.
+LaTeX Warning: Command \v invalid in math mode on input line 258.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 256.
+LaTeX Warning: Command \v invalid in math mode on input line 258.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 256.
+LaTeX Warning: Command \' invalid in math mode on input line 258.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 256.
+LaTeX Warning: Command \v invalid in math mode on input line 258.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 256.
+LaTeX Warning: Command \' invalid in math mode on input line 258.
 
 
 ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
@@ -1036,112 +1109,133 @@ ty"
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-61.
+63.
  ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [21] [22]
 
-LaTeX Warning: Command \v invalid in math mode on input line 302.
+LaTeX Warning: Command \v invalid in math mode on input line 304.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 302.
+LaTeX Warning: Command \' invalid in math mode on input line 304.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 302.
+LaTeX Warning: Command \' invalid in math mode on input line 304.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 302.
+LaTeX Warning: Command \v invalid in math mode on input line 304.
 
-<Figures/tfPose1.png, id=404, 1065.9825pt x 521.69907pt>
+<Figures/tfPose1.png, id=401, 1065.9825pt x 521.69907pt>
 File: Figures/tfPose1.png Graphic file (type png)
 <use Figures/tfPose1.png>
-Package pdftex.def Info: Figures/tfPose1.png  used on input line 306.
+Package pdftex.def Info: Figures/tfPose1.png  used on input line 308.
 (pdftex.def)             Requested size: 455.24411pt x 222.7978pt.
 [23 <./Figures/tfPose1.png>]
-<Figures/alphaPoseRedundant.png, id=416, 846.91406pt x 472.76625pt>
+<Figures/alphaPoseRedundant.png, id=415, 846.91406pt x 472.76625pt>
 File: Figures/alphaPoseRedundant.png Graphic file (type png)
 <use Figures/alphaPoseRedundant.png>
-Package pdftex.def Info: Figures/alphaPoseRedundant.png  used on input line 321
+Package pdftex.def Info: Figures/alphaPoseRedundant.png  used on input line 322
 .
 (pdftex.def)             Requested size: 273.14923pt x 152.47856pt.
  [24 <./Figures/alphaPoseRedundant.png>] [25]
-<Figures/wrnchAI.png, id=435, 1004.25188pt x 527.72156pt>
+<Figures/wrnchAI.png, id=436, 1004.25188pt x 527.72156pt>
 File: Figures/wrnchAI.png Graphic file (type png)
 <use Figures/wrnchAI.png>
-Package pdftex.def Info: Figures/wrnchAI.png  used on input line 352.
+Package pdftex.def Info: Figures/wrnchAI.png  used on input line 353.
 (pdftex.def)             Requested size: 409.71692pt x 215.30432pt.
 
 [26 <./Figures/wrnchAI.png>]
-<Figures/sphericalModel.png, id=443, 621.07031pt x 486.31688pt>
+<Figures/sphericalModel.png, id=444, 621.07031pt x 486.31688pt>
 File: Figures/sphericalModel.png Graphic file (type png)
 <use Figures/sphericalModel.png>
-Package pdftex.def Info: Figures/sphericalModel.png  used on input line 368.
+Package pdftex.def Info: Figures/sphericalModel.png  used on input line 369.
 (pdftex.def)             Requested size: 227.62206pt x 178.2351pt.
  [27
 
- <./Figures/sphericalModel.png>]
-<Figures/goproOmni.jpg, id=451, 803.0pt x 602.25pt>
+ <./Figures/sphericalModel.png>] [28]
+<Figures/goproOmni.jpg, id=456, 803.0pt x 602.25pt>
 File: Figures/goproOmni.jpg Graphic file (type jpg)
 <use Figures/goproOmni.jpg>
 Package pdftex.def Info: Figures/goproOmni.jpg  used on input line 394.
-(pdftex.def)             Requested size: 136.57462pt x 102.4271pt.
- [28]
-<Figures/sphericalModel2.png, id=458, 910.90312pt x 357.58594pt>
+(pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
+ [29 <./Figures/goproOmni.jpg>]
+<Figures/sphericalModel2.png, id=463, 910.90312pt x 357.58594pt>
 File: Figures/sphericalModel2.png Graphic file (type png)
 <use Figures/sphericalModel2.png>
-Package pdftex.def Info: Figures/sphericalModel2.png  used on input line 412.
-(pdftex.def)             Requested size: 409.71692pt x 160.84125pt.
- [29 <./Figures/goproOmni.jpg>]
-<Figures/cubemapVsEcti.png, id=463, 1604.99625pt x 633.86812pt>
+Package pdftex.def Info: Figures/sphericalModel2.png  used on input line 411.
+(pdftex.def)             Requested size: 455.24411pt x 178.71613pt.
+ [30 <./Figures/sphericalModel2.png>]
+<Figures/cubemapVsEcti.png, id=469, 1604.99625pt x 633.86812pt>
 File: Figures/cubemapVsEcti.png Graphic file (type png)
 <use Figures/cubemapVsEcti.png>
-Package pdftex.def Info: Figures/cubemapVsEcti.png  used on input line 422.
-(pdftex.def)             Requested size: 409.71692pt x 161.81316pt.
- [30 <./Figures/sphericalModel2.png> <./Figures/cubemapVsEcti.png>] [31
+Package pdftex.def Info: Figures/cubemapVsEcti.png  used on input line 421.
+(pdftex.def)             Requested size: 455.24411pt x 179.79347pt.
+ [31 <./Figures/cubemapVsEcti.png>] [32
 
-] [32] [33] [34]
-<Figures/camCompare.png, id=501, 1102.87032pt x 527.72156pt>
+] [33] [34] [35]
+<Figures/camCompare.png, id=505, 1102.87032pt x 527.72156pt>
 File: Figures/camCompare.png Graphic file (type png)
 <use Figures/camCompare.png>
 Package pdftex.def Info: Figures/camCompare.png  used on input line 513.
 (pdftex.def)             Requested size: 455.24411pt x 217.83276pt.
- [35 <./Figures/camCompare.png>] [36]
-<Figures/op_result.png, id=511, 1264.725pt x 413.29407pt>
+ [36 <./Figures/camCompare.png>] [37]
+<Figures/op_result.png, id=516, 1264.725pt x 413.29407pt>
 File: Figures/op_result.png Graphic file (type png)
 <use Figures/op_result.png>
 Package pdftex.def Info: Figures/op_result.png  used on input line 539.
 (pdftex.def)             Requested size: 455.24411pt x 148.76682pt.
- [37 <./Figures/op_result.png>] [38]
-<Figures/tf_result.png, id=524, 1258.7025pt x 423.83344pt>
+
+[38 <./Figures/op_result.png>] [39]
+<Figures/tf_result.png, id=530, 1258.7025pt x 423.83344pt>
 File: Figures/tf_result.png Graphic file (type png)
 <use Figures/tf_result.png>
 Package pdftex.def Info: Figures/tf_result.png  used on input line 560.
 (pdftex.def)             Requested size: 455.24411pt x 153.29129pt.
- [39 <./Figures/tf_result.png>]
-(SourceCodes/poseUnifier.py)
-
-LaTeX Warning: Reference `tab:openpose3' on page 40 undefined on input line 577
-.
-
-[40] [41] [42] [43]
-<Figures/landmarks.png, id=579, 759.58781pt x 337.26pt>
+ [40 <./Figures/tf_result.png>]
+(SourceCodes/poseUnifier.py) [41] [42] [43] [44] [45]
+<Figures/landmarks.png, id=590, 759.58781pt x 337.26pt>
 File: Figures/landmarks.png Graphic file (type png)
 <use Figures/landmarks.png>
-Package pdftex.def Info: Figures/landmarks.png  used on input line 673.
+Package pdftex.def Info: Figures/landmarks.png  used on input line 700.
 (pdftex.def)             Requested size: 318.66948pt x 141.49384pt.
- [44]
-<Figures/landmarkPoints.png, id=585, 953.81343pt x 349.305pt>
+ [46] [47 <./Figures/landmarks.png>]
+<Figures/landmarkPoints.png, id=601, 953.81343pt x 349.305pt>
 File: Figures/landmarkPoints.png Graphic file (type png)
 <use Figures/landmarkPoints.png>
-Package pdftex.def Info: Figures/landmarkPoints.png  used on input line 693.
+Package pdftex.def Info: Figures/landmarkPoints.png  used on input line 728.
 (pdftex.def)             Requested size: 455.24411pt x 166.72108pt.
- [45 <./Figures/landmarks.png>] [46 <./Figures/landmarkPoints.png>] [47] [48] [
-49] [50] [51] [52
 
-] (main.bbl [53
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 786.
+
+[48 <./Figures/landmarkPoints.png>]
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 812.
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 819--821
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--821
+
+ []
+
+[50]
+<Figures/faceRotation.png, id=640, 1320.43312pt x 392.96812pt>
+File: Figures/faceRotation.png Graphic file (type png)
+<use Figures/faceRotation.png>
+Package pdftex.def Info: Figures/faceRotation.png  used on input line 840.
+(pdftex.def)             Requested size: 455.24411pt x 135.48419pt.
+ [51 <./Figures/faceRotation.png>] [52] [53] [54] [55
+
+] (main.bbl [56
 
 ]
-Underfull \hbox (badness 2103) in paragraph at lines 4--8
+Underfull \hbox (badness 2096) in paragraph at lines 4--8
 []\T1/lmr/m/n/10.95 Gabriel Nica.  Bmw as-sis-ted dri-ving view lo-oks cool and
  use-ful, 2019.  [On-
  []
@@ -1164,46 +1258,39 @@ Underfull \hbox (badness 1694) in paragraph at lines 52--55
 t/m/n/10.95 https : / / gopro . com / en / cz / news / vr _
  []
 
-[54
+[57
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 135--139
+Underfull \hbox (badness 10000) in paragraph at lines 147--151
 []\T1/lmr/m/n/10.95 Vikas Gupta.  Pose de-tec-tion com-pa-ri-son : wrn-chai vs 
 open-pose,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--139
+Underfull \hbox (badness 10000) in paragraph at lines 147--151
 \T1/lmr/m/n/10.95 2019.  [On-line; Ci-to-vané 03.03.2020 z [][]$\T1/lmtt/m/n/10
 .95 https : / / www . learnopencv . com /
  []
 
-[55])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 766.
- [56]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 766.
+[58])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 902.
+ [59]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 902.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 766.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 766.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 902.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 902.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E65F316B3738CBB4AC98FA6449F46DE4;4551.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 766.
+(rerunfilecheck)             Checksum: 92A9B58B94148CA61CEB25BD74BF548F;4268.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 902.
  ) 
 Here is how much of TeX's memory you used:
- 19417 strings out of 481567
- 285598 string characters out of 2914666
- 876531 words of memory out of 3000000
- 34101 multiletter control sequences out of 15000+200000
- 578866 words of font info for 54 fonts, out of 3000000 for 9000
+ 20084 strings out of 481567
+ 293807 string characters out of 2914666
+ 888817 words of memory out of 3000000
+ 34722 multiletter control sequences out of 15000+200000
+ 579187 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,11n,60p,3742b,2341s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 52i,18n,60p,3875b,2341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
 }{C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}
 {C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.e
@@ -1225,10 +1312,11 @@ nts/type1/public/lm/lmri10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9
 X 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Asus/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Asus/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Asus/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (56 pages, 10531456 bytes).
+s/MiKTeX 2.9/fonts/type1/public/lm/lmtto10.pfb><C:/Users/Asus/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (59 pages, 11527465 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 170 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 813 PDF objects out of 1000 (max. 8388607)
+ 194 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 

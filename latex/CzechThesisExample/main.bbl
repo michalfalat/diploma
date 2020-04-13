@@ -111,6 +111,13 @@ Mykhaylo Andriluka, Leonid Pishchulin, Peter Gehler, and Bernt Schiele.
 \newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, June 2014.
 
+\bibitem{githubTF}
+CMU-Perceptual-Computing-Lab.
+\newblock Deep pose estimation implemented using tensorflow with custom
+  architectures for fast inference., 2018.
+\newblock [Online; Citované 10.04.2020 z
+  \url{https://github.com/ildoonet/tf-pose-estimation}.
+
 \bibitem{ren2015faster}
 Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
 \newblock Faster r-cnn: Towards real-time object detection with region proposal
@@ -130,6 +137,11 @@ AlphaPose.
   system, 2017.
 \newblock [Online; Citované 26.02.2020 z
   \url{https://github.com/MVIG-SJTU/AlphaPose}.
+
+\bibitem{wrnchAI}
+Paul Kruszewski.
+\newblock Wrnch.
+\newblock Online \url{https://wrnch.ai/}.
 
 \bibitem{openposeVsWrnchAI}
 Vikas Gupta.
@@ -171,5 +183,12 @@ Fran\c{c}ois Chollet et~al.
 Anne~T McCartt, Stephen~A Ribner, Allan~I Pack, and Mark~C Hammer.
 \newblock The scope and nature of the drowsy driving problem in new york state.
 \newblock {\em Accident Analysis \& Prevention}, 28(4):511--517, 1996.
+
+\bibitem{lourakis2005levenberg}
+MLA Lourakis and Antonis~A Argyros.
+\newblock Is levenberg-marquardt the most efficient optimization algorithm for
+  implementing bundle adjustment?
+\newblock In {\em Tenth IEEE International Conference on Computer Vision
+  (ICCV'05) Volume 1}, volume~2, pages 1526--1531. IEEE, 2005.
 
 \end{thebibliography}

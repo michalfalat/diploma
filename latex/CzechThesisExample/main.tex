@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{amsfonts}
 \usepackage{url}
+\usepackage{amsmath}
 \bibliographystyle{unsrt}
 \nocite{*}
 % Zadame pozadovane vstupy pro generovani titulnich stran.
@@ -49,6 +50,7 @@
 
 \AddAcronym{2D}{2-dimensional}
 \AddAcronym{3D}{3-dimensional}
+\AddAcronym{CLI}{Command line interface}
 \AddAcronym{CNN}{Convolutional neural network}
 \AddAcronym{CNTK}{Microsoft cognitive toolkit}
 \AddAcronym{CPU}{Central processing unit}
@@ -86,7 +88,7 @@
 % A nasleduje text zaverecne prace.
 \section{Úvod}
 \label{sec:Introduction}
-V dnešnom modernom svete sú autá takmer každodennou súčasťou života ľudí. Mnohokrát sa ani nezamýšľame nad ich bezpečnosťou, ktorá je v prípade zrážky kľúčová. V súčasnosti nám pri jazde autom asistuje veľké množstvo systémov, ktoré zvyšujú bezpečnosť posádky, ale aj ostantých účastníkov cestnej premávky. Aj keď tieto systémy ešte stále nedokážu vodiča úplne nahradiť, dokážu mu výrazným spôsobom pomôcť napríklad v krízových situáciach. Výhodou takýchto systémov je ich rýchlejší reakčný čas oproti človeku. Takéto systémy spočívajú v použití rôznych snímačov alebo kamier, ktoré aktívne sledujú okolie ale aj interiér vozidla. Vďaka takýmto moderným technickým riešeniam je možné predísť rôznym  častokrát aj smrteľným dopravným nehodám. Výrobcovia áut sa čoraz častejšie snažia svoje systémy vylepšovať na čo najvyššiu možnú úroveň a poskytnúť tak vysoký level ochrany.\par Táto diplomová práca je zameraná hlavne na problematiku analýzy vodiča pomocou detekcie obrazu zo sférickej (360-stupňovej) kamery. V diplomovej práci je postupne rozobratá problematika analýzy videa z kamery umiestnenej v interiéri vozidla. Vhodným umiestnením kamery je možné získať obraz z prednej časti auta, ale aj obraz vodiča sediaceho za volantom. Táto práca sa primárne venuje najmä analýze a spracovaniu videa z interiéru vozidla na zachytenie ľudských aktivít vodiča. Aby bola dosiahnutá čo najväčšia časť tela vodiča, je potrebné mať dostatočne veľký uhol záberu. Bežné kamery majú uhol záberu veľmi nízky, aby dokázal z malej vzdialenosti zachytiť celý snímaný objekt. Takýto problém sa naskytuje najpríklad aj v interiéri vozidla, kde je vzdialenoť kamery od snímaného objektu menej ako 1 meter, čo nemusí byť dostatočné na zosnímanie tela celého vodiča. Práve v takejto situácii je vhodné použiť širokouhlú prípadne sférickú kameru. Počas vypracovania práce boli k dispozícii viaceré kamery, s ktorými bolo zhotovených niekoľko desiatok videí v rôznych situáciach. Z takýchto videi sa dokázalo analyzovať a zistiť mnoho užitočných informácii, ktore sú spracované v tejto diplomovej práci. Tieto informácie boli zbierané nahrávaním videa sférickymi kamerami za rôznych svetelnych  podmienok a pozicií vodiča. V tejto práci sú taktiež spomenuté problémy takejto analýzy, riešenia vzniknutých problémov, ale aj zhrnutie celkovej problematiky sledovania vodiča vo vozidle. V práci sú tiež zhrnuté ďalšie možnosti vylepšenia detekcie a porovnanie oproti klasickým kamerám.\par V nasledujúcich kapitolách je postupne rozobratá problematika snímania ľudských postáv v obrazoch a skúmanie ich aktivít. Pre snímanie postáv existuje viacero metód, ktoré boli následne porovnané medzi sebou. Aby sa dokázala vyhodnotiť správna pozícia vodiča, v programe bola využitá neurónová sieť, ktorá bola trénovaná na vlastnom datasete postavenom na výstupe z kamier.\par V súčasnosti taktiež neexistuje veľa podobných riešení, ktoré by sa venovali podobnej problamatike, či spracovaniu videa zo sférickej kamery a preto sa práca zameriava na túto oblasť. Pri analýze vodiča rovnako neboli nájdené vhodné datasety z interiéru vozidla snímané sférickou kamerou.
+V dnešnom modernom svete sú autá takmer každodennou súčasťou života ľudí. Mnohokrát sa nikto nezamýšľa nad ich bezpečnosťou, ktorá je v prípade zrážky kľúčová. V súčasnosti pri jazde autom vodičovi asistuje veľké množstvo systémov, ktoré zvyšujú bezpečnosť posádky, ale aj ostatných účastníkov cestnej premávky. Aj keď tieto systémy ešte stále nedokážu vodiča úplne nahradiť, dokážu mu výrazným spôsobom pomôcť napríklad v krízových situáciach. Výhodou takýchto systémov je ich rýchlejší reakčný čas oproti človeku. Takéto systémy spočívajú v použití rôznych snímačov alebo kamier, ktoré aktívne sledujú okolie ale aj interiér vozidla. Vďaka takýmto moderným technickým riešeniam je možné predísť rôznym  častokrát aj smrteľným dopravným nehodám. Výrobcovia áut sa čoraz častejšie snažia svoje systémy vylepšovať na čo najvyššiu možnú úroveň a poskytnúť tak vysokú mieru ochrany.\par Táto diplomová práca je zameraná hlavne na problematiku analýzy vodiča pomocou detekcie obrazu zo sférickej (360-stupňovej) kamery. V diplomovej práci je postupne rozobratá problematika analýzy videa z kamery umiestnenej v interiéri vozidla. Vhodným umiestnením kamery je možné získať obraz z prednej časti auta, ale aj obraz vodiča sediaceho za volantom. Táto práca sa primárne venuje najmä analýze a spracovaniu videa z interiéru vozidla na zachytenie ľudských aktivít vodiča. Aby bola dosiahnutá čo najväčšia časť tela vodiča, je potrebné mať dostatočne veľký uhol záberu. Bežné kamery majú uhol záberu veľmi nízky, aby dokázal z malej vzdialenosti zachytiť celý snímaný objekt. Takýto problém sa naskytuje najpríklad aj v interiéri vozidla, kde je vzdialenosť kamery od snímaného objektu menej ako 1 meter, čo nemusí byť dostatočné na zosnímanie celého tela vodiča. Práve v takejto situácii je vhodné použiť širokouhlú prípadne sférickú kameru. Počas vypracovania práce boli k dispozícii viaceré kamery, s ktorými bolo zhotovených niekoľko desiatok videí v rôznych situáciach. Z takýchto videí sa dokázalo analyzovať a zistiť mnoho dôležitých informácii, ktore sú spracované v tejto diplomovej práci. Tieto informácie boli zbierané nahrávaním videa sférickymi kamerami za rôznych svetelnych  podmienok a pozicií vodiča. V tejto práci sú taktiež spomenuté problémy takejto detekcie, riešenia vzniknutých problémov, ale aj zhrnutie celkovej problematiky sledovania vodiča vo vozidle. V práci sú tiež zhrnuté ďalšie možnosti vylepšenia detekcie a porovnanie oproti klasickým kamerám.\par V nasledujúcich kapitolách je postupne rozobratá problematika snímania ľudských postáv v obrazoch a skúmanie ich aktivít. Pre snímanie postáv existuje viacero metód, ktoré boli následne porovnané medzi sebou. Aby sa dokázala vyhodnotiť správna pozícia vodiča, v programe bola využitá neurónová sieť, ktorá bola trénovaná na vlastnom datasete postavenom na výstupe z kamier.\par V súčasnosti taktiež neexistuje veľa podobných riešení, ktoré by sa venovali podobnej problamatike, či spracovaniu videa zo sférickej kamery a preto sa práca zameriava na túto oblasť. Pri analýze vodiča rovnako neboli nájdené vhodné datasety z interiéru vozidla snímané sférickou kamerou.
 
 
 
@@ -94,15 +96,15 @@ V dnešnom modernom svete sú autá takmer každodennou súčasťou života ľud
 \newpage
 \section{Detekcia vodiča vo vozidle}
 \label{sec:Pose detection}
-Hlavným zmyslom detekcie vodiča je analyzovanie jeho správania za volantom.  Pomocou takejto analýzy dokážeme napríklad odhadnúť, či je vodič unavený, alebo či sa dostatočne venuje okolitej premávke. Detekcia vodiča vo vozidle môže byť vykonaná viacerými spôsobmi. Zariadenie, ktoré sleduje vodičovo správanie môže byť založené na rôznych mechanických alebo digitálnych senzoroch, či kamerách. Aby sa zamedzilo zlyhaniu celého systému a nesprávnemu vyhodnoteniu situácie, je vhodné kombinovať viacero takýchto systémov vo vozidle sučasne. Existujú systémy, ktoré dokážu analyzovať správanie vodiča pomocou reakcie na točenia volantom, alebo rôzne trhavé reakcie vodičovho tela, ktoré sú spôsobené pokročilou fázou mikrospánku. Táto fáza je však už často sprevádzaná ďalšími príznakmi, ako zatvorenie očí a  krátkodobé nevnímanie situácie, čo môže byť veľmi nebezpečné pre vštkých účastníkov premávky.  Okrem toho je možné snímať napríklad  vodičove oči pomocou digitálnej kamery. Systém by mohol vyhodnocovať  pravidelnosť mrknutia očí a na základe celej trasy odhadnúť úroveň únavy. Aby bol systém dostatočne spoľahlivý mal by mať nasledujúce vlastnosti:
+Hlavným zmyslom detekcie vodiča je analyzovanie jeho správania za volantom.  Pomocou takejto analýzy je možné napríklad odhadnúť, či je vodič unavený, alebo či sa dostatočne venuje okolitej premávke. Detekcia vodiča vo vozidle môže byť vykonaná viacerými spôsobmi. Zariadenie, ktoré sleduje vodičovo správanie môže byť založené na rôznych mechanických alebo digitálnych senzoroch, či kamerách. Aby sa zamedzilo zlyhaniu celého systému a nesprávnemu vyhodnoteniu situácie, je vhodné kombinovať viacero takýchto systémov vo vozidle sučasne. Existujú systémy, ktoré dokážu analyzovať správanie vodiča pomocou reakcie na točenia volantom, alebo rôzne trhavé reakcie vodičovho tela, ktoré sú spôsobené pokročilou fázou mikrospánku. Táto fáza je však už často sprevádzaná ďalšími príznakmi, ako zatvorenie očí a  krátkodobé nevnímanie okolia, čo môže byť veľmi nebezpečné pre všetkých účastníkov premávky.  Okrem toho je možné snímať napríklad  vodičove oči pomocou digitálnej kamery. Systém by mohol vyhodnocovať  pravidelnosť mrknutia očí a na základe celej trasy odhadnúť úroveň únavy. Aby bol systém dostatočne spoľahlivý mal by mať nasledujúce vlastnosti:
 \begin{itemize}
 \item \textbf{Okamžitá detekcia} - každý systém musí byť dostatočne rýchly a schopný zdetekovať nepozornosť alebo mikrospánok vodiča maximálne behom 1-2 sekúnd. Každá sekunda navyše v rýchlo idúcom vozidle dramaticky zvyšuje riziko vzniku dopravnej nehody.
 \item \textbf{Fungovanie v zhoršených podmienok} - systém by  fungovať vo všetkých podmienkach  spoľahlivo. Nemal by byť obmedzený zhoršenými svetelnými podmienkami, alebo napríklad vodičovými nepravidelnými pohybmi, ktoré sa môžu podobať na mikrospánok.
-\item \textbf{Upozornenie} - pre úspešné fungovanie systému je požadujúce, aby dokázal nielen detekovať problém s vodičom, ale aj účinne zabrániť následkom vzniknutej situácie. To je možné vykonať napríklad hlasným zvukovým upozornením , prípadne spomalením až zastavením vozidla v prípade väčšieho problému s vodičovým vedomím. 
+\item \textbf{Upozornenie} - pre úspešné fungovanie systému je požadujúce, aby dokázal nielen detekovať problém s vodičom, ale aj účinne zabrániť následkom vzniknutej situácie. To je možné vykonať napríklad hlasným zvukovým upozornením, prípadne spomalením až zastavením vozidla v prípade väčšieho problému s vodičovým vedomím. 
 \end{itemize}
-Samotná detekcia obrazu v uzavretom priestore sa od bežnej detekcie v základných princípoch nelíši. Obmedzenia nastávajú najmä nevhodnou pozíciou alebo natočením kamery, ktorá je umiestnená vo vozidle. Ak je kamera nesprávne umiestnená, alebo má nedostatočný uhol záberu, nemusí byť zdetekovaný celý snímaný objekt, čo môže viesť k chybe pri jeho detekcii. Autori v práci na analýzu vodiča \cite{smith2003determining}, kde sa zameriavali na oblasť tváre vodiča použili kameru umiestnenú v oblasti stredu palubnej dosky. Tým dosiahli takmer priame natočenie kamery na vodiča, bez toho, aby ho táto kamera výraznejšie obmedzovala vo výhľade. Keďže táto práca bola zameraná primárne na detekciu očí a úst, nebolo potrebné  používať kameru s vysokým uhlom záberu. Celý proces snímania však nebol spracovaný v reálnom čase, ale až po presune a spracovaní nahratých videí z kamery. Aby sa dal použiť takýto systém aj v reálnej premávke, bolo by potrebné aby dokázal spracovávať video  a vyhodnocovať vodičovo správanie v reálnom čase. Jedným z takýchto riešení by mohlo byť napríklad použitie malej priemyselnej kamery spolu s počítačom.\par
-Zariadenie na detekciu ospalosti vodiča  ponúka aj celosvetová firma Bosch. Ich detekcia ospalosti vodiča je založená na algoritme, ktorý začína zaznamenávať správanie vodiča pri začatí jazdy. Vyrobca si však uvedomoval všetky nedostatky použitia kamery na smínaie a preto sa rozhodol vymyslieť detekciu  spánku iným spôsobom. Na volante je pripevnené špeciálne zariadenie, ktoré sníma otáčanie volantom. Následne rozpoznáva zmeny v priebehu dlhých ciest a tým pádom aj únavu vodiča. Typickými znakmi klesajúcej koncentrácie sú fázy, počas ktorých vodič sotva riadi, v kombinácii s miernymi, ale rýchlymi a prudkými pohybmi volantu, aby udržal vozidlo na ceste. Takéto riešenie však môže byť limitujúce, pretože nedokáže na mikrospánok zareagovať okamžite. Z tohto dôvôdu ho firma Bosch predáva hlavne ako pomocný systém na odhalenie únavy vodiča. \par
-Mnoho podobných riešení zameraných na snímanie aktivity vodiča sa snažia zaviesť aj výrobcovia automobilov. Títo výrobcovia si veľmi dobre uvedomujú, že veľká časť dopravných nehôd býva spôsobená mikrospánkom, alebo len nepozornosťou vodiča. Príkladom môže byť vyrobca automobilov značky BMW, ktorý vo svojich vozidlách ponúka ako príplatkovú výbavu kameru na snímanie správania vodiča. Táto kamera dokáže reagovať napríklad na únavu alebo zatvorenie očí vodiča. Vo všeobecnosti tento systém dokáže dokonca reagovať aj na to, že vodič má otočenú hlavu a nesleduje premávku, čo môže viesť k nebezpečnej situácii. V každom takomto prípade je vodič upozornenený zvukovým znamením. Kamera je umiestnená v prístrojovej doske na mieste za volantom, odkiaľ je na tvár vodiča priamy výhľad (obr. \ref{fig:bmwAssistent}). Okrem jej vhodného umiestnenia je navyše vybavená aj IR LED diódami, vďaka ktorým kamera funguje aj za znížených svetelných podimenok a v noci, kedy sa vyskytuje najväčší počet mikrospánkov u vodičov všetkých vozidiel. Vďaka takémuto riešeniu sa dokáže predísť mnohým nebezpečným situáciám a dopravným nehodám. Výrobcovia však neuvádzajú žiadne oficiálne štatistiky o úspešnosti týchto systémov na snímanie tváre vodiča.
+Samotná detekcia obrazu v uzavretom priestore sa od bežnej detekcie v základných princípoch nelíši. Obmedzenia nastávajú najmä nevhodnou pozíciou alebo natočením kamery, ktorá je umiestnená vo vozidle. Ak je kamera nesprávne umiestnená, alebo má nedostatočný uhol záberu, nemusí byť zdetekovaný celý snímaný objekt, čo môže viesť k chybe pri jeho detekcii. Autori v práci na analýzu vodiča \cite{smith2003determining}, kde sa zameriavali na oblasť tváre vodiča použili kameru umiestnenú v oblasti stredu palubnej dosky. Tým dosiahli takmer priame natočenie kamery na vodiča, bez toho, aby ho táto kamera výraznejšie obmedzovala vodiča vo výhľade. Keďže táto práca bola zameraná primárne na detekciu očí a úst, nebolo potrebné  používať kameru s vysokým uhlom záberu. Celý proces snímania však nebol spracovaný v reálnom čase, ale až po presune a spracovaní nahratých videí z kamery. Aby sa dal použiť takýto systém aj v reálnej premávke, bolo by potrebné aby dokázal spracovávať video  a vyhodnocovať vodičovo správanie v reálnom čase. Jedným z takýchto riešení by mohlo byť napríklad použitie malej priemyselnej kamery spolu s počítačom.\par
+Zariadenie na detekciu ospalosti vodiča  ponúka aj celosvetová firma Bosch. Vyrobca si však uvedomoval všetky nedostatky použitia kamery na smímanie a preto sa rozhodol vymyslieť detekciu  spánku iným spôsobom. Na volante je pripevnené špeciálne zariadenie, ktoré sníma otáčanie volantom. Následne rozpoznáva zmeny v priebehu dlhých ciest a tým pádom aj únavu vodiča. Ich detekcia ospalosti vodiča je založená na algoritme, ktorý začína zaznamenávať správanie vodiča pri začatí jazdy. Typickými znakmi klesajúcej koncentrácie sú fázy, počas ktorých vodič nevenuje dostatočnú pozornosť vedeniu vozidla v kombinácii s miernymi, ale rýchlymi a prudkými pohybmi volantu, aby udržal vozidlo na ceste. Takéto riešenie však môže byť limitujúce, pretože nedokáže na mikrospánok zareagovať okamžite. Z tohto dôvôdu ho firma Bosch predáva hlavne ako pomocný systém na odhalenie únavy vodiča. \par
+Mnoho podobných riešení zameraných na snímanie aktivity vodiča sa snažia zaviesť aj výrobcovia automobilov. Títo výrobcovia si veľmi dobre uvedomujú, že veľká časť dopravných nehôd býva spôsobená mikrospánkom, alebo len nepozornosťou vodiča. Príkladom môže byť vyrobca automobilov značky BMW, ktorý vo svojich vozidlách ponúka ako príplatkovú výbavu kameru na snímanie správania vodiča. Táto kamera dokáže reagovať napríklad na únavu alebo zatvorenie očí vodiča. Vo všeobecnosti tento systém dokáže dokonca reagovať aj na to, že vodič má otočenú hlavu a nesleduje premávku, čo môže viesť k nebezpečnej situácii. V každom takomto prípade je vodič upozornenený zvukovým znamením. Kamera je umiestnená v prístrojovej doske na mieste za volantom, odkiaľ je na tvár vodiča priamy výhľad (obr. \ref{fig:bmwAssistent}). Okrem jej vhodného umiestnenia je navyše vybavená aj IR LED diódami, vďaka ktorým kamera funguje aj za znížených svetelných podimenok a v noci, kedy sa vyskytuje najväčší počet mikrospánkov u vodičov všetkých vozidiel. Vďaka takémuto riešeniu sa dokáže predísť mnohým nebezpečným situáciám a dopravným nehodám. Výrobcovia však neuvádzajú žiadne oficiálne štatistiky o úspešnosti týchto systémov na snímanie tváre vodiča. V nasledujúcej kapitole sú popísané metódy na detekciu a snímanie ľudského tela  v interiéri vozidla. Takúto detekciu je možné následne využiť na analýzu chovania vodiča  a predikovanie jeho správania alebo rôznych nebezpečných situácii.
 
 \begin{figure}[H]
 	\centering
@@ -120,19 +122,19 @@ Mnoho podobných riešení zameraných na snímanie aktivity vodiča sa snažia 
 \label{sec:human body decection}
 
 História detekcie postáv v obrazoch siaha až do polovice 20. storočia. Mnoho inžinierov videlo obrovský potenciál detekcie obrazu napríklad v oblastiach medicíny, priemyslu, dopravy a mnohých ďalších oblastiach. S nárastom technických možností postupne rástla motivácia využiť detekciu obrazu aj v praxi. Jeden z prvých vedeckých článkov v oblasti spracovania obrazu \cite{rosenfeld1969} rozoberal napríklad jednoduchú analýzu  obrazu a spracovanie obrazov s dostupnými prostriedkami.  Postupom času sa však počítačová technika vylepšovala a bolo možné pracovať na vývoji metód pre analýzu  a detekciu objektov v obrazoch. Na detekciu chodcov alebo iných ľubovolných objektov existuje mnoho prístupov. Veľkým fenoménom v posledných rokoch sa stali neurónové siete. Okrem neurónových sietí však stále existujú aj tradičné metódy, ktoré fungujú aj bez trénovacích dát. V práci boli využívané metódy Haar a HOG, ktoré sa radia medzi najpoužívanejšie tradičné metódy a je im venované podkapitola \ref{Príznakové rozpoznávanie}.\par
-Každý obraz sa skladá z pixelov. Analýza obrazu však nespočíva v prehľadávaní jednodlivých pixelov, ale v hľadaní jednotlivých objektov v obraze. Tieto objekty je možné  určovať do  samostatných tried. Triedy nám určujú, aký druh objektu sa v obraze nachádza (Napríklad chodec, vozidlo, dopravná značka a podobne). Aby bolo možné tieto objekty (v našom prípade ľudí) nájsť, bolo potrebné nájsť spoľahlivý a rýchly spôsob detekcie. 
+Každý obraz sa skladá z pixelov. Analýza obrazu však nespočíva v prehľadávaní jednodlivých pixelov, ale v hľadaní jednotlivých objektov v obraze. Tieto objekty je možné  určovať do  samostatných tried. Triedy určujú, aký druh objektu sa v obraze nachádza (Napríklad chodec, vozidlo, dopravná značka a podobne). Aby bolo možné tieto objekty (napr. ľudí) v obraze identifikovať, je potrebné nájsť spoľahlivý a rýchly spôsob detekcie. 
 
 
 \subsection{Príznakové rozpoznávanie}
 \label{Príznakové rozpoznávanie}
-\subsubsection*{Haar}
-Metódou Haar je možné detekovať rôzne triedy objektov. Jedným z najčastejších a jednoducho detekovatelných  typov objektov je napríklad tvár. Táto metóda bola popísaná autormi Viola a Jones\cite{viola2001rapid} v roku 2001. Medzi jej hlavné výhody patrí vysoká rýchlosť  a spoľahlivá detekcia a vysoká nezávislosť na intenzite osvetlenia, čo môže byť kľúčový faktor pri použití detekcie v interiéri vozidla. Vo všeobecnosti je tento detektor rozdelený do 4 samostantných častí: Výpočet integrálneho obrazu,  výpočet Haar príznakov, výber príznakov a kaskádový klasifikátor.\par Výpočet integrálneho obrazu sa robí prevedením vstupného obrazu na integrálny obraz (Obr. \ref{fig:integralImage}). Výpočet pre konkrétne súradnice \textit{(x, y)} spočíva v súčte hodnôt jasu vľavo a nad súradnicami  \textit{(x, y)}. Výpočet je znároznený v rovnici \ref{eq:integral}.
+\subsubsection*{Príznaky typu Haar}
+Metódou Haar je možné detekovať rôzne triedy objektov. Túto metódu je možné využiť napríklad na snímanie tváre vodiča alebo iných osôb. Táto metóda bola popísaná autormi Viola a Jones\cite{viola2001rapid} v roku 2001. Medzi jej hlavné výhody patrí vysoká rýchlosť  a spoľahlivá detekcia a vysoká nezávislosť na intenzite osvetlenia, čo môže byť kľúčový faktor pri použití detekcie v interiéri vozidla. Vo všeobecnosti je tento detektor rozdelený do 4 samostatných častí: Výpočet integrálneho obrazu,  výpočet Haar príznakov, výber príznakov a kaskádový klasifikátor.\par Výpočet integrálneho obrazu sa robí prevedením vstupného obrazu na integrálny obraz (obr. \ref{fig:integralImage}). Výpočet pre konkrétne súradnice \textit{(x, y)} spočíva v súčte hodnôt jasu vľavo a nad súradnicami  \textit{(x, y)}. Výpočet je znároznený v rovnici \ref{eq:integral}.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Figures/integralImage.png}
-	\caption{Výpočet integrálneho obrazu - vstupný obraz (A) , integrálny obraz (B)}
+	\caption{Výpočet integrálneho obrazu - vstupný obraz (A), integrálny obraz (B)}
 	\label{fig:integralImage}
 \end{figure}
 
@@ -145,9 +147,9 @@ ii(x,y)=\sum_{x^{\prime}\leq x,y^{\prime}\leq y}i(x^{\prime},y^{\prime}),
 
  Metóda funguje na porovnavaní celých blokov pixelov. Tieto bloky (častokrát nazývané aj zhluky) môžu mať rôzne tvary, veľkosť a natočenie. Tieto bloky môžu nadobúdať rôzne tvary ale vo všeobecnosti sa používajú 3 hlavné typy príznakov:
 \begin{itemize}
-  \item \textbf{Dvoj-obdĺžnikové} \textit{(angl. two-rectangle)} - porovnávajú sumu pixlov v obdĺžnikových oblastiach, ktoré sa nachádzajú vedľa seba, vodorovne, alebo zvislo.
-  \item \textbf{Troj-obdĺžnikové} \textit{(angl. three-rectangle)} - porovnávajú sumu obdĺžnikových oblastí, ktoré sa nachádzajú po oboch stranách aktuálnej oblasti a sumu aktuálnej oblasti.
-  \item \textbf{Štvor-obdĺžnikové} \textit{(angl. four-rectangle)} - počítajú rozdiel medzi dvoma aktuálnymi obdĺžnikovými oblasťami, ktoré sa dotýkajú svojimi rohmi a obdĺžnikovými oblasťami medzi nimi.
+  \item \textbf{Dvoj-obdĺžnikové} (angl. two-rectangle) - porovnávajú sumu pixlov v obdĺžnikových oblastiach, ktoré sa nachádzajú vedľa seba, vodorovne, alebo zvislo.
+  \item \textbf{Troj-obdĺžnikové} (angl. three-rectangle) - porovnávajú sumu obdĺžnikových oblastí, ktoré sa nachádzajú po oboch stranách aktuálnej oblasti a sumu aktuálnej oblasti.
+  \item \textbf{Štvor-obdĺžnikové} (angl. four-rectangle) - počítajú rozdiel medzi dvoma aktuálnymi obdĺžnikovými oblasťami, ktoré sa dotýkajú svojimi rohmi a obdĺžnikovými oblasťami medzi nimi.
   
  \end{itemize}
    \begin{figure}[H]
@@ -156,7 +158,7 @@ ii(x,y)=\sum_{x^{\prime}\leq x,y^{\prime}\leq y}i(x^{\prime},y^{\prime}),
 	\caption{Haar - dvoj-obdĺžnikové príznaky (A, B), troj-obdĺžnikové príznaky (C) a štvor-obdĺžnikové príznaky(D)\cite{viola2001robust}}
 	\label{fig:Haar1}
 \end{figure}
-  Znázornenie jednotlivých typov príznakov môžeme vidieť na obrázku \ref{fig:Haar1}. Jednotlivé príznaky môžu byť použité pre rôzne typy obrázkov. Efektivita klesá pri použití príznaku na celý obraz. Vhodným riešením je preto skombinovať viacero príznakov. Na výber  správnych efektívnych príznakov sa používajú špeciálne algoritmy. Jedným z najpoužívanejších algoritmov  pre zvýšenie efektivity výberu príznakov je AdaBoost\cite{freund1995desicion}, ktorý vytvoril profesor Yoav Freund. Jedná se o klasifikačný algoritmus, ktorý je schopný vytvoriť dostatočne silný klasifikátor z kombinácii viacerých slabších klasifikátorov. 
+  Znázornenie jednotlivých typov príznakov je znázornené na obrázku \ref{fig:Haar1}. Jednotlivé príznaky môžu byť použité pre rôzne typy obrázkov. Efektivita klesá pri použití príznaku na celý obraz. Vhodným riešením je preto skombinovať viacero príznakov. Na výber  správnych efektívnych príznakov sa používajú špeciálne algoritmy. Jedným z najpoužívanejších algoritmov  pre zvýšenie efektivity výberu príznakov je AdaBoost\cite{freund1995desicion}, ktorý vytvoril profesor Yoav Freund. Jedná se o klasifikačný algoritmus, ktorý je schopný vytvoriť dostatočne silný klasifikátor z kombinácii viacerých slabších klasifikátorov. 
 
 
 \begin{figure}[H]
@@ -168,9 +170,9 @@ ii(x,y)=\sum_{x^{\prime}\leq x,y^{\prime}\leq y}i(x^{\prime},y^{\prime}),
 
 
 
-\subsubsection*{HOG}
+\subsubsection*{Príznaky HOG}
 \label{HOG}
-S nápadom  vylepšiť detekciu objektov použitím príznakov prišli v roku 2005 Navneed Dalal a Bill Triggs \cite{dalal2005}, kde postupne vyskúšali niekoľko typov deskriptorov.  V práci taktiež podrobne rozobrali  možnosti a spôsoby ako správne určiť parametre ich detekčnej metódy pre správne fungovanie detekcie jednotlivých tried. Hlavnou myšlienkou ich metódy je, že objekt môže byť charakterizovaný  viacerými spôsobmi. Metóda je vhodná napríklad pre detekciu ľudských postáv, ktoré majú charakteristický tvar. Táto metóda je rozdelená do niekoľkých samostatných krokov (Obr. \ref{fig:HOG1}):
+S nápadom  vylepšiť detekciu objektov použitím príznakov prišli v roku 2005 Navneed Dalal a Bill Triggs \cite{dalal2005}, kde postupne vyskúšali niekoľko typov deskriptorov.  V práci taktiež podrobne rozobrali  možnosti a spôsoby ako správne určiť parametre ich detekčnej metódy pre správne fungovanie detekcie jednotlivých tried. Hlavná myšlienka tejto metódy spočíva vo využití súčtu gradientov, ktorý sa počíta pre  každú časť obrazu, ktorý je rozdelený do viacerých častí. Metóda je vhodná napríklad pre detekciu ľudských postáv, ktoré majú charakteristický tvar. Táto metóda je rozdelená do niekoľkých samostatných krokov (obr. \ref{fig:HOG1}):
 \begin{itemize}
   \item \textbf{Úprava obrazu} - v tomto kroku je potrebné  v obraze upraviť kontrast a jas, ktoré by mohli spôsobovať  problémy v nasledujúcich krokoch. Okrem tejto úpravy  je možné obraz upraviť napríklad gamma filtrom.
   \item \textbf{Výpočet gradientov} - veľkosť gradientov sa počíta na základe vstupného obrazu a masky. Masky, ktoré sa používaju v tomto kroku sú \textit{[-1, 0, 1]} alebo \textit{[-1, 0, 1] \textsuperscript{T}}. Gradienty je nutné vypočítať v obidvoch osách, čím sa získa \textit{I\textsubscript{x}} a \textit{I\textsubscript{y}}. Po získaní gradientov je potrebné vypočítať veľkosť gradientov \textit{m(x,y)} a ich smer \textit{$\theta(x, y)$}:
@@ -185,7 +187,7 @@ m(x,y)= \sqrt{I_{x}^{2} + I_{y}^{2}}
 \label{eq:Výpočet smeru gradientu}
 \end{equation}
   \item \textbf{Normalizácia} -  pre správne fungovanie je potrebné obraz normalizovať, aby sa minimalizovali rozdiely medzi jednotlivými bunkami. Tento krok spočíva v skladaní viacerých buniek, čím následne vznikajú bloky. 
-   \item \textbf{Deskriptor} -  je vytvorený zo vstupného obrazu do jednotlivých blokov. Jednotlivé bloky sa posúvajú a prekrývajú o daný počet pixelov. Výsledok deskriptoru je odovzdaný  klasifikátoru, ktorý následne určuje do akej triedy objekt patrí. Jeden z často používaných klasifikátorov je Support vector machine (SVM), ktorý napríklad používali autori vo svojej práci na efektívnu detekciu chodcov.\cite{pang2011efficient}
+   \item \textbf{Deskriptor} -  je vytvorený zo vstupného obrazu do jednotlivých blokov. Jednotlivé bloky sa posúvajú a prekrývajú o daný počet pixelov. Výsledok deskriptoru je odovzdaný  klasifikátoru, ktorý následne určuje do akej triedy objekt patrí. Jeden z často používaných klasifikátorov je Support vector machine (SVM), ktorý napríklad používali autori vo svojej práci na efektívnu detekciu chodcov\cite{pang2011efficient}.
  \end{itemize}
 
 
@@ -222,11 +224,11 @@ OpenPose, ktorý bol vyvinutý výskumníkmi na univerzite Carnegie Mellon Unive
  Samotný framework je veľmi detailne vysvetlený a dobre zdokumentovaný. OpenPose bol pôvodne napísaný v C++ a Caffe\cite{jia2014caffe}. Postupom času však  autori vytvorili aj  nadstavbu pre jazyk Python, s ktorým sa rozšírili možnosti jeho využitia medzi ostatnými programátormi. Základná myšlienka detekcie pomocou OpenPose sa skladá z viacerých krokov:
 
 \begin{itemize}
-\item \textbf{Spracovanie vstupného obrazu} - vstupný obrázok (Obr. \ref{fig:openposeOverall}a) privádza ako vstup do dvojvetvovvej viacstupňovej Konvolučnej nerónovej siete (CNN). Dve vetvy znamenajú, že CNN produkuje dva rôzne výstupy z jedného vstupného obrazu. Viacstupňové znamená, že sieť je v každej fáze naskladaná jedna na druh. Tento krok je analogický jednoduchému zväčšeniu hĺbky neurónovej siete s cieľom zachytiť podstatnejšie výstupy smerom k posledným stupňom.
+\item \textbf{Spracovanie vstupného obrazu} - vstupný obrázok (obr. \ref{fig:openposeOverall}a) privádza ako vstup do dvojvetvovej viacstupňovej Konvolučnej nerónovej siete (CNN). Dve vetvy znamenajú, že CNN produkuje dva rôzne výstupy z jedného vstupného obrazu. Viacstupňové znamená, že sieť je v každej fáze naskladaná jedna na druhú. Tento krok je analogický jednoduchému zväčšeniu hĺbky neurónovej siete s cieľom zachytiť podstatnejšie výstupy smerom k posledným stupňom.
 
-\item \textbf{Spracovanie v dvoch vetvách} - prvá vetva predpovedá mapy dôveryhodnosti (Obr. \ref{fig:openposeOverall}b) rôznych častí tela, ako je pravé oko, ľavé oko, pravé lakte a podobne. Druhá vetva zobrazená modrou farbou predpovedá afinitné polia (Obr. \ref{fig:openposeOverall}c), čo predstavuje stupeň asociácie medzi rôznymi časťami tela.
+\item \textbf{Spracovanie v dvoch vetvách} - prvá vetva predpovedá mapy dôveryhodnosti (obr. \ref{fig:openposeOverall}b) rôznych častí tela, ako je pravé oko, ľavé oko, pravé lakte a podobne. Druhá vetva zobrazená modrou farbou predpovedá afinitné polia (obr. \ref{fig:openposeOverall}c), čo predstavuje stupeň asociácie medzi rôznymi časťami tela.
 
-\item \textbf{Viacfázové spracovanie} - v prvej fáze sieť vytvorí počiatočnú sadu detekčných máp spoľahlivosti \textit{S} a množinu polí afinity častí \textit{L}. Potom v každej nasledujúcej fáze predpovede z obidvoch vetiev v predchádzajúcej fáze, spolu s pôvodnými obrazovými znakmi \textit{F}, sú zreťazené a použité na vytvorenie podrobnejších predpovedí. Pri implementácii OpenPose sa posledná fáza \textit{t} zvolí ako číslo 6.
+\item \textbf{Viacfázové spracovanie} - v prvej fáze sieť vytvorí počiatočnú sadu detekčných máp spoľahlivosti \textit{S} a množinu polí afinitných častí \textit{L}. Potom v každej nasledujúcej fáze predpovede z obidvoch vetiev v predchádzajúcej fáze, spolu s pôvodnými obrazovými znakmi \textit{F}, sú zreťazené a použité na vytvorenie podrobnejších predpovedí. Pri implementácii OpenPose sa posledná fáza \textit{t} zvolí ako číslo 6.
 \end{itemize}
 
 \subsubsection{Mapa spoľahlivosti}
@@ -237,7 +239,7 @@ Prvá vetva v neurónovej sieti OpenPose vytvára sadu máp spoľahlivosti \text
 & S\in\mathbb{R}^{w \times  h},\nonumber\\
 & j\in \left \{1,\: J  \right \}, kde\: J\: je\: počet\: všetkých\: častí\: tela\nonumber
 \end{eqnarray}
-Počet častí tela závisí od množiny datasetov, s ktorými je program OpenPose trénovaný. Pokiaľ ide napríklad o súbor datasetu COCO\cite{lin2014microsoft}, \textit{J = 19}, pretože existuje 18 rôznych kľúčových bodov tela + 1 pozadie. Obrázok \ref{fig:cocoDataset} znázorňuje rôzne časti tela s prideleným identifikátorom pre súbor údajov COCO. Pre model trénovaný s dátovým súborom COCO bude sada \textit{S} obsahovať prvky \textit{S1, S2, S3,…, S19}. V tomto príklade predpokladáme, že prvok \textit{S1} zodpovedá mape spoľahlivosti pre kľúčový bod s číslom 0, ktorý zodpovedá nosu (Obr. \ref{fig:cocoDataset}).\par. Ako jednoduchý príklad môže poslužiť predstava, že celý obraz má šírku a výšku 5px, čo vedie k vytvoreniu  mapy spoľahlivosti o veľkosti \textit{$5\times 5$}. Vo vstupnom obrázku sa nachádza iba jedna tvár. Preto pre mapu spoľahlivosti \textit{S1} (zodpovedajúca za detekciu nosa) je možné vidieť hodnoty s vysokou spoľahlivosťou iba v oblasti, kde sa nos nachádza.\bigskip
+Počet častí tela závisí od množiny datasetov, s ktorými je program OpenPose trénovaný. Pokiaľ ide napríklad o súbor datasetu COCO\cite{lin2014microsoft}, \textit{J = 19}, pretože existuje 18 rôznych kľúčových bodov tela + 1 pozadie. Obrázok \ref{fig:cocoDataset} znázorňuje rôzne časti tela s prideleným identifikátorom pre súbor údajov COCO. Pre model trénovaný s dátovým súborom COCO bude sada \textit{S} obsahovať prvky \textit{S1, S2, S3,…, S19}. V tomto príklade je zrejmé, že prvok \textit{S1} zodpovedá mape spoľahlivosti pre kľúčový bod s číslom 0, ktorý zodpovedá nosu (obr. \ref{fig:cocoDataset}).\par. Ako jednoduchý príklad môže poslužiť predstava, že celý obraz má šírku a výšku 5px, čo vedie k vytvoreniu  mapy spoľahlivosti o veľkosti 5$\times$5. Vo vstupnom obrázku sa nachádza iba jedna tvár. Preto pre mapu spoľahlivosti \textit{S1} (zodpovedajúca za detekciu nosa) je možné vidieť hodnoty s vysokou spoľahlivosťou iba v oblasti, kde sa nos nachádza.\bigskip
 
 \begin{figure}[H]
 	\centering
@@ -256,7 +258,7 @@ Druhá vetva neurónovej siete vytvára množinu čiastkových afinitných polí
 & c\in \left \{1,\: C  \right \}, kde\: C\: je\: počet\: všetkých\: končatín\nonumber
 \end{eqnarray}
 
-Celkový počet končatín a párov závisí od datasetu, s ktorým je OpenPose trénovaný. Kvôli prehľadnosti sa uvádzajú dvojice častí tela ako končatiny, napriek tomu, že niektoré páry častí tela nie sú v skutočnosti končatinami (Napríklad oko-nos, ucho-oko atď.). Pre dataset COCO je počet párov končatín, \textit{C = 19}. Môžeme si predstaviť, že každý prvok v množine \textit{L} je mapa veľkosti \textit{$w\times h$}, kde každá bunka obsahuje 2D vektor predstavujúci smer párových prvkov. Napríklad na obrázku \ref{fig:cocoDataset} je možné vidieť, že pár častí tela pozostáva z pravého ramena k pravému laktu. Schéma potom ukazuje smerový vektor, ktorý ukazuje z pravého ramena na pravý lakeť. Celý zoznam párov končatín je znázornený vo výpise \ref{src:coco_pairs}.\bigskip
+Celkový počet končatín a párov závisí od datasetu, s ktorým je OpenPose trénovaný. Kvôli prehľadnosti sa uvádzajú dvojice častí tela ako končatiny, napriek tomu, že niektoré páry častí tela nie sú v skutočnosti končatinami (napríklad oko-nos, ucho-oko atď.). Pre dataset COCO je počet párov končatín, \textit{C = 19}. Môžeme si predstaviť, že každý prvok v množine \textit{L} je mapa veľkosti \textit{$w\times h$}, kde každá bunka obsahuje 2D vektor predstavujúci smer párových prvkov. Napríklad na obrázku \ref{fig:cocoDataset} je možné vidieť, že pár častí tela pozostáva z pravého ramena k pravému laktu. Schéma potom ukazuje smerový vektor, ktorý ukazuje z pravého ramena na pravý lakeť. Celý zoznam párov končatín je znázornený vo výpise \ref{src:coco_pairs}.\bigskip
 
 \begin{lstlisting}[language=Python,label=src:coco_pairs,caption={Množina párov končatín v datasete COCO}]
 COCO_PAIRS = [(1, 2), (1, 5), (2, 3), (3, 4), (5, 6), (6, 7), (1, 8), (8, 9), (9, 10), (1, 11), (11, 12), (12, 13), (1, 0), (0, 14), (14, 16), (0, 15), (15, 17), (2, 16), (5, 17)]
@@ -293,27 +295,26 @@ Model PoseNet je nezávislý na veľkosti vstupného obrazu. To znamená, že m�
 
 
 \subsubsection{Výstup}
-Keď PoseNet spracováva obraz, v skutočnosti vytvára tepelnú mapa \textit{(angl. Heatmap)} spolu s ofsetovými vektormi, ktoré je možné dekódovať, aby sa v obraze našli oblasti s vysokou spoľahlivosťou. Veľkou výhodou pri detekcii postáv v obraze cez Tensorflow je teda to, že spolu s vektormi výstupného modelu dostávame aj štruktorované dáta pravdepodobnosti jednotlivých častí postavy, ktoré môžeme využiť na ďalšie spracovanie, alebo znázorniť pre lepšiu predstavu\textit{(Obr. \ref{fig:tfPoseHeatmap})}.
+Keď PoseNet spracováva obraz, v skutočnosti vytvára mapu pravdepodobnosti (angl. Heatmap) spolu s ofsetovými vektormi, ktoré je možné dekódovať, aby sa v obraze našli oblasti s vysokou spoľahlivosťou. Veľkou výhodou pri detekcii postáv v obraze cez Tensorflow je teda to, že spolu s vektormi výstupného modelu dostávame aj štruktorované dáta pravdepodobnosti jednotlivých častí postavy, ktoré môžeme využiť na ďalšie spracovanie, alebo znázorniť pre lepšiu predstavu (obr. \ref{fig:tfPoseHeatmap}).
 
-\subsubsection{Tepelná mapa}
-Každá pozícia v tejto tepelnej mape má určité skóre spoľahlivosti. Tento údaj vyjadruje pravdepodobnosť, že v danom umiestnení existuje určitá časť daného typu. Dá sa to považovať za rozdelenie pôvodného obrázka do mriežky \textit{$15\times 15$}, kde skóre v termografickej mape poskytuje klasifikáciu pravdepodobnosti, že každý kľúčový bod existuje v každom štvorci mriežky.
+\subsubsection{Mapa pravdepodobnosti}
+Každá pozícia v tejto mape pravdepodobnosti má určité skóre spoľahlivosti. Tento údaj vyjadruje pravdepodobnosť, že v danom umiestnení existuje určitá časť daného typu. Dá sa to považovať za rozdelenie pôvodného obrázka do mriežky \textit{$15\times 15$}, kde skóre v termografickej mape poskytuje klasifikáciu pravdepodobnosti, že každý kľúčový bod existuje v každom štvorci mriežky.
 
 \subsubsection{Výstupný vektor}
-Každý výstupný vektor je 3D vektor, ktorý má veľkosť \textit{$šírka  \times výška \times 34$}. Číslo 34 je dvojnásobok kľúčových bodov( 2 $\times$ 17). Tepelné mapy sú iba aproximáciou toho, kde sa skutočné kľúčové body nachádzajú, pričom výstupné vektory zodpovedajú svojou polohou bodom tepelnej mapy a používajú sa na predpovedanie presnej polohy jednotlivých častí ľudského tela. Prvých 17 rezov výstupného vektora obsahuje x-ovú súradnicu vektora a posledných 17 rezov y-ovú súradnicu. Veľkosti výstupného vektora sú v rovnakej mierke ako pôvodný vstupný obrázok.
+Každý výstupný vektor je 3D vektor, ktorý má veľkosť \textit{$šírka  \times výška \times 34$}. Číslo 34 je dvojnásobok kľúčových bodov ( 2$\times$17). Mapy pravdepodobnosti sú iba aproximáciou toho, kde sa skutočné kľúčové body nachádzajú, pričom výstupné vektory zodpovedajú svojou polohou bodom tepelnej mapy a používajú sa na predpovedanie presnej polohy jednotlivých častí ľudského tela. Prvých 17 rezov výstupného vektora obsahuje x-ovú súradnicu vektora a posledných 17 rezov y-ovú súradnicu. Veľkosti výstupného vektora sú v rovnakej mierke ako pôvodný vstupný obrázok.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figures/tfPose1.png}
-	\caption{Tepelná mapa  - vstupný obraz (a), tepelná mapa postavy (b)}
+	\caption{Tepelná mapa  - vstupný obraz (a), tepelná mapa postavy (b)\cite{githubTF}}
 	\label{fig:tfPoseHeatmap}
 \end{figure}
 
 \subsection{AlphaPose}
-AlphaPose\cite{fang2017rmpe} je zameraný na detekciu ľudských postáv s najvyššou presnosťou. Prvé začiatky tohto frameworku siahajú do roku 2017. Tento framework pracuje na princípe používania ohraničovacích boxov \textit{(angl. bounding box)}. Pre efektívne fungovanie algoritmu je použitý najmodernejší detektor objektov. Autori práce použili natrénovaný model Faster RCNN\cite{ren2015faster} a model pre detekciu postáv v obraze\cite{newell2016stacked}, ktorý je zameraný na SPPE detekciu. Primárna myšlienka práce spočíva v riešení dvoch hlavných problémov, ktoré pri takejto detekcii vznikajú:
+AlphaPose\cite{fang2017rmpe} je zameraný na detekciu ľudských postáv s najvyššou presnosťou. Prvé začiatky tohto frameworku siahajú do roku 2017. Tento framework pracuje na princípe používania ohraničovacích boxov (angl. bounding box). Pre efektívne fungovanie algoritmu je použitý najmodernejší detektor objektov. Autori práce použili natrénovaný model Faster RCNN\cite{ren2015faster} a model pre detekciu postáv v obraze\cite{newell2016stacked}, ktorý je zameraný na SPPE detekciu. Primárna myšlienka práce spočíva v riešení dvoch hlavných problémov, ktoré pri takejto detekcii vznikajú:
 \begin{itemize}
-\item \textbf{Problém lokalizačnej chyby} - skutočnosti je tento model dosť náchylný na chyby pri spočívajúce v použití ohraničovacích boxov. Aj v prípadoch, keď sú ohraničovacie rámčeky
-sú považované za správne a majú dostatočne vysokú spoľahlivosť \textit{$(I_oU > 0,5)$}, zistené ľudské pozície môžu byť stále nesprávne. 
-\item \textbf{Redundantná detekcia} - model vytvára pózu pre každý ohraničovací box, čo vo výsledku vedie k duplicitnej detekcii rovnakej osoby (Obr. \ref{fig:alphaPoseRedundant})
+\item \textbf{Problém lokalizačnej chyby} - v skutočnosti je tento model dosť náchylný na chyby spočívajúce v použití ohraničovacích boxov. Aj v prípadoch, keď sú ohraničovacie rámčeky považované za správne a majú dostatočne vysokú spoľahlivosť \textit{$(I_oU > 0,5)$}, zistené ľudské pozície môžu byť stále nesprávne. 
+\item \textbf{Redundantná detekcia} - model detekuje pozíciu pre každý ohraničovací box, čo vo výsledku vedie k duplicitnej detekcii rovnakej osoby (obr. \ref{fig:alphaPoseRedundant})
 \end{itemize}
 
 \begin{figure}[H]
@@ -334,14 +335,14 @@ Okrem  najpoužívajenších metód ako OpenPose, TF pose estiamtion, či AlphaP
 
 
 \subsubsection{WrnchAI}
-WrnchAI je platforma, ktorá je zameraná na detekciu postáv v obrazoch vytvorená v roku 2014. S myšlienkou využiť umelú inteligenciu a založiť projekt pre detekciu postáv prišiel Paul Kruszewski. Napriek tomu, že táto platforma existuje už niekoľko rokov a v niektorých článkoch\cite{openposeVsWrnchAI} dokázala dokonca získať lepší čas detekcie oproti iným metódam,  nestala sa veľmí populárnym nástrojom medzi vývojarmi. Jedným z hlavných dôvodov je to, že knižnica nie je voľne dostupná pre vývojárov a jedná sa o platený projekt bez voľného prístupu k zdrojovému kódu. Súčasná cenová politika základnej verzie sa pohybuje na úrovni \$500 za mesiac používania s možnosťou vyskúšania trial verzie na prvý mesiac zadarmo. Trial verzia však funguje v obmedzenom režime  bez prístupu ku všetkým platformám. Pre bežného človeka sa táto cena môže zdať privysoká, avšak vzhľadom na jeho široké možnosti využitia  v rôznych oblastiach sa jedná o adekvátnu cenu. WrnchAI však našiel svoje uplatnenie možnosťou využitia na rôznych typoch zariadení, ktoré sa prispôsobujú konkrétnym podmienkam. V súčasnosti WrnchAI poskytuje 4 hlavné platformy:
+WrnchAI\cite{wrnchAI} je platforma, ktorá je zameraná na detekciu postáv v obrazoch vytvorená v roku 2014. S myšlienkou využiť umelú inteligenciu a založiť projekt pre detekciu postáv prišiel Paul Kruszewski. Napriek tomu, že táto platforma existuje už niekoľko rokov a v niektorých článkoch\cite{openposeVsWrnchAI} dokázala získať lepší čas detekcie oproti iným metódam,  nestala sa veľmí populárnym nástrojom medzi vývojarmi. Jedným z hlavných dôvodov je to, že knižnica nie je voľne dostupná pre vývojárov a jedná sa o platený projekt bez voľného prístupu k zdrojovému kódu. Súčasná cenová politika základnej verzie sa pohybuje na úrovni \$500 za mesiac používania s možnosťou vyskúšania trial verzie na prvý mesiac zadarmo. Trial verzia však funguje v obmedzenom režime  bez prístupu ku všetkým platformám. Pre bežného človeka sa táto cena môže zdať privysoká, avšak vzhľadom na jeho široké možnosti využitia  v rôznych oblastiach sa jedná o adekvátnu cenu. WrnchAI však našiel svoje uplatnenie možnosťou využitia na rôznych typoch zariadení, ktoré sa prispôsobujú konkrétnym podmienkam. V súčasnosti WrnchAI poskytuje 4 hlavné platformy:
 \begin{itemize}
-\item \textbf{wrnchPC} - umožňuje zachytiť ľudský pohyb neobmedzeného množstva ľudí, bez toho, aby boli použité drahé senzory či kamery. WrnchPC je postavený na základoch  umelej inteligencie tak, aby sa ľahko integroval do všetkých aplikácií. Použité sú modely hlbokého učenia, aby bolo zabezpečené spoľahlivé zachytenie ľudského pohybu pre všetky činnosti a v akomkoľvek prostredí.
+\item \textbf{wrnchPC} - umožňuje zachytiť ľudský pohyb neobmedzeného množstva ľudí, bez toho, aby boli použité drahé senzory či kamery. WrnchPC je postavený na základoch  umelej inteligencie tak, aby sa ľahko integroval do všetkých aplikácií. Použité sú modely hlbkového učenia, aby bolo zabezpečené spoľahlivé zachytenie ľudského pohybu pre všetky činnosti a v akomkoľvek prostredí.
 
 
 \item \textbf{wrnchCloud} - detekuje ľudský postoj na vzdialenom serveri. WrnchCloud je nákladovo veľmi efektívne riešenie, pretože nepotrebuje žiadne vysoké hardwarové nároky okrem bežného počítača s pripojením na internet. Celý proces detekcie prebieha na serveri, čo odľahčuje zákaznika od nákupu drahých grafických kariet a iného hardwaru. Toto riešenie je škálovateľné s možnosťou spracovania viacerých vstupov súčasne. Využitie cloudového riešenie zároveň pomáha držať krok moderných trendov v internetových technológiách.
 
-\item \textbf{wrnchMobile } - umožňuje využiť mobilné zariadenia na vytvorenie programu snímania postáv v reálnom čase. Taktiež dokáže spolupracovať s mobilnými operačnými systémami ako Android alebo IOS. Jeho základnym princípom je efektívne využitie výpočtového výkonu  na malých prenosných zariadeniách ako sú napríklad mobilné telefóny. Tento druh platformy taktiež dokáže pracovať aj s dalšími pokročilými vecami ako je napríklad rozšírená realita. S touto pomocou rozšírenej reality dokáže wrnchMobile snímanú postavu detekovať a zároveň zobrazovať napríklad do VR okuliarov.
+\item \textbf{wrnchMobile } - umožňuje využiť mobilné zariadenia na vytvorenie programu snímania postáv v reálnom čase. Taktiež dokáže spolupracovať s mobilnými operačnými systémami ako Android alebo IOS. Jeho základnym princípom je efektívne využitie výpočtového výkonu  na malých prenosných zariadeniách ako sú napríklad mobilné telefóny. Tento druh platformy taktiež dokáže pracovať aj s dalšími pokročilými nástrojmi ako je napríklad rozšírená realita. S pomocou rozšírenej reality dokáže wrnchMobile snímanú postavu detekovať a následne zobrazovať napríklad do VR okuliarov.
 
 
 \item \textbf{wrnchEmbedded} - poskytuje možnosť detekovať postavy na rôznych automatizovaných zariadeniach ako napríklad roboty, samoriadiace vozidlá, aby mohli v reálnom čase vidieť a interagovať s ľuďmi a ich pohybom. WrnchEmbedded pomáha zariadeniam predvídať ľudské správanie a najlepšie reagovať vo všetkých situáciách. Ich program je optimalizovaný najmä na rôzne priemyselné platformy a počítače, vďaka ktorým by mala byť ich integrácia s platformou Wrnch veľmi jednoduchá. V súčasnosti je však táto časť platformy stále v aktívnom vývoji a momentálne nie je dostupná. 
@@ -354,44 +355,43 @@ WrnchAI je platforma, ktorá je zameraná na detekciu postáv v obrazoch vytvore
 	\label{fig:wrnchAICloud}
 \end{figure}
 
-Na obrázku \ref{fig:wrnchAICloud} môžeme vidieť výsledok metódy cloudovej platformy WrnchAI. Táto platforma  funguje dostatočne spoľahlivo aj pri atypických polohách ľudského tela, ako je napríklad sedavá poloha vodiča za volantom. WrnchAI okrem polohy tela poskytuje aj detekciu kľúčových bodov tváre a kľúčové body rúk a prstov. Oproti ostatným knižniciam a frameworkom je možnost použiť WrnchAI ako komplexné riešenie na detekciu celého ľudského tela, čo napríklad pri OpenPose nie je bez použitia dalších rozšírení možné. V skúšobnej trial verzii  taktiež nie je možné odstrániť vodoznak firmy, ktorý sa nachádza v pravom dolnom rohu výstupného obrázka.
+Na obrázku \ref{fig:wrnchAICloud} je znázornený výsledok metódy cloudovej platformy WrnchAI. Táto platforma  funguje dostatočne spoľahlivo aj pri atypických polohách ľudského tela, ako je napríklad sedavá poloha vodiča za volantom. WrnchAI okrem polohy tela poskytuje aj detekciu kľúčových bodov tváre a kľúčové body rúk a prstov. Oproti ostatným knižniciam a frameworkom je možnosť použiť WrnchAI ako komplexné riešenie na detekciu celého ľudského tela, čo napríklad pri OpenPose nie je bez použitia dalších rozšírení možné. V skúšobnej trial verzii  taktiež nie je možné odstrániť vodoznak firmy, ktorý sa nachádza v pravom dolnom rohu výstupného obrázka.
 
 
 
 \newpage
 \section{Využitie sférických kamier na detekciu obrazu}
 \label{sec:Spherical cameras}
-
-Výstup z kamery je reprezentovaný 2D snímkou, ktorá  zachytáva obraz z celého svojho okolia. Toto zobrazenie sa dá popísať  modelom sférického obrazu (Obr. \ref{fig:sphericalModel}). Predpokladajme, že existuje priestorová guľa a bod \textit{P}, ktorý sa nachádza v priestore. Priesečník povrchu gule s čiarou spájajúcou bod \textit{p} a stred gule je premietanie bodu \textit{p} do gule. Takýmto spôsobom sa získa sférický obraz premietaním všetkých viditeľných bodov do gule. Toto sa nazýva sférická projekcia. Záber sférickej projekcie  môžeme popísať dvomi uhlami. Prvý uhol vyjadruje záber v horizontálnom smere $ \phi \in [-180^\circ , +180^\circ ]$ a druhý uhol vyjadruje záber vo vertikálnom smere  $\theta \in [-90^\circ , +90^\circ ]$.
+Súčasný trh ponúka veľké množstvo kamier rôznych typov. Bežne používaným typom sú kamery, ktoré majú  uhol záberu v priemre  od 70$^\circ$ do 90$^\circ$. Problém takejto kamery je zachytenie celého snímaného objektu z malej vzdialenosti. Pri použiti v interiéri vozidla by tak  postava vodiča nemusela byť zosnímaná celá, pretože interiér bežného vozidla nie je veľmi rozsiahly. Kamera by musela byť umiestnená od vodiča v dostatočnej vzdialenosti, čo môže predstavovať problém. Okrem týchto typov však existujú aj kamery, ktoré majú uhol záberu podstatne vyšší, či dokonca umožňujú aj panoramatický záber celého svojho okolia. Na snímanie interiéru vozidla je vhodné použiť napríklad sférickú kameru, z ktorou je postava vodiča úplne zachytená.
+Výstup zo sférickej kamery je reprezentovaný 2D snímkou, ktorá  zachytáva obraz z celého svojho okolia. Toto zobrazenie sa dá popísať  modelom sférického obrazu (obr. \ref{fig:sphericalModel}). Predpokladajme, že existuje priestorová guľa a bod \textit{P}, ktorý sa nachádza v priestore. Priesečník povrchu gule s čiarou spájajúcou bod \textit{p} a stred gule je premietanie bodu \textit{p} do gule. Takýmto spôsobom sa získa sférický obraz premietaním všetkých viditeľných bodov do gule. Toto sa nazýva sférická projekcia. Záber sférickej projekcie  môžeme popísať dvomi uhlami. Prvý uhol vyjadruje záber v horizontálnom smere $ \phi \in [-180^\circ , +180^\circ ]$ a druhý uhol vyjadruje záber vo vertikálnom smere  $\theta \in [-90^\circ , +90^\circ ]$.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Figures/sphericalModel.png}
 	\caption{Model sférickej projekcie.\cite{li2006full}}
 	\label{fig:sphericalModel}
 \end{figure}
-Zhotovenie takejto sférickej snímky je technicky  náročnjšie ako bežná fotografia. Pre dosiahnutie správneho výsledku je potrebné zachovať určité podmienky. Ideálny sférický model obrazového snímača by mal spĺnať nasledujúce vlastnosti:
+Zhotovenie takejto sférickej snímky je technicky  náročnejšie ako zhotovenie bežnej fotografie. Takýto záber sa zvyčajne skladá zo sérii viacerých fotiek, ktoré su snímané viacerými objektívmi. Pri takomto zhotovení fotografie môže dochádzať k určitým problémom, ktoré by nemuseli zaručiť správny výsledok. Pre dosiahnutie požadovanej kvality a zachytenie  celého okolia kamery je potrebné zachovať určité podmienky. Ideálny sférický model obrazového snímača by mal preto spĺnať nasledujúce vlastnosti:
 \begin{itemize}
-\item \textbf{Úplný zorný uhol} \textit{(angl. Full FOV)} - každá sférická kamera by mala vytvárať obraz z celého svojho okolia bez vynechania miesta v scéne. Ak sa nejaká časť scény vynechá, nejedná sa o úplný sfrérický záber.
-\item \textbf{Jeden pozorovací zdroj} - snímanie celej scény by malo  byť zabezpečené z jedného rovnakého miesta, aby jednotlivé časti scény na seba správne nadväzovali. V prípade, že by scéna bola snímana z viacerých miest, rekonštrukcia výslednej sférickej sníky  by sa nemusela správne vytvoriť.
+\item \textbf{Úplný zorný uhol} \textit{(angl. Full FOV)} - každá sférická kamera by mala vytvárať obraz z celého svojho okolia bez vynechania miesta v scéne. Ak sa nejaká časť scény vynechá, nejedná sa o úplný sférický záber.
+\item \textbf{Jeden pozorovací zdroj} - snímanie celej scény by malo  byť zabezpečené z jedného rovnakého miesta, aby jednotlivé časti scény na seba správne nadväzovali. V prípade, že by scéna bola snímaná z viacerých miest, rekonštrukcia výslednej sférickej snímky  by sa nemusela správne vytvoriť. Niektoré objekty v scéne by mohli byť napríklad posunuté alebo roztiahnuté, čo by nezodpovedalo reálnemu stavu.
 \item \textbf{Snímanie celej scény v rovnakom čase} - zariadenie na snímanie by malo vyhotoviť snímok celej scény v jednom momente. Táto vlastnosť je potrebná najmä pri snímaní dynamických scén, alebo pohyblivých objektov. Pri jej nedodržaní by sa pohybujúci objekt mohol vo výslednom obraze objaviť viackrát, alebo byť rozmazaný.
 \end{itemize}
-\newpage
 \subsubsection*{Možnosti snímania sférického obrazu}
-Aby  sme dostali obraz, ktorý zachytáva celú scénu, je potrebné takýto obraz najskôr nasmínať. Existuje mnoho metód a postupov, ako možno vytvoriť sférickú fotografiu. Každé riešenie má svoje výhody aj nevýhody, ktoré môžu ovplyvniť konečný výber spôsobu výtvárania sférickej fotografie. Medzi najbežnejšie spôsoby zhotovenia sférických obrazov je možné zaradiť tieto spôsoby:
+Aby  bolo možné získať obraz, ktorý zachytáva celú scénu, je potrebné takýto obraz najskôr nasmínať. Existuje mnoho metód a postupov, ako možno vytvoriť sférickú fotografiu. Každé riešenie má svoje výhody aj nevýhody, ktoré môžu ovplyvniť konečný výber spôsobu výtvárania sférickej fotografie. Tieto spôsôby sa  častokrát líšia najmä vo finančnej, či technickej náročnosti.  Je potrebné si preto uvedomiť, či  výsledná fotografia musí spĺňať rôzne kritéria a podľa toho prispôsobiť výber. Pri použití takejto kamery v interiéri vozidla patrí najmä kompaktná veľkosť, aby kamera nebránila vodičovi vo výhľade, ale aj čo najmenší počet objektívov, aby nevznikalo veľa chýb spôsobených v spájaní jednotlivých snímok. Medzi najbežnejšie možnosti zhotovenia sférických obrazov je možné zaradiť tieto spôsoby:
 \begin{itemize}
-\item \textbf{Použitie bežného fotoaparátu} - vytvorenie sférickej fotografie je možné aj pomocou  bežného fotoaparátu, ktorý má obmedzený uhol záberu. Aby bolo možné zachytiť celú scnénu, je potrebné  vytvoriť fotografie celej scény, ktoré sa následne poskladajú  do mozaiky. Toto riešenie je veľmi jednoduché, avšak má  obrovské nevýhody. Takýmto  snímaním nie je možné zachytiť dynamickú scénu a na výslednej fotografii sa môžu pohybujúce objekty objaviť viackrát. Ďalšou nevýhodou je zdĺhavé vytváranie a spájanie jednotlivých snímok, ktore nemusia vo výsledku  na seba úplne nadväzovať.
+\item \textbf{Použitie bežného fotoaparátu} - vytvorenie sférickej fotografie je možné aj pomocou  bežného fotoaparátu, ktorý sa nachádza napríklad v dnešných smartfónoch. Hlavným obmedzením, ktoré toto riešenie prináša je obmedzený uhol záberu kamery. Aby bolo možné zachytiť celú scénu, je potrebné  vytvoriť fotografie celého okolia, ktoré sa následne poskladajú  do mozaiky. Toto riešenie je veľmi jednoduché, avšak má obrovské nevýhody. Takýmto  snímaním nie je možné zachytiť dynamickú scénu a na výslednej fotografii sa môžu pohybujúce objekty objaviť viackrát. Ďalšou nevýhodou je zdĺhavé vytváranie a spájanie jednotlivých snímok, ktore nemusia vo výsledku  na seba úplne nadväzovať. Takéto riešenie sa často používa napríklad pri  fotení panoramatickej fotky, kedy je pohyb objektov minimálny.
 
-\item \textbf{Použitie skupiny kamier} - riešenie je založené na použití viacerých bežných fotoaparátov súčasne. Takéto zariadenie dokáže v jednom momente ovládať všetky fotoaparáty a zhotoviť fotografiu, ktorú následne správne spojí do výslednej sférickej fotografie. Takéto zariadenie je však technicky náročné a samotné fotoaparáty musia byť schopné komunikovať s hlavnou jednotkou zariadenia. Tento faktor sa vo výsledku prejaví najmä vo vysokej cene zariadennia. Okrem ceny  je však zariadenie veľké a ťažké, čo môže byť pre určité zamerania obmedzujúce. Zariadenie spočívajúce zo skupiny 6 kamier vytvorila napríklad firma GoPro. Skladá sa zo 6 outdoorových kamier, ktoré sú pripojené ku centrálnej jednotke. Ukážky takýchto zariadení sú znázornené na obrázku \ref{fig:goproOmni}
+\item \textbf{Použitie skupiny kamier} - riešenie je založené na použití viacerých bežných fotoaparátov súčasne. Takéto zariadenie dokáže v jednom momente ovládať všetky fotoaparáty a zhotoviť fotografiu, ktorú následne správne spojí do výslednej sférickej fotografie. Takéto zariadenie je však technicky náročné a samotné fotoaparáty musia byť schopné komunikovať s hlavnou jednotkou zariadenia. Tento faktor sa vo výsledku prejaví najmä vo vysokej cene zariadennia. Okrem ceny  je však zariadenie veľké a ťažké, čo môže byť pre určité zamerania obmedzujúci faktor. Zariadenie spočívajúce zo skupiny viacerých kamier vytvorila napríklad firma GoPro. Skladá sa zo 6 outdoorových kamier, ktoré sú pripojené ku centrálnej jednotke. Zariadenie je znázornené na obrázku \ref{fig:goproOmni}.
 
 \item \textbf{Použitie všesmerovej kamery} - ďalšiou populárnou metódou je snímať široké scény jediným fotoaparátom s použitím zakriveného zrkadla. Tvar zrkadla môže byť napríklad parabolický, hyperbolicý alebo eliptický, vďaka čomu  poskytuje 360$ ^\circ$ zorné pole v horizontálnej rovine a viac ako 100$^\circ$ vo vertikálnej rovine. Použitie všesmerovej kamery však neprináša  úplný 360$ ^\circ$  obraz celej scény, pretože nieje možné zachytiť  obraz nad šošovkou a obraz pod zakriveným zrkadlom. Z tohto dôvodu môže vzniknúť limitujúci faktor pri výbere.  
 
-\item \textbf{Kombinácia hemisférických kamier} - najpoužívanejšou alternatívou na získanie sférickej fotografie je použitie dvojice objektívov tzv. rybie oko \textit{(angl. Fish eye)}. Takýto objektív sa od obyčajného líši najmä svojím obrovským uhlom záberu, ktorý  mnohokrát prekonáva hranicu 180$ ^\circ$. Samotná sférická kamera sa skladá z dvoch oproti sebe umiestneních objektívov, ktoré sa následne spracujú do výslednej sférickej fotografie. Hlavnou výhodou takétoho riešenia je cena, dostatočne kvalitný obraz bez väčších rozdielov medzi jednotlivými snímkami objektívov a rýchle vytvorenie snímky.
+\item \textbf{Kombinácia hemisférických kamier} - najpoužívanejšou alternatívou na získanie sférickej fotografie je použitie dvojice objektívov tzv. rybie oko (angl. fish eye). Takýto objektív sa od obyčajného líši najmä svojím obrovským uhlom záberu, ktorý  mnohokrát prekonáva hranicu 180$ ^\circ$. Samotná sférická kamera sa skladá z dvoch oproti sebe umiestneních objektívov, ktoré sa následne spracujú do výslednej sférickej fotografie. Hlavnou výhodou takétoho riešenia je cena, dostatočne kvalitný obraz bez väčších rozdielov medzi jednotlivými snímkami objektívov a rýchle vytvorenie snímky.
 
 \end{itemize}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{Figures/goproOmni.jpg}
+	\includegraphics[width=0.5\textwidth]{Figures/goproOmni.jpg}
 	\caption{GoPro Omni - séria synchronizovaných kamier pre zachytenie sférickej fotografie.\cite{goproOmni}}
 	\label{fig:goproOmni}
 \end{figure}
@@ -399,8 +399,7 @@ Aby  sme dostali obraz, ktorý zachytáva celú scénu, je potrebné takýto obr
 
 \subsubsection*{Formát sférickej fotografie}
 Panoramatické projekcie sa používajú na mapovanie úplnej alebo čiastočnej 3D scény na dvojrozmerný povrch. Napríklad cylindrické projekcie sprostredkujú scénu viditeľnú vo všetkých smeroch, s výnimkou priamo nad kamerou a pod kamerou. To znamená, že horná a dolná časť imaginárneho valca v takýchto obrázkoch máp chýba. Cylindrickú prjekciu je teda možné zobraziť aj ako obyčajnú fotografiu, ktorá však bude veľmi  široká z dôvodu zachytenia scény v celom horizontálnom pásme.
-Na rozdiel od cylindrického pohľadu, sférické projekcie majú vertikálny uhol pozorovania 180$ ^\circ$ a horizontálny uhol pohľadu 360$ ^\circ$. Obsahujú svetelné údaje pochádzajúce zo všetkých smerov a preto je možné ich vizualizovať tak, že premietajú jednotlivé body do gule. Medzi najznámejšie  a súčasne používané formáty patria zobrazenie pomocou kubickej mapy \textit{(angl. cubemap)} a ekvidistantné zobrazenie \textit{(angl. equirectangular )}. Tieto projekcie  sa líšia v určitých vlastnostiach:
-
+Na rozdiel od cylindrického pohľadu, sférické projekcie majú vertikálny uhol pozorovania 180$ ^\circ$ a horizontálny uhol pohľadu 360$ ^\circ$. Obsahujú svetelné údaje pochádzajúce zo všetkých smerov a preto je možné ich vizualizovať tak, že premietajú jednotlivé body do gule. Medzi najznámejšie  a súčasne používané formáty patria zobrazenie pomocou kubickej mapy (angl. cubemap) a ekvidistantné zobrazenie (angl. equirectangular). Tieto projekcie  sa líšia v určitých vlastnostiach:
 \begin{itemize}
 \item \textbf{Kubické zobrazenie} -  pozostáva zo 6 samostatných plôch kocky na vyplnenie celej scény. Tieto mapy sa často vytvárajú zobrazovaním scény pomocou skupiny šiestich 90-stupňových kamier, ktoré poskytujú textúru vľavo, spredu, vpravo, zozadu, zhora a dole. Šesť obrázkov je zvyčajne usporiadaných ako rozložená kocka. Každá plocha  má zodpovedajúcu textúrnu mapu. Po zložení je pohľad premapovaný na plochy kocky, a pripomínajú kríž položený na bok. Jednotlivé plochy  sa dokážu spojiť veľmi jednoducho. Na jednej strane je kubická projekcia akousi povrchovou textúrou ako obyčajná 2D textúra. Na druhej strane je to určitý formát zobrazenia sférickej fotografie, pretože každý bod v 3D súradnicovom priestore textúry zodpovedá ploche kocky, ku ktorej je najbližšie.
 
@@ -409,17 +408,17 @@ Na rozdiel od cylindrického pohľadu, sférické projekcie majú vertikálny uh
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Figures/sphericalModel2.png}
+	\includegraphics[width=1\textwidth]{Figures/sphericalModel2.png}
 	\caption{Znázornenie sférických projekcií - kubické zobrazenie (a), ekvidistantné zobrazenie (b)}
 	\label{fig:sphericalModel2}
 \end{figure}
 
 Konverzia rovnostranného obrázka na kubickú mapu sa najčastejšie používa pre niektoré riešenia virtuálneho prostredia alebo pri úprave severných a južných pólov sférických panorám.
-Rovnostranné obrázky sú roztiahnuté v horizontálnom smere. Je to dôvod na značné množstvo redundancie údajov v blízkosti pólov. Pri zmenšovaní obrázka v editore sa efektívne rozlíšenie textúry zníži podľa očakávania - s výnimkou blízkych pólov. To môže spôsobiť radiálne artefakty, ktoré sa zobrazia pri zobrazovaní 3D fotografie. Rovnostranná projekcia je preto vhodná na simuláciu iba tých prostredí, v ktorých sú deformácie textúry v hornej a dolnej časti gule zanedbateľné. Riešením je prepnúť na menej zdeformovanú projekciu pred zmenšením mierky, rozmazaním alebo zaostrením panorámy a v prípade potreby prepnúť do sférického režimu neskôr. Kubická projekmcia našla využitie v počítačovej grafike v reálnom čase. Mapovanie prostredia alebo skôr guľové mapovanie sa používa na vytváranie lesklých alebo reflexných objektov. V takom prípade by textúra mapy mala byť pohľadom na scénu, ktorá sa odráža v lesklej gule.
+Rovnostranné obrázky sú roztiahnuté v horizontálnom smere. Je to dôvod na značné množstvo redundancie údajov v blízkosti pólov. Pri zmenšovaní obrázka v editore sa efektívne rozlíšenie textúry zníži podľa očakávania - s výnimkou blízkych pólov. To môže spôsobiť rôzne artefakty v obraze, ktoré sa zobrazia pri zobrazovaní 3D fotografie. Rovnostranná projekcia je preto vhodná na simuláciu iba tých prostredí, v ktorých sú deformácie textúry v hornej a dolnej časti gule zanedbateľné. Riešením je prepnúť na menej zdeformovanú projekciu pred zmenšením mierky, rozmazaním alebo zaostrením panorámy a v prípade potreby prepnúť do sférického režimu neskôr. Kubická projekcia našla využitie v počítačovej grafike v reálnom čase. Mapovanie prostredia alebo skôr guľové mapovanie sa používa na vytváranie lesklých alebo reflexných objektov. V takom prípade by textúra mapy mala byť pohľadom na scénu, ktorá sa odráža v lesklej gule. V tejto práci však nieje  úplný sférický záber potrebný. Hlavným snímaným objektom je vodič, ktorý dokáže byť zachytený aj kamerou s dostatočne širokým záberom napríklad športovou akčnou kamerou. Z tohto dôvôdu sa v programe využíva iba časť výstupu kamery, v ktorej sa nachádza celá postava vodiča.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Figures/cubemapVsEcti.png}
+	\includegraphics[width=1\textwidth]{Figures/cubemapVsEcti.png}
 	\caption{Rovnaká sférická fotografia v rôznych zobrazeniach  - kubické zobrazenie (a), ekvidistantné zobrazenie (b)}
 	\label{fig:sphereFormats}
 \end{figure}
@@ -430,19 +429,20 @@ Rovnostranné obrázky sú roztiahnuté v horizontálnom smere. Je to dôvod na 
 \newpage
 \section{Vlastná implementácia}
 \label{sec:Vlastná implementácia}
-
-\subsection{Popis programu}
-Táto kapitola je zameraná na  popis implementácie vlastného programu. Hlavnou podstatouvýsledného programu je detekcia vodiča z videa alebo z jednotlivých obrázkov nahratých kamerou z interiéru vozidla. V kapitole sú tiež detailné popísané možnosti, problémy a riešenia nahrávania samotných videí z interiéru vozidla pri rôznych problematických podmienkach. Z dôvôdu technickej náročnosti sú tieto videá spracované až dodatočne po ich stiahnutí do počítača, kde sú následne spracované  programom. Riešenie teda neumožňuje spracovanie videa v reálnom čase počas jazdy. To však neznamená, že taká možnosť neexistuje. Tento program môže poslúžiť ako inšpirácia pre budúce riešenia, ktoré by sa zameriavali na spracovanie podobného druhu aj v reálnom čase.\par
-Program  by mal byť schopný detekovať vodičove správanie a znázorňovať stav daného vodiča s vyhodnotením situácie. Medzi takúto detekciu patrí napríklad analýza posedu v aute, umiestnenie rúk alebo natočenie hlavy. Program musí podporovať použitie viacerých frameworkov na detekciu ľudských postáv a umožniť porovnanie medzi sebou formou vhodného výstupu. Základné metódy, ktoré musí program podporovať sú Tensorflow pose Estimation a OpenPose. Tieto frameworky boli zvolené najmä z dôvodu, že sa jedná o najviac používanie metódy na detekciu postáv v súčasnosti. Okrem toho majú výborne zdokumentované zdrojové kódy a dostatočné množstvo informácii pre vlastnú implementáciu. Okrem základnej detekcie postáv program umožňuje aj rozšírený mód. Tento rozšírený mód sa zameriava na detekciu ďalších vlastnosti šoféra vozidla ako napríklad zapnutie bezpečnostného pásu, alebo natočenie hlavy. Z týchto informácii je potom možná ďalšia analýza vodičovho správania a vyhodnotenie rizík. Program je rozdelený do jednotlivých samostatných celkov, ktoré sú na sebe nezávislé. Každý z týchto celkov spracováva konkrétnu časť:
+Táto kapitola je zameraná na  popis implementácie vlastného programu. Hlavnou podstatou výsledného programu je detekcia vodiča z videa alebo z jednotlivých obrázkov nahratých kamerou z interiéru vozidla a analýza jeho správania. V kapitole sú tiež detailne popísané možnosti, problémy a riešenia nahrávania samotných videí z interiéru vozidla pri rôznych pracovných podmienkach. Z dôvôdu technickej náročnosti sú tieto videá spracované až dodatočne po ich stiahnutí do počítača, kde sú následne spracované  programom. Riešenie teda neumožňuje spracovanie videa v reálnom čase počas jazdy. To však neznamená, že taká možnosť neexistuje. Tento program môže poslúžiť ako inšpirácia pre budúce riešenia, ktoré by sa zameriavali na spracovanie podobného druhu aj v reálnom čase.\par
+Program  by mal byť schopný detekovať vodičove správanie a znázorňovať stav daného vodiča s vyhodnotením situácie. Medzi takúto detekciu patrí napríklad analýza posedu v aute, umiestnenie rúk alebo natočenie hlavy. Program musí podporovať použitie viacerých frameworkov na detekciu ľudských postáv a umožniť vzájomné porovnanie medzi sebou formou vhodného výstupu. Základné metódy, ktoré musí program podporovať sú Tensorflow pose Estimation a OpenPose. Tieto frameworky boli zvolené najmä z dôvodu, že sa jedná o najviac používané metódy na detekciu postáv v súčasnosti. Okrem toho majú výborne zdokumentované zdrojové kódy a dostatočné množstvo informácii pre vlastnú implementáciu. Okrem základnej detekcie postáv program umožňuje aj rozšírený mód. Tento rozšírený mód sa zameriava na detekciu ďalších vlastnosti šoféra vozidla ako napríklad natočenie hlavy. Z týchto informácii je potom možná ďalšia analýza vodičovho správania a vyhodnotenie rizík vo vedení vozidla. Program je rozdelený do jednotlivých samostatných celkov, ktoré sú na sebe nezávislé. Každý z týchto celkov je zameraný na konkrétnu časť:
 \begin{itemize}
-\item \textbf{Detekcia vodiča} (Kapitola \ref{sec:driverDetection}) - základným prvkom programu je  analýza vodičovho posedu.  V kapitole je popísané využitie jednotlivých frameworkov na detekciu a analýza ľudského tela zo zozbieraných údajov pomocou jednotlivých frameworkov.
-
-\item \textbf{Otočenie hlavy} (Kapitola \ref{sec:headOrientation}) - je zameraná na rotáciu a natočenie hlavy vodiča pomocou detekcie tvárových landmarkov a knižnice dlib\cite{dlib09}. 
-
-\item \textbf{Bezpečnostný pás} (Kapitola \ref{sec:safeBelt}) - táto kapitola je zameraná  predovšetkým na problematiku snímania bezbečnostného pásu pri rôznych nepriaznivých podmienkach.
+\item \textbf{Detekcia vodiča} (Kapitola \ref{sec:driverDetection}) - základným prvkom programu je  analýza vodičovho posedu.  V kapitole je popísané využitie jednotlivých frameworkov na detekciu a analýza ľudského tela zo zozbieraných údajov pomocou jednotlivých frameworkov a ich vzájomné porovnanie medzi sebou.
 
 
-\item \textbf{Neurónová sieť} (Kapitola \ref{sec:neuralNetwork}) - vo výslednej časti je popísaná implementácia neurónovej siete, ktorá vyhodnocuje jednotlivé výstupy predchádzajúcich častí.
+\item \textbf{Analýza pozície vodiča} (Kapitola \ref{sec:neuralNetwork}) - v tejto  časti je popísaná implementácia neurónovej siete, ktorá vyhodnocuje výstup z detekcie postavy. Neurónová sieť je zameraná hlavne  na kontrolu správnej pozíciu vodiča za volantom
+
+\item \textbf{Otočenie hlavy} (Kapitola \ref{sec:headOrientation}) - je zameraná na rotáciu a natočenie hlavy vodiča pomocou detekcie tvárových landmarkov a knižnice dlib\cite{dlib09}. Z tejto detekcie je možné určiť, či vodič správne sleduje situáciu v premávke.
+
+
+%\item \textbf{Bezpečnostný pás} (Kapitola \ref{sec:safeBelt}) - táto kapitola je zameraná  predovšetkým na problematiku snímania bezbečnostného pásu pri rôznych nepriaznivých podmienkach.
+
+
 
 \end{itemize}
 
@@ -541,7 +541,7 @@ OpenPose obsahuje mnoho ďalších nastaviteľných parametrov, ktoré  sú zvy�
 	\label{fig:op_result}
 \end{figure}
 
-Na obrázkoch je znázornený výstup  z metódy OpenPose testovaný na bežnej polohe vodiča pri rôznych svetelných podmienkach. Metóda si úspešne dokázala poradiť aj so zníženými či dokonca nevyhovujúcimi svetelnými podmienkami. Detekcia vodiča z ukážky bola testovaná na rozlíšení 729 $\times$ 700px. Z 3392 snímok z testovacieho videa bola postava vodiča zdetekovaná  3392 krát. To znamená, že úspešnosť detekcie sa pohybovala na úrovni 100\% aj pri nevyhovujúcich svetelných podmienkach. Metóda pracovala spoľahlivo ale nedostatočne rýchlo. Pri zvolenom rozlíšení sa spracovanie jednej snímky pohybovalo v rozmedzí 780ms až 950ms. Tieto údaje sú podrobne zhrnuté v tabuľke ???
+Na obrázkoch je znázornený výstup  z metódy OpenPose testovaný na bežnej polohe vodiča pri rôznych svetelných podmienkach. Metóda si úspešne dokázala poradiť aj so zníženými či dokonca nevyhovujúcimi svetelnými podmienkami. Detekcia vodiča z ukážky bola testovaná na rozlíšení 729 $\times$ 700px. Z 3392 snímok z testovacieho videa bola postava vodiča zdetekovaná  3392 krát. To znamená, že úspešnosť detekcie sa pohybovala na úrovni 100\% aj pri nevyhovujúcich svetelných podmienkach. Metóda pracovala spoľahlivo ale nedostatočne rýchlo. Pri zvolenom rozlíšení sa spracovanie jednej snímky pohybovalo v rozmedzí 780ms až 950ms. Tieto údaje sú podrobne zhrnuté v tabuľkách \ref{tab:openpose1} a \ref{tab:openpose2}
 
 
 \subsubsection*{TF Pose estimation}
@@ -572,9 +572,9 @@ Hlavným problémom pri použití viacerých knižníc na detekciu v jednom prog
 
 
 
-\subsubsection*{Porovnanie metód}
+\subsubsection*{Porovnanie výsledkov metód na detekciu postáv}
 \label{sec:compare}
-Testovanie úspešnosti  prebehlo na viacerých videách pri rôznych  pracovných a svetelných  podmienkach. Aby bola nasimulovaná bežná  jazda v aute, na simuláciu bolo primárne použité video nahraté v slabších  svetelných podmienkach ako je v interiéri vozidla obvyklé. Počas testovacieho videa  vodič vykonáva bežnú čonnosť ako držanie a točenie volantu, pohyb radiacou pákou ale aj zapínanie  bezpečnostného pásu. Pri zapínaní bezpečnostného pásu dochádzalo k prudšiemu pohybu a  kamera pri slabom svetle tento pohyb nedokázala  zachytiť bez  značného rozmazania videa. Práve pri tomto  kroku vznikalo najviac  prípadov chýbajúcej postavy vodiča. Úspešnosť detekcie bola meraná na základe zdetekovanej postavy v obraze a dostatočným počtom detekovaných častí tela. Aby sa výsledok detekcie označil ako úspešný, museli byť zdetekované nasledujúce časti: hlava, krk, ramená a lakte. V prípade, že tieto časti neboli zdetekované,  detekcia bola označená ako  neúspešná. Samotné označenie  častí tela prebiehalo spoľahlivo. To znamená, že nepríklad ramená sa nachádzali na mieste, kde ramená naozaj boli. Pri testovaní nedochádzalo k chybnej  detekcii a nesprávnemu označeniu častí tela. V  tabuľkách \ref{tab:openpose1}, \ref{tab:openpose2} a \ref{tab:openpose3} je znázornená úspešnosť a časová náročnosť pre framework OpenPose pri rôznych rozlíšeniach vstupného obrázku. Ako je z tabulek vidieť, miera úspešnosti je pomerne vysoká, ale pri nižšom rozlíšení vstupného obrazu je detekcia v priemere o niekoľko desiatok milisekúnd  rýchlejšia  so stále dostačujúcou úspešnosťou okolo 99\%. Veľký problém tejto detekcie tvorí práve vysoká časová náročnosť, ktorá  neumožňuje spracovávať video v reálnom čase.
+Testovanie úspešnosti  prebehlo na viacerých videách pri rôznych  pracovných a svetelných  podmienkach. Aby bola nasimulovaná bežná  jazda v aute, na simuláciu bolo primárne použité video nahraté v slabších  svetelných podmienkach ako je v interiéri vozidla obvyklé. Počas testovacieho videa  vodič vykonáva bežnú čonnosť ako držanie a točenie volantu, pohyb radiacou pákou ale aj zapínanie  bezpečnostného pásu. Pri zapínaní bezpečnostného pásu dochádzalo k prudšiemu pohybu a  kamera pri slabom svetle tento pohyb nedokázala  zachytiť bez  značného rozmazania videa. Práve pri tomto  kroku vznikalo najviac  prípadov chýbajúcej postavy vodiča. Úspešnosť detekcie bola meraná na základe zdetekovanej postavy v obraze a dostatočným počtom detekovaných častí tela. Aby sa výsledok detekcie označil ako úspešný, museli byť zdetekované nasledujúce časti: hlava, krk, ramená a lakte. V prípade, že tieto časti neboli zdetekované,  detekcia bola označená ako  neúspešná. Samotné označenie  častí tela prebiehalo spoľahlivo. To znamená, že nepríklad ramená sa nachádzali na mieste, kde ramená naozaj boli. Pri testovaní nedochádzalo k chybnej  detekcii a nesprávnemu označeniu častí tela. V  tabuľkách \ref{tab:openpose1}, \ref{tab:openpose2} je znázornená úspešnosť a časová náročnosť pre framework OpenPose pri rôznych rozlíšeniach vstupného obrázku. Ako je z tabulek vidieť, miera úspešnosti je pomerne vysoká, ale pri nižšom rozlíšení vstupného obrazu je detekcia v priemere o niekoľko desiatok milisekúnd  rýchlejšia  so stále dostačujúcou úspešnosťou okolo 99\%. Veľký problém tejto detekcie tvorí práve vysoká časová náročnosť, ktorá  neumožňuje spracovávať video v reálnom čase.
 
 \begin{table}[H]
 \begin{tabular}{|l|c|c|}
@@ -632,12 +632,12 @@ Pri testovaní TF Pose estimation  sa postupovalo podobne ako pri predchádzajú
 \begin{tabular}{|l|c|c|}
 \hline
 \textbf{Rozlíšenie vstupného obrazu [px]}        & \textbf{Úspešnosť [\%]}  & \textbf{Čas spracovania snímky [ms]} \\ \hline
-\textbf{938$\times$ 900}      & 97.94     & 344     \\ \hline
-\textbf{521$\times$ 500}      & 97.64     & 257     \\ \hline
-\textbf{417$\times$ 400}      & 97.82     & 245     \\ \hline
-\textbf{208$\times$ 200}      & 96.08     & 220     \\ \hline
-\textbf{104$\times$ 100}      & 91.10     & 213     \\ \hline
-\textbf{52$\times$  50}       & 85.18     & 206     \\ \hline
+\textbf{938$\times$900}      & 97.94     & 344     \\ \hline
+\textbf{521$\times$500}      & 97.64     & 257     \\ \hline
+\textbf{417$\times$400}      & 97.82     & 245     \\ \hline
+\textbf{208$\times$200}      & 96.08     & 220     \\ \hline
+\textbf{104$\times$100}      & 91.10     & 213     \\ \hline
+\textbf{52$\times$50}       & 85.18     & 206     \\ \hline
 \end{tabular}
 
 	\caption{Úspešnosť detekcie TF Pose estimation, dataset \textit{mobilenet\_thin}, rozlíšenie trénovacieho vstupu 216 $\times$ 184}
@@ -648,12 +648,12 @@ Pri testovaní TF Pose estimation  sa postupovalo podobne ako pri predchádzajú
 \begin{tabular}{|l|c|c|}
 \hline
 \textbf{Rozlíšenie vstupného obrazu [px]}        & \textbf{Úspešnosť [\%]}  & \textbf{Čas spracovania snímky [ms]} \\ \hline
-\textbf{938$\times$ 900}      & 90.89     &  320       \\ \hline
-\textbf{521$\times$ 500}      & 87.83     &  242    \\ \hline
-\textbf{417$\times$ 400}      & 88.20     &  228    \\ \hline
-\textbf{208$\times$ 200}      & 87.00     &  211   \\ \hline
-\textbf{104$\times$ 100}      & 80.15     &  199       \\ \hline
-\textbf{52$\times$  50}       & 61.54    &  192       \\ \hline
+\textbf{938$\times$900}      & 90.89     &  320       \\ \hline
+\textbf{521$\times$500}      & 87.83     &  242    \\ \hline
+\textbf{417$\times$400}      & 88.20     &  228    \\ \hline
+\textbf{208$\times$200}      & 87.00     &  211   \\ \hline
+\textbf{104$\times$100}      & 80.15     &  199       \\ \hline
+\textbf{52$\times$50}       & 61.54    &  192       \\ \hline
 \end{tabular}
 
 	\caption{Úspešnosť detekcie TF Pose estimation, dataset \textit{mobilenet\_thin}, rozlíšenie trénovacieho vstupu 192 $\times$ 144}
@@ -661,12 +661,39 @@ Pri testovaní TF Pose estimation  sa postupovalo podobne ako pri predchádzajú
 \end{table}
 
 Po otestovaní a zhodnotení  výsledkov metód  je dôležité vybrať tu správnu metódu na  použitie ďalšej analýzy vodiča. Do úvahy treba brať viacero faktov, ktoré sú kľúčové pre výsledný program. Vzhľadom na diametrálne odlišné časové náročnosti jednotlivých metód a pomerne vysokú úspešnosť obidvoch metód, bude lepšie využiť metódu s rýchlejšou detekciou. Pri použití tejto detekcie treba počítať s možnými chybami, ktoré je možné odstrániť jednoduchýhm filtrom, alebo použitím  prahovej hodnoty na počet snímkov s chybovou detekciou. Pri bežnom videu sa pohybuje rýchlosť snímkovania okolo 30FPS. Aby detekcia teda  bola schopná rozoznať chybu do 500 milisekúnd, je potrebné nastaviť prah na 15 snímok s chybnou detekciou. Ako optimálna hodnota však stačí aj hodnota s počtom 10 chybných snímkov v rade. Po prekročení tejto hodnoty program vyhodnotí výsledok ako chybový, teda postava sa v obraze nenachádza, alebo jej pohola neumožňuje správnu detekciu. Takéto upozornenie je v programe  implementované formou výstražného textu na obrazovke. Pri použití vo vozidle by bolo vhodné najmä zvukové upozornenie, ktoré by vodič nemohol prehliadnuť.  Pri ignorovaní tohto varovania by vozidlo uskutočnilo napríklad brzdový  manéver  vzhľadom na okolitú premávku. Z výsledku týchto metód je možno odhadnúť napríklad, či vodič správne drží volant, alebo používa radiacu páku. Ak  vodič nevykonáva žiadnu z týchto činností, pravdepodobne nevenuje dostatočnú pozornosť riadeniu vozidla. Takáto situácia je veľmi nebezpečná a može viesť až k dopravnej nehode. Využitie výsledkov týchto metód bude slúžiť najmä na  vyhodnotenie vočovovej pozície pomocou natrénovanej neurónovej siete. Tejto analýze a vyhodnoteniu  vodičovho správania je venovaná kapitola \ref{sec:neuralNetwork}. Pri správnom natočení kamery na vodiča a normálnom posede bez prudkých pohybov, by psotava mala byť správne zdetekvoaná aj pri veľmi nízkých podmienkach. Pri jazde v noci však postavu už bez prídavného  osvetlenia nie je možné detekovať.
+
+
+
+
+\newpage
+\subsection{Neurónová sieť}
+\label{sec:neuralNetwork}
+Pri predchádzajúcich kapitolách boli zbierané rôzne druhy informácii, ktoré je možné zbierať a analyzovať pomocou detekcie obrazu. Pomocou  špeciálných knižníc a metód  je možné získať napríklad  polohu vodiča vrátane pozície jeho rúk, či natočenie hlavy. 
+
+-NN klasifikator\\
+- trenovanie \\
+- testovanie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  
 \newpage
 \subsection{Orientácia hlavy}
 \label{sec:headOrientation}
-Analýza správania vodiča za volantom je  veľmi rozsiahla komplexná téma. Okrem detekcie pozície vodiča za volantom, ktorá je spracovaná v predchadzajúcej kapitole je možno skúmať ľudské správanie aj z rôznych ďalších zdrojov. Samotná pozícia  síce napovedá, ako vodič sedí a či správne drží volant, avšak  stále z nej nie je možné odvodiť veľa dôležitých informácii.  Medzi najčastejšie príčiny nehôd v nočných hodinách patrí jednoznačne mikrospánok. Podľa štúdii\cite{mccartt1996scope}, ktorú vykonali McCartt, Ribner, Pack a Hammer  v roku 1996 približne 55\% z 1000 opýtaných vodičov uviedlo, že jazdili s miernymi príznakmi mikrospánku a 23\% zaspalo dokonca na pár sekúnd počas jazdy. To potvrdzuje ďalšie zistenia, že ospalosť môže zohrávať významnú úlohu pri zrážkach, ktoré sú chybne pripisované iným príčinám Vznik mikrospánku je zvyčajne spôsobený únavou ľudského tela  a človek si veľakrát ani nedokáže pripustiť, že je unavený. Takéto podcenenie situácie zvyčajne končí krátkodobým mikrospánkom  vodiča, ktoré je  veľmi nebezpečné aj pre ostatných účastníkov premávky.  Pri samotnom mikrospánku dochádza  k viacerým kľúčovým okolnostiam, ktoré je možné včas odhaliť. Okrem straty pozornosti a vnímania okolia často dochádza aj k zatvoreniu očných zreničiek alebo prudkému pohybu hlavy smerom nadol. Pred týmito udalosťami je možné napríklad detekovať  očné zreničky, alebo natočenie hlavy. Ľudské zreničky su vzhľadom  k veľkosti tela veľmi malé. Obzvlásť pri použití širokouhlej alebo sférickej kamery nie je možné v obraze detekovať  zreničky s dostatočne vysokou presnosťou, či dokonca detekovať ich otvorenie a zatvorenie.  Skúmanie stavu zreničiek je špeciifcká téma a nie je predmetom tejto práce, aj keď môže slúžiť ako významný vstup pre analýzu ľudského správania  predikovania ospalosti vodiča. Sférickou kamerou je možné  však  zachytiť celú tvár v dostatočnej kvalite pre ďalšie spracovanie. Z týchto dôvodov je  táto kapitola  primárne na orientáciu a otáčanie hlavy. Pri prudkom otočení hlavy nadol je možné predikovať, že človek napríklad stratil vedomie alebo zaspal. Vodič sa zároveň často otáča do strán  hlavne pri cúvaní alebo pri  státí na križovatke pre získanie rozhľadu v okolí vozidla.  Pri priamej jazde však vodič nemá žiadný dôvod hlavou otáčať alebo výraznejšie meniť jej pozíciu. Z tohto dôvôdu  do programu  bola pridaná detekcia na orientáciu hlavy vodiča. Táto detekcia spočíva v detekcii  kľúčových bodov tváre pomocou Haar príznakov.  Tieto body (angl. landmarky) zodpovedajú pozíciam v obraze. Na obrázku môžeme vidieť 68 bodový dataset  aj s ukážkou deetekciu  v reálnom obraze. Na túto detekciu bol použitá funkcia CascadeClassifier z OpenCV, ktorá berie ako parameter  cestu k natrénovanemu datasetu. Dataset \textit{shape\_predictor\_68\_face\_landmarks} bol stiahnutý z oficiálnych stránok OpenCV. Tento dataset  umožňuje detekovať až 68 bodov tvoriacich tvár. Tieto body s[ znázornené na obrázku \ref{fig:landmarks}. Metóda využíva algoritmus AdaBoost, ktorý slúži na zrýchlenie detekcie. Výstup tejto detekcie je možné využiť viacerými spôsobmi. Jedným spôsôbom je napríklad detekcia orientácie tváre vzhľadom na kameru. Pri správnej analýze je vo výsledku možné odhadnúť, či vodič sleduje vozovku, alebo jeho hlava je vytočená do inej strany. Aby bolo možné odhadnúť smerovanie tváre, je potrebné tvár transformovať do 3D súradníc.
+Analýza správania vodiča za volantom je  veľmi rozsiahla komplexná téma. Okrem detekcie pozície vodiča za volantom, ktorá je spracovaná v predchadzajúcej kapitole je možno skúmať ľudské správanie aj z rôznych ďalších zdrojov. Samotná pozícia  síce napovedá, ako vodič sedí a či správne drží volant, avšak  stále z nej nie je možné odvodiť veľa dôležitých informácii.  Medzi najčastejšie príčiny nehôd v nočných hodinách patrí jednoznačne mikrospánok. Podľa štúdii\cite{mccartt1996scope}, ktorú vykonali McCartt, Ribner, Pack a Hammer  v roku 1996 približne 55\% z 1000 opýtaných vodičov uviedlo, že jazdili s miernymi príznakmi mikrospánku a 23\% zaspalo dokonca na pár sekúnd počas jazdy. To potvrdzuje ďalšie zistenia, že ospalosť môže zohrávať významnú úlohu pri zrážkach, ktoré sú chybne pripisované iným príčinám Vznik mikrospánku je zvyčajne spôsobený únavou ľudského tela  a človek si veľakrát ani nedokáže pripustiť, že je unavený. Takéto podcenenie situácie zvyčajne končí krátkodobým mikrospánkom  vodiča, ktoré je  veľmi nebezpečné aj pre ostatných účastníkov premávky.  Pri samotnom mikrospánku dochádza  k viacerým kľúčovým okolnostiam, ktoré je možné včas odhaliť. Okrem straty pozornosti a vnímania okolia často dochádza aj k zatvoreniu očných zreničiek alebo prudkému pohybu hlavy smerom nadol. Pred týmito udalosťami je možné napríklad detekovať  očné zreničky, alebo natočenie hlavy. Ľudské zreničky su vzhľadom  k veľkosti tela veľmi malé. Obzvlásť pri použití širokouhlej alebo sférickej kamery nie je možné v obraze detekovať  zreničky s dostatočne vysokou presnosťou, či dokonca detekovať ich otvorenie a zatvorenie.  Skúmanie stavu zreničiek je špeciifcká téma a nie je predmetom tejto práce, aj keď môže slúžiť ako významný vstup pre analýzu ľudského správania  predikovania ospalosti vodiča. Sférickou kamerou je možné  však  zachytiť celú tvár v dostatočnej kvalite pre ďalšie spracovanie. Z týchto dôvodov je  táto kapitola  primárne na orientáciu a otáčanie hlavy. Pri prudkom otočení hlavy nadol je možné predikovať, že človek napríklad stratil vedomie alebo zaspal. Vodič sa zároveň často otáča do strán  hlavne pri cúvaní alebo pri  státí na križovatke pre získanie rozhľadu v okolí vozidla.  Pri priamej jazde však vodič nemá žiadný dôvod hlavou otáčať alebo výraznejšie meniť jej pozíciu. Z tohto dôvôdu  do programu  bola pridaná detekcia na orientáciu hlavy vodiča. Tento spôsob spočíva v detekcii  kľúčových bodov tváre pomocou natrénovaných datasetov.  Tieto body (angl. landmarky) následne zodpovedajú pozíciam bodov v obraze. Na túto detekciu bol použitá funkcia z knižnice dlib, ktorá je založená na použití histogramov orientovaných gradientov ( Kap. \ref{HOG}) s použitím SVM. Metóda sa značí vysokou rýchlosťou a presnosťou detekcie.  Hlavnou metódou detekcie je \textit{get\_frontal\_face\_detector()}, ktorá berie ako parameter cestu k natrénovanému datasetu. Pre túto implementáciu bol zvolený dataset \textit{shape\_predictor\_68\_face\_landmarks}, ktorý je dostupný na oficiálnych stránkach OpenCV. Tento dataset  umožňuje detekovať až 68 bodov tvoriacich tvár. Tieto body sú znázornené na obrázku \ref{fig:landmarks}. Výstup tejto detekcie je možné využiť viacerými spôsobmi. Jedným spôsôbom je napríklad detekcia orientácie tváre vzhľadom na kameru. Pri správnej analýze je vo výsledku možné odhadnúť, či vodič sleduje vozovku, alebo jeho hlava je vytočená do inej strany. Aby bolo možné odhadnúť smerovanie tváre, je potrebné tvár transformovať do 3D súradníc.
 
 \begin{figure}[H]
 	\centering
@@ -678,42 +705,151 @@ Analýza správania vodiča za volantom je  veľmi rozsiahla komplexná téma. O
 
 Problém odhadu pozície z obrazu do pozície reálneho sveta sa často označuje ako problém perspektívneho n-bodu alebo PNP. Cieľom je nájsť pozíciu objektu, ktorý je zachytený kamerou, zistiť umiestnenie  3D bodov na objekte a zodpovedajúcu 2D projekciu v obraze. Pri pohybe objektu vzhľadom na kameru môžu nastať 2 rôzne druhy pohybov:
 \begin{itemize}
-\item\textbf{Posun} - pohyb kamery z jej aktuálnej 3D pozície $(X, Y, Z)$ na novú 3D pozíciu $(X ', Y', Z ')$ sa nazýva posun. Tieto 3 súradnice pozície sa nazývaju aj 3 stupne voľnosti, pretože kamera sa môže pohybovať v 3 rôznych smeroch. Posun predstavuje vektor, ktorý sa rovná rozdielu starej a novej pozície:  $(X '- X, Y' - Y, Z '- Z)$.
-\item\textbf{Rotácia}  Kamera sa môže otáčať aj okolo osí $X, Y$ a $Z$. Rotácia má preto tiež tri stupne voľnosti. Existuje mnoho spôsobov, ako reprezentovať rotáciu. Môžete ho reprezentovať pomocou Eulerových uhlov (nakláňanie, stúpanie a vybočenie), matice rotácie 3 krát 3 alebo podľa smeru rotácie (t. J. Osi) a uhla.
+\item\textbf{Posun} - pohyb kamery z jej aktuálnej 3D pozície $(X, Y, Z)$ na novú 3D pozíciu $(X ', Y', Z ')$ sa nazýva posun. Tieto 3 súradnice pozície sa nazývajú aj 3 stupne voľnosti, pretože kamera sa môže pohybovať v 3 rôznych smeroch. Posun predstavuje vektor, ktorý sa rovná rozdielu starej a novej pozície:  $(X '- X, Y' - Y, Z '- Z)$.
+\item\textbf{Rotácia}  Kamera sa môže otáčať aj okolo osí $X, Y$ a $Z$. Rotácia má preto tiež tri stupne voľnosti. Existuje mnoho spôsobov, ako reprezentovať rotáciu. Môžete ho reprezentovať pomocou Eulerových uhlov (pretočenie, stúpanie a vybočenie), matice rotácie 3$\times$3 alebo podľa smeru rotácie a uhla.
 \end{itemize}
 
-Odhadnutie pozície 3D objektu znamená nájsť 6 hodnôt  - tri pre posun a tri pre rotáciu objektu. Na výpočet 3D pozície objektu v obraze sú potrebné nasledujúce informácie:
+Určenie pozície 3D objektu znamená nájsť 6 hodnôt  - tri pre posun a tri pre rotáciu objektu. Po získaní týchto hodnôt je ďalej možné 3D body transformovať do svetových súradníc na 3D body v súradniciach kamery. 3D body v súradniciach kamery môžu byť premietané do obrazovej roviny (Súradnicový systém obrazu) pomocou vnútorných parametrov kamery (ohnisková vzdialenosť, optický stred atď.). Na výpočet 3D pozície objektu v obraze sú potrebné nasledujúce informácie:
 \begin{itemize}
-\item\textbf{2D súradnice niekoľkých bodov} - na lokalizáciu 2D bodov pozície  $(x, y )$ je potrebné vybrať niekoľko dostatočne významných na obrázku. V prípade tváre by ste si mohli zvoliť rohy očí, špičku nosa, rohy úst atď. Detektor orientácie tváre spoločnosti Dlib nám poskytuje veľa bodov na výber. V tomto návode použijeme špičku nosa, bradu, ľavý roh ľavého oka, pravý roh pravého oka, ľavý roh úst a pravý roh úst.
-\item\textbf{3D polohy rovnakých bodov}  - potrebujete tiež 3D umiestnenie 2D funkčných bodov. Možno si myslíte, že na získanie 3D miest potrebujete 3D model osoby na fotografii. V ideálnom prípade áno, ale v praxi to tak nie je. Stačí všeobecný 3D model. Odkiaľ pochádzate 3D model hlavy? Naozaj nepotrebujete úplný 3D model. Potrebujete iba 3D polohy niekoľkých bodov v ľubovoľnom referenčnom rámci. V tomto návode použijeme nasledujúce 3D body.
+\item\textbf{2D súradnice niekoľkých bodov} - na lokalizáciu 2D bodov pozície  $(x, y )$ je potrebné vybrať niekoľko dostatočne významných bodov na obrázku. V prípade tváre je možné zvoliť napríklad krajné rohy očí, špičku nosa, rohy úst. Tieto hodnoty nám poskytuje metóda na detekciu landmarkov, ktorá ako výsledo kvráti pozíciu jednotlivých bodov.
+\item\textbf{3D súradnice rovnakých bodov}  - aby sa dokázali body z obrazu transfomovať, je potrebné nájsť správny spôsob transformácie. Táto transformácia je založená na využití reálneho 3D modelu tváre, z ktorého  sa vyberú referenčné body. Tieto body musia mať k dispozícii súradnice v 3D sústave. Pre tvár sa zvolia referenčné body uvedené vyššie a sú znázornené na obrázku \ref{fig:landmarkPoints}. Pre tieto body existuje niekoľko  vypočítaných modelov. Nasledujúca skupina bodov predstavuje pozíciu bodov, ktoré sú použité  na transformáciu v 3D priestore:
+\begin{enumerate}
+  \item Špička nosa \textit{P = (0, 0, 0)}
+  \item Brada \textit{P = (0, -330, -65)}
+  \item Ľavý roh ľavého oka \textit{P = (-225, 170, -135)}
+  \item Pravý roh pravého oka \textit{P = (225, 170, -135)}
+  \item Ľavý roh úst \textit{P = (-150, -150, -125)}
+  \item Pravý roh úst \textit{P = (150, -150, -125)}
+\end{enumerate}
 \end{itemize}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figures/landmarkPoints.png}
-	\caption{Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov (c)}
+	\caption{Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tvárev 3D(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D(c)}
 	\label{fig:landmarkPoints}
 \end{figure}
 
-Predpokladajme, že poznáme umiestnenie (U, V, W) 3D bodu P vo svetových súradniciach. Ak poznáme rotáciu \ mathbf {R} (matica 3 × 3) a preklad \ mathbf {t} (vektor 3 × 1) svetových súradníc vzhľadom na súradnice kamery, môžeme vypočítať umiestnenie (X , Y, Z) bodu P v súradnicovom systéme kamery pomocou nasledujúcej rovnice.
+Po zistení 3D súradníc však stále ostáva neznáma matica rotácie \textit{R} o veľkosti 3$\times$3 a posun  \textit{t} veľkosti 3$\times$1 vzhľadom na súradnice kamery. AK by tieto hodnoty boli známe je následne možné vypočítať umiestnenie $(X, Y, Z)$ bodu \textit{P} v súradnicovom systéme kamery. Vzťah medzi týmito hodnotami je znázornený pomocou rovnice \ref{eq:transformation}. Po úprave tejto rovnice vnikajú 2 neznáme vektory $(r_{ij})$ a $(t_{x},t_{y},t_{z})$, ktoré sa dajú zistiť použitím správnej tranformácie. Do úvahy je potrebné počítať aj s faktorom mierky \textit{s}, keďže nieje zaručená konštantná veškosť tváre na všetkých vstupných obrázkoch.
 
-- Haar  priznaky ,\\
-- prevod 2D na 3D \\
-- smerova priamka
+
+\begin{eqnarray}
+\begin{split}
+&\ \ \ \ \begin{bmatrix}
+X\\ 
+Y\\ 
+Z\\
+\end{bmatrix}
+= R
+\begin{bmatrix}
+U\\ 
+V\\ 
+W\\ 
+\end{bmatrix}
++ t
+\\
+\\
+&\Rightarrow
+\begin{bmatrix}
+X\\ 
+Y\\ 
+Z\\
+\end{bmatrix}
+= \left[R \mid t\right]
+\begin{bmatrix}
+U\\ 
+V\\ 
+W\\
+1\\
+\end{bmatrix}
+\\
+\\
+&\Rightarrow
+\begin{bmatrix}
+X\\ 
+Y\\ 
+Z\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+r_{00} & r_{01} & r_{02} & t_{x}\\ 
+r_{10} & r_{11} & r_{12} & t_{y}\\ 
+r_{20} & r_{21} & r_{22} & t_{z}\\
+\end{bmatrix}
+\begin{bmatrix}
+U\\ 
+V\\ 
+W\\
+1\\
+\end{bmatrix}
+\label{eq:transformation}
+\end{split}
+\end{eqnarray}
+
+
+Na výpočet týchto nezmámych je možné puužiť napríklad  priamu lineárnu transformáciu (angl. DLT). Na 3D modeli poznáme viacero referenčných bodov \textit{(U, V, W)}, ale  nie sú známe zodpovedajúce body \textit{(X, Y, Z)} referenčných 2D bodov, u ktorých poznáme súradnice iba v 2D. Ak sa zanedbá miera radiálneho skreslenia, súradnice  \textit{(x, y)} pre ľubovolný bod \textit{p} v 2D projekcii sú znázornené v rovnici \ref{eq:rad}, kde $f_x$ a $f_y$ sú ohniskové vzdialenosti v smere $x$ a $y$ a $(c_x, c_y)$ je optický stred.
+
+
+\begin{eqnarray}
+\begin{split}
+&\ \ \ \ \begin{bmatrix}
+x\\ 
+y\\ 
+1\\
+\end{bmatrix}
+=  s
+\begin{bmatrix}
+f_{x} & 0 & c_{x}\\ 
+0 & f_{y} & c_{y}\\ 
+0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+X\\ 
+Y\\ 
+Z\\
+\end{bmatrix}
+\label{eq:rad}
+\end{split}
+\end{eqnarray}
+
+Túto rovnicu je možné vyriešiť pomocou metódy nazývanej priama lineárna transformácia (DLT). DLT je možné použiť, keď vznikne problém, v ktorom je rovnica takmer lieárna, ale jej výsledok je stále závislý napríklad od faktoram ierky \textit{s}. Použitie DLT nie je príliš presné z viacerých dôvodov. Po prvé, rotácia \textit{R} má tri stupne voľnosti, ale maticová reprezentácia použitá v riešení DLT má 9 hodnôt. V riešení DLT nie je nič, čo zaručí prevod  matice 3$\times$3 na rotačnú maticu. ďalšou nevýhodou DLT je  chýbajúca minimalizácia chýb. Aby výsledok nebol príliš skreslený a výsledný vektor zodpvoedal  skutočnému natočen iu tváre, je potrebné miniimalizovať chyby, ktoré vznikajú v 2D projekcii. \par
+Je dôležité zamerať sa na vzťah medzi premietanými 3D bodmi a 2D bodmi tváre. Ak je odhadovaná pozícia tváre natočená priamo, 3D body premietnuté do obrazovej roviny sa takmer dokonale zarovnajú s 2D bodmi tváre. Ak je odhad pozice nesprávny, je možné vypočítať mieru chyby opätovného premietania. Ako bolo vyššie spomenuté, pomocou riešenia DLT je možné nájsť približný odhad matíc \textit{R} a \textit{t}. Najjednoduchší spôsob, ako vylepšiť riešenie DLT, by bolo mierne zmeniť pozíciu \textit{R} a \textit{t} a skontrolovať, či sa chyba reprojekcie neznížila. Ak sa tak stane, môžeme prijať nový odhad natočenia tváre.  Aj keď tento postup bude fungovať, bude veľmi pomalý a časovo náročný. Na iteratívne zlepšenia  tejto chyby vznikajúcej pri transformácii existuje viacero  metód. Jedna takáto metóda sa nazýva Levenberg-Marquardtova optimalizácia\cite{lourakis2005levenberg}, ktorá dokáže významne ovplyvniť výsledný čas spracovania.
+
+\subsubsection*{Implementácia}
+Na vyriešenie problému perspektívneho n-bodu (PNP) existuje v OpenCV viacero metód, ktoré dokážu vypočítať  pozíciu objektu vzhľadom na pozíciu kamery. V programe, ktorý má vytvoriť smerový vektor orientácie tváre  je použitá funkcia \textit{solvePnP()} Funkcia implementuje niekoľko typov algoritmov na odhadovanie pozície, ktoré je možné zvoliť pomocou parametra \textit{flag}. Štandardne používa príznak \textit{SOLVEPNP\_ITERATIVE}, čo je v podstate obyčajná lineárna transformácia nasledovaná optimalizáciou Levenberg-Marquardt. \textit{SOLVEPNP\_P3P} používa iba 3 body na výpočet pozície. Z tohto dôvôdu je výpočet rýchly, ale  aj malá odchýlka  v jednom z týchto 3 bodov vedie k výraznemu skresleniu a nie je vhodné ju v tomto prípade používať.  Ako ďalší parameter je potrebné  zadať  maticu kamery, ktorú je potrebné vypočítať na základe vekosti vstupného obrazu. Výpočet tejto matice je znázornený na výpise \ref{src:cameraMatrix}. Ďalší dôležitý parameter je nastavenie koeficientu skreslenia \textit{distCoeffs}. Tento parameter je potrebné midifikvoať najmä pri významnom zakrivení rkajov obrazu pri použití širokouhlej kamery. Napriek tomu, že vodič je snímaný  takouto kamerou, ku skresleniu dochádza iba pri krajoch videa. V strede obrazu, kde sa tvár vodiča nachádza je skreslenie minimálne a z tohto dôvodu je vhodné parameter nechať na predvolenú hodnotu.
+\\\\
+\begin{lstlisting}[language=Python,label=src:cameraMatrix,caption={Výpočet  matice kamery}]
+    # Camera matrix calculation
+    focal_length = input_image[1]
+    center = (input_image[1]/2, input_image[0]/2)
+    camera_matrix = np.array(
+        [
+            [focal_length,   0,               center[0]],
+            [0,              focal_length, center[1]],
+            [0,              0,              1         ]
+        ], dtype="double"
+    )
+\end{lstlisting}
 
 \newpage
-\subsection{Bezpečnostný pás}
-\label{sec:safeBelt}
-- bezp. pas
+Výsledok metódy je realizovaný formou rotačného vektoru \textit{R} a vektoru posunu \textit{t}. Pre zobrazenie orientácie hlavy je dôležitý práve rotačný vektor. Aby  bolo možné tento vektor znázorniť vo vstupnom obrázku, je potrebné určiť stred, odkiaľ sa vykreslí stredová priamka vyjadrujúca rotáciu tváre. Vhodným bodom je práve špička nosa, pretože nos sa nachádza približne v strede tváre. Na výpočet druhého bodu rotačnej priamky je použitá funkcia z OpenCV \textit{projectPoints()}. Táto metóda berie ako prvý parameter bod v 3D priestore, voči ktorému sa rotácia určuje. Bod musí mať rovnaké súradnice \textit{(X, Y)} ako bod špičky nosa. Posledná súradnica však je posunutá v priestore, aby bolo možné zostrojiť projekčný bod. Výsledkom funkcie sú súradnice bodu v 2D, ktoré reprezentujú premietnutý bod. Na záver je teda potrebné vykresliť priamku medzi bodom určujúcim špičku nosa a súradnice získaného bodu. Na testovanie a overenie funkčnosti boli použité viaceré natočenia tváre. Výsledok je znázornený na obrázku \ref{fig:faceRotation}.
 
-\newpage
-\subsection{Neurónová sieť}
-\label{sec:neuralNetwork}
-Pri predchádzajúcich kapitolách boli zbierané rôzne druhy informácii, ktoré je možné rozpoznať pomocou detekcie obrazu. Pomocou  špeciálných knižníc a metód  je možné získať napríklad  polohu vodiča a jej natočenie hlave. 
 
--NN klasifikator\\
-- trenovanie \\
-- testovanie
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/faceRotation.png}
+	\caption{Výsledok detekcie orientácie tváre - pohľad vpravo (a), pohľad dolu (b), pohľad na vozovku (c), pohľad vľavo (d)}
+	\label{fig:faceRotation}
+\end{figure}
+
+S použitím takejto detekcie je možné odhadnúť úroveň natočenia tváre vodiča oproti kamere. Aby bolo možné vymedziť pohyb a rotáciu hlavy, je potrebné určiť povolený rozsah jej otáčania pri bežnej jazde. Detekciu otáčania halvy treba  samozrejme v špeicfických prípadoch ignorovať. Každý vodič, ktorý parkuje sa často otáča okolo seba, aby získal prehľad okolo vozidla. V takomto prípade  by detekcia  nemala byť aktívna. Do úvahy tiež treba brať fakt, že kamera sa nenachádza priamo pred vodičom a vektor rotáce tváre má  pri pohľade vodiča vpred určité vychýlenie od kamery (Obr. \ref{fig:faceRotation}c). Z tohto dôvôdu je potrebné  vymedziť  možný uhol natočenia tváre. 
+
+%\newpage
+%\subsection{Bezpečnostný pás}
+%\label{sec:safeBelt}
+%- bezp. pas
+
+
 
 \newpage
 \subsection{Výstup programu}
