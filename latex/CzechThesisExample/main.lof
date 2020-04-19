@@ -22,6 +22,8 @@
 \contentsline {figure}{\numberline {16}{\ignorespaces Porovnanie výstupu z kamier (ISO 1600) - GoPro Fusion(a), Ricoh Theta V(b)\relax }}{36}{figure.caption.17}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Natívny výstup metódy OpenPose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }}{38}{figure.caption.18}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Natívny výstup metódy TF pose - normálne svetelné podmienky (a), zhoršené svetelné podmienky (b), nevyhovujúce svetelné podmienky (c)\relax }}{40}{figure.caption.19}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Detekcia tváre pomocou landmarkov. Označenie bodov (a), detekcia na reálnej tvári vodiča (b)\relax }}{47}{figure.caption.25}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tvárev 3D(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D(c)\relax }}{48}{figure.caption.26}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Výsledok detekcie orientácie tváre - pohľad vpravo (a), pohľad dolu (b), pohľad na vozovku (c), pohľad vľavo (d)\relax }}{51}{figure.caption.27}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Minimálny rozdiel detekcie v rôznych situáciach - používanie radiacej páky(a), obsluha klimatizácie alebo rádia(b)\relax }}{46}{figure.caption.25}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Držanie a točenie volantom\relax }}{47}{figure.caption.26}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Detekcia tváre pomocou landmarkov. Označenie bodov (a), detekcia na reálnej tvári vodiča (b)\relax }}{49}{figure.caption.27}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre v 3D(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D(c)\relax }}{50}{figure.caption.28}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Výsledok detekcie orientácie tváre - pohľad vpravo (a), pohľad dolu (b), pohľad na vozovku (c), pohľad vľavo (d)\relax }}{53}{figure.caption.29}%
