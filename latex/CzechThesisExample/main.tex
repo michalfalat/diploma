@@ -294,13 +294,13 @@ Tento framework pre detekciu postáv bol implementovaný pomocou knižnice Tenso
 Model PoseNet je nezávislý na veľkosti vstupného obrazu. To znamená, že môže predikovať polohy pozícií v rovnakom rozlíšení ako pôvodný obrázok bez ohľadu na to, či je obraz zmenšený. PoseNet môže byť nakonfigurovaný tak, aby mal vyššiu presnosť na úkor rýchlosti detekcie nastavením výstupného kroku. Výstupný krok určuje, do akej miery zmenšujeme výstup vzhľadom na veľkosť vstupného obrázka. To ovplyvňuje veľkosť jednotlivých vrstiev a výstupy modelu. Čím vyšší je výstupný krok, tým menší je počet vrstiev v sieti a výstupoch a tým aj ich presnosť. V základnej implementácii môže mať výstupný krok hodnoty 8, 16 alebo 32. Inými slovami, výstupný krok 32 bude mať za následok najrýchlejší výkon, ale najnižšiu presnosť, zatiaľ čo 8 bude mať najvyššiu presnosť, ale najpomalší čas detekcie.
 
 
-\subsubsection{Výstup}
+\subsubsection*{Výstup detekcie}
 Keď PoseNet spracováva obraz, v skutočnosti vytvára mapu pravdepodobnosti (angl. Heatmap) spolu s ofsetovými vektormi, ktoré je možné dekódovať, aby sa v obraze našli oblasti s vysokou spoľahlivosťou. Veľkou výhodou pri detekcii postáv v obraze cez Tensorflow je teda to, že spolu s vektormi výstupného modelu dostávame aj štrukturované dáta pravdepodobnosti jednotlivých častí postavy, ktoré môžeme využiť na ďalšie spracovanie, alebo znázorniť pre lepšiu predstavu (obr. \ref{fig:tfPoseHeatmap}).
 
-\subsubsection{Mapa pravdepodobnosti}
+\subsubsection*{Mapa pravdepodobnosti}
 Každá pozícia v tejto mape pravdepodobnosti má určité skóre spoľahlivosti. Tento údaj vyjadruje pravdepodobnosť, že v danom umiestnení existuje určitá časť daného typu. Dá sa to považovať za rozdelenie pôvodného obrázka do mriežky \textit{$15\times 15$}, kde skóre v termografickej mape poskytuje klasifikáciu pravdepodobnosti, že každý kľúčový bod existuje v každom štvorci mriežky.
 
-\subsubsection{Výstupný vektor}
+\subsubsection*{Výstupný vektor}
 Každý výstupný vektor je 3D vektor, ktorý má veľkosť \textit{$šírka  \times výška \times 34$}. Číslo 34 je dvojnásobok kľúčových bodov ( 2$\times$17). Mapy pravdepodobnosti sú iba aproximáciou toho, kde sa skutočné kľúčové body nachádzajú, pričom výstupné vektory zodpovedajú svojou polohou bodom tepelnej mapy a používajú sa na predpovedanie presnej polohy jednotlivých častí ľudského tela. Prvých 17 rezov výstupného vektora obsahuje x-ovú súradnicu vektora a posledných 17 rezov y-ovú súradnicu. Veľkosti výstupného vektora sú v rovnakej mierke ako pôvodný vstupný obrázok.
 
 \begin{figure}[H]
@@ -334,7 +334,7 @@ aplikovaný na optimalizáciu parametrov metriky vzdialenosti. RMPE je navrhnut�
 Okrem  najpoužívanejších metód ako OpenPose, TF pose estiamtion, či AlphaPose existuje aj mnoho ďalších riešení. Tieto riešenia často vychádzajú zo základného princípu detekcie postáv, ktoré používajú aj tieto hlavné knižnice. Hlavný rozdiel je však použitie upravenej neurónovej siete alebo zmena rôznych parametrov. Vďaka takejto úprave je možné dosiahnuť v špecifických prípadoch vyššiu úspešnosť a presnosť detekcie alebo dokonca znížiť výpočtový čas potrebný na detekciu a spracovanie. Tieto riešenia sú však často obmedzované najmä chýbajúcou dokumentáciou, nedostatočnou implementáciou vo viacerých jazykoch, alebo nemožnosťou jednoduchej zmeny konfigurácie. Okrem voľne dostupných riešení existuje aj mnoho projektov, ktoré nemajú verejné zdrojové kódy a slúžia len pre komerčné použitie, čo môže mnoho používateľov zo začiatku odradiť. Jedným z takýchto projektov je napríklad WrnchAI, ktorému je venovaná nasledujúca podkapitola.
 
 
-\subsubsection{WrnchAI}
+\subsubsection*{WrnchAI}
 WrnchAI\cite{wrnchAI} je platforma, ktorá je zameraná na detekciu postáv v obrazoch vytvorená v roku 2014. S myšlienkou využiť umelú inteligenciu a založiť projekt pre detekciu postáv prišiel Paul Kruszewski. Napriek tomu, že táto platforma existuje už niekoľko rokov a v niektorých článkoch\cite{openposeVsWrnchAI} dokázala získať lepší čas detekcie oproti iným metódam,  nestala sa veľmi populárnym nástrojom medzi vývojármi. Jedným z hlavných dôvodov je to, že knižnica nie je voľne dostupná pre vývojárov a jedná sa o platený projekt bez voľného prístupu k zdrojovému kódu. Súčasná cenová politika základnej verzie sa pohybuje na úrovni \$500 za mesiac používania s možnosťou vyskúšania trial verzie na prvý mesiac zadarmo. Trial verzia však funguje v obmedzenom režime  bez prístupu ku všetkým platformám. Pre bežného človeka sa táto cena môže zdať privysoká, avšak vzhľadom na jeho široké možnosti využitia  v rôznych oblastiach sa jedná o adekvátnu cenu. WrnchAI však našiel svoje uplatnenie možnosťou využitia na rôznych typoch zariadení, ktoré sa prispôsobujú konkrétnym podmienkam. V súčasnosti WrnchAI poskytuje 4 hlavné platformy:
 \begin{itemize}
 \item \textbf{wrnchPC} - umožňuje zachytiť ľudský pohyb neobmedzeného množstva ľudí, bez toho, aby boli použité drahé senzory či kamery. WrnchPC je postavený na základoch  umelej inteligencie tak, aby sa ľahko integroval do všetkých aplikácií. Použité sú modely hĺbkového učenia, aby bolo zabezpečené spoľahlivé zachytenie ľudského pohybu pre všetky činnosti a v akomkoľvek prostredí.
@@ -695,19 +695,75 @@ Na vyhodnocovanie pozície  vodiča vo vozidle je v programe použitá neurónov
 \item \textbf{Fit model}- predstavuje tréningový krok neurónovej siete. Definuje počet epoch , počas ktorých sa bude trénovať neurónovú sieť.
 \end{itemize}
 
-Na začiatok je potrebné vytvoriť vhodný formát datasetu, na ktorom sa neurónová sieť  bude trénovať.
+Na začiatok je potrebné vytvoriť vhodný formát datasetu, na ktorom sa neurónová sieť  bude trénovať. Tento dataset  sa skladá z množiny obrázkov, ktoré predstavujú postavu vodiča a bod reprezentujúci hlavu. Pre jednotný format sa  detekovaná postava vykreslí na čierne pozadie a uloží ako miniatúrny obrázok. Veľkosť obrázka závisí aj na rýchlosti trénovania. Z tohto dôvodu bola šírka zvolená na 64 pixelov a výška  sa automaticky prispôsobí podľa tvaru postavu. Tieto obrázky boli zbierané z viacerých videí  a rozdlené do 3 spomínaných tried. Ukážku jednotlivých datasetov je možné vidieť  na obrázkock \ref{fig:NNSteering}, \ref{fig:NNShifting}  a \ref{fig:NNWrong}. Takýmto spôsobom bolo zozbieraných 11 957  trénovacích obrázkov. Rozpis pre jednotlivé triedy je  znázornený v tabuľke \ref{tab:nn}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figures/NNsteering.png}
-	\caption{Držanie a točenie volantom}
-	\label{fig:radioUsage}
+	\caption{Ukážka trénovacieho datasetu - držanie volantu}
+	\label{fig:NNSteering}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/NNShifting.png}
+	\caption{Ukážka trénovacieho datasetu - používanie radiacej páky}
+	\label{fig:NNShifting}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/NNWrong.png}
+	\caption{Ukážka trénovacieho datasetu - nesprávna pozícia}
+	\label{fig:NNWrong}
 \end{figure}
 
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Trieda datasetu}        & \textbf{Počet trénovacích obrázkov} \\ \hline
+Používanie radiacej páky        &  2985       \\ \hline
+Držanie volantu    &  2991    \\ \hline
+Nesprávna pozícia       &  5981    \\ \hline
+\end{tabular}
+	\caption{Počet trénovacích obrázkvo pre jednotlivé triedy}
+	\label{tab:nn}
+\end{table}
 
 
 
+\newpage
+Po úspešnom vytvorení testovacieho datasetu je potrebné  sieť správne natrénovať. Tento krok je asi najdôležitejší a zlé natrénovanie siete vedie k  neúspechu celej detekcie. Je potrebné zvoliť správne vrstvy a ich počet, nakoľko sa  od toho odvíja úspešnosť natrénovania siete. Aby sa priebežne testovala úspešnosť siete, je vhodné  z datasetu určité percento  obrázkov zvoliť na testovanie. Z tohto dôvodu bola zvolená hodnota 10\%, ktorá je pre informatívne účely postačujúca. Aj keď sa na prvý pohľad môže zdať, že trénovacie vstupy vyzerajú rovnako, líšia sa v určitých typických veciach, ktoré sú typické pre celú triedu. Jedným z takýchto znakov je napríklad umiestnenie pravej ruky pri porovnaní  medzi datasetom na obrázku \ref{fig:NNSteering} a \ref{fig:NNShifting}. Aby sa všetky tieto znaky identifikovali správne, je potrebné pridať niekoľko skrytých vrstiev, ktoré tieto znaky zachytia. Model siete sa skladá zo vstupnej vrstvy,  4 skrytých vrstiev a výstupnej vrstvy:
+\begin{itemize}
+\item \textbf{Vstupná vrstva} - jedná sa o prvú vrstvu na spracovanie trénovacích obrázkov. Na vstupe bola použitá konvolučná vrstva, ktorá sa skladá z 32 filtrov s veľkosťou 3$\times$3. Jej hlavnou úlohou je previesť fyzický obrázok na  dáta, ktoré su schupné spracovať nasledujúce vrstvy siete.
+\item \textbf{1. skrytá vrstva}  - predstavuje konvolučnú vrstvu s použitím 64 filtrov s rovnakou veľkosťou ako pri predchádzajúcej vrstve. 
+\item \textbf{2. skrytá vrstva} -  jedná sa o redukovaciu vrstvu, ktorej hlavnou úlohou je redukcia dimenzií z predchádzajúcich vrstiev. Tieto dimenzie sa môžu redukovať na základe  rôznych hodnôt. Pri vytvárani modelu siete bola použitá vrstva \textit{MaxPooling2D} s veľkosťou filtra 2$\times$2. Ukážka fungovania redukovacej vrstvy je znázornená na obrázku \ref{fig:pooling}
+\item \textbf{3. skrytá vrstva} - medzi konvolučnou vrstvou a plne prepojenou vrstvou typu \textit{dense} je  použitá vrstva \textit{Flatten}, ktorá transformuje dvojrozmernú maticu príznakov na vektor, ktorý nasleduje do klasifikátora neurónovej siete. 
+\item \textbf{4. skrytá vrstva} - reprezentuje plne prepojenú vrstvu  (angl. fully connected layer). Každý vstupný uzol je pripojený ku každému výstupnému uzlu.
+\item \textbf{Výstupná vrstva} - výstupná vrstva sa skladá z 3 filtrov, ktoré reprezentujú jednotlivé triedy objektov s príslošnou hodnotou. Ako aktivačná funkcia je použitá funkcia \textit{SoftMax}, Softmax je veľmi zaujímavá aktivačná funkcia, pretože nielen mapuje  výstup do rozsahu $[0,1]$, ale tiež mapuje každý výstup tak, že celkový súčet je 1. Výstupom Softmax je preto rozdelenie pravdepodobnosti jednotlivých tried objektov
+\end{itemize}
+\newpage
+\begin{lstlisting}[language=Python,label=src:cameraMatrix,caption={Vrstvy neurónovej siete}]
+    model = keras.Sequential([
+        keras.layers.Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(size, size, 1)),
+        keras.layers.Conv2D(64, kernel_size=(3, 3), activation='relu'),
+        keras.layers.MaxPooling2D(pool_size=(2, 2)),
+        keras.layers.Flatten(),
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(3, activation='softmax')
+    ])
+\end{lstlisting}
+
+Po vytvorení modelu je na čase začať s trénovaním siete. Je potrebné zvoliť  správne množstvo iterácii (angl. epoch), aby sa model správne natrénoval. Ak by tento parameter bol príliš nízky, znamenalo by to nedostatočné natrénovanie a presnosť siete by nebola dostatočne vysoká. Naopak, po určitom počte  trénovacich iterácií je možné pozorovať určitú stágnáciu v úspešnosti siete a v  parametri straty (angl. loss).  Pokiaľ sa  tieto parametre novou iteráciou   nemenia výraznejším tempom, je potrebné trénovanie ukončiť.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/pooling.png}
+	\caption{MaxPooling2D}
+	\label{fig:pooling}
+\end{figure}
 
 
 

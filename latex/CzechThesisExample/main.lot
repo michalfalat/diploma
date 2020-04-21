@@ -10,3 +10,4 @@
 \contentsline {table}{\numberline {4}{\ignorespaces Úspešnosť detekcie TF Pose estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 432$\times $368\relax }}{43}{table.caption.22}%
 \contentsline {table}{\numberline {5}{\ignorespaces Úspešnosť detekcie TF Pose estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 216$\times $184\relax }}{43}{table.caption.23}%
 \contentsline {table}{\numberline {6}{\ignorespaces Úspešnosť detekcie TF Pose estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 192$\times $144\relax }}{44}{table.caption.24}%
+\contentsline {table}{\numberline {7}{\ignorespaces Počet trénovacích obrázkvo pre jednotlivé triedy\relax }}{47}{table.caption.29}%
