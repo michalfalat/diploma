@@ -37,6 +37,13 @@ Bryan Chung.
 \newblock [Online; Citované 23.02.2020 z
   \url{http://www.magicandlove.com/blog/2018/08/06/openpose-in-processing-and-opencv-dnn/}.
 
+\bibitem{githubTF}
+CMU-Perceptual-Computing-Lab.
+\newblock Deep pose estimation implemented using tensorflow with custom
+  architectures for fast inference., 2018.
+\newblock [Online; Citované 10.04.2020 z
+  \url{https://github.com/ildoonet/tf-pose-estimation}.
+
 \bibitem{fang2017rmpe}
 Hao-Shu Fang, Shuqin Xie, Yu-Wing Tai, and Cewu Lu.
 \newblock Rmpe - regional multi-person pose estimation.
@@ -52,6 +59,12 @@ Shigang Li.
 GoPro, 2016.
 \newblock [Online; Citované 6.03.2020 z
   \url{https://gopro.com/en/cz/news/vr_spherical_omni_rig_shipping}.
+
+\bibitem{netron}
+Lutz Roeder.
+\newblock Netron - visualizer for neural network, deep learning and machine
+  learning models.
+\newblock Online \url{https://github.com/lutzroeder/netron}.
 
 \bibitem{smith2003determining}
 Paul Smith, Mubarak Shah, and Niels da~Vitoria~Lobo.
@@ -110,13 +123,6 @@ Mykhaylo Andriluka, Leonid Pishchulin, Peter Gehler, and Bernt Schiele.
   analysis.
 \newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, June 2014.
-
-\bibitem{githubTF}
-CMU-Perceptual-Computing-Lab.
-\newblock Deep pose estimation implemented using tensorflow with custom
-  architectures for fast inference., 2018.
-\newblock [Online; Citované 10.04.2020 z
-  \url{https://github.com/ildoonet/tf-pose-estimation}.
 
 \bibitem{ren2015faster}
 Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
@@ -179,6 +185,12 @@ Fran\c{c}ois Chollet et~al.
   expressions}.
 \newblock {\em arXiv e-prints}, abs/1605.02688, May 2016.
 
+\bibitem{kalman1960}
+Rudolph~Emil Kalman.
+\newblock A new approach to linear filtering and prediction problems.
+\newblock {\em Transactions of the ASME--Journal of Basic Engineering},
+  82(Series D):35--45, 1960.
+
 \bibitem{mccartt1996scope}
 Anne~T McCartt, Stephen~A Ribner, Allan~I Pack, and Mark~C Hammer.
 \newblock The scope and nature of the drowsy driving problem in new york state.
@@ -190,5 +202,10 @@ MLA Lourakis and Antonis~A Argyros.
   implementing bundle adjustment?
 \newblock In {\em Tenth IEEE International Conference on Computer Vision
   (ICCV'05) Volume 1}, volume~2, pages 1526--1531. IEEE, 2005.
+
+\bibitem{diplomaRepo}
+Michal Falát.
+\newblock Repository for driver analysis using spherical cameras.
+\newblock Online \url{https://github.com/michalfalat/SP_VSB}.
 
 \end{thebibliography}
