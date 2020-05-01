@@ -204,8 +204,7 @@ MLA Lourakis and Antonis~A Argyros.
   (ICCV'05) Volume 1}, volume~2, pages 1526--1531. IEEE, 2005.
 
 \bibitem{diplomaRepo}
-Michal Falát.
-\newblock Repository for driver analysis using spherical cameras.
+Repository for driver analysis using spherical cameras.
 \newblock Online \url{https://github.com/michalfalat/SP_VSB}.
 
 \end{thebibliography}
