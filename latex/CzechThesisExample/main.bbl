@@ -66,6 +66,11 @@ Lutz Roeder.
   learning models.
 \newblock Online \url{https://github.com/lutzroeder/netron}.
 
+\bibitem{headmodel}
+3d male head model.
+\newblock Online
+  \url{https://www.turbosquid.com/FullPreview/Index.cfm/ID/346686}, 2007.
+
 \bibitem{smith2003determining}
 Paul Smith, Mubarak Shah, and Niels da~Vitoria~Lobo.
 \newblock Determining driver visual attention with one camera.
@@ -195,6 +200,11 @@ Rudolph~Emil Kalman.
 Anne~T McCartt, Stephen~A Ribner, Allan~I Pack, and Mark~C Hammer.
 \newblock The scope and nature of the drowsy driving problem in new york state.
 \newblock {\em Accident Analysis \& Prevention}, 28(4):511--517, 1996.
+
+\bibitem{mallick}
+SATYA MALLICK.
+\newblock Head pose estimation using opencv and dlib.
+\newblock 2016.
 
 \bibitem{lourakis2005levenberg}
 MLA Lourakis and Antonis~A Argyros.

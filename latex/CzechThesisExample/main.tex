@@ -820,7 +820,7 @@ Analýza správania vodiča za volantom je  veľmi rozsiahla komplexná téma. O
 \end{figure}
 
 
-Problém odhadu pozície z obrazu do pozície reálneho sveta sa často označuje ako problém perspektívneho n-bodu alebo PNP. Cieľom je nájsť pozíciu objektu, ktorý je zachytený kamerou, zistiť umiestnenie  3D bodov na objekte a zodpovedajúcu 2D projekciu v obraze. Pri pohybe objektu vzhľadom na kameru môžu nastať 2 rôzne druhy pohybov:
+Problém odhadu pozície z obrazu do pozície reálneho sveta sa často označuje ako problém perspektívneho n-bodu alebo PNP. Podobnému zisťovaniu  natočenia hlavy sa venovalo mnoho autorov. Jeden z článkov\cite{mallick}, kde  sa autor venoval transformácii 2D tváre do 3D projekcie spočíva v detekcii landmarkov a následnej transformácii pomocou referenčných bodov. Cieľom práce autora bolo nájsť pozíciu objektu, ktorý je zachytený kamerou, zistiť umiestnenie 3D bodov na objekte a zodpovedajúcu 2D projekciu v obraze, ktorú následne dokázal znázorniť. Podobný spôsob zisťovania natočenia hlavy je možné využiť aj na detekciu otáčania hlavy vodiča vo vozidle. Po zistení tejto informácii je možné úroveň otočenia hlavy spracovať ďalej. Pri pohybe objektu vzhľadom na kameru môžu nastať 2 rôzne druhy pohybov:
 \begin{itemize}
 \item\textbf{Posun} - pohyb kamery z jej aktuálnej 3D pozície $(X, Y, Z)$ na novú 3D pozíciu $(X ', Y', Z ')$ sa nazýva posun. Tieto 3 súradnice pozície sa nazývajú aj 3 stupne voľnosti, pretože kamera sa môže pohybovať v 3 rôznych smeroch. Posun predstavuje vektor, ktorý sa rovná rozdielu starej a novej pozície:  $(X '- X, Y' - Y, Z '- Z)$.
 \item\textbf{Rotácia} - kamera sa môže otáčať aj okolo osí $X, Y$ a $Z$. Rotácia má preto tiež tri stupne voľnosti. Existuje mnoho spôsobov, ako reprezentovať rotáciu. Môže sa reprezentovať pomocou Eulerových uhlov (pretočenie, stúpanie a vybočenie), matice rotácie 3$\times$3 alebo podľa smeru rotácie a uhla.
@@ -842,8 +842,8 @@ Určenie pozície 3D objektu znamená nájsť 6 hodnôt  - tri pre posun a tri p
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Figures/landmarkPoints.png}
-	\caption{Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre v 3D(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D(c)}
+	\includegraphics[width=0.9\textwidth]{Figures/landmarkPoints.png}
+	\caption{Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre v 3D\cite{headmodel} (a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D (c)}
 	\label{fig:landmarkPoints}
 \end{figure}
 
@@ -949,7 +949,7 @@ Na vyriešenie problému perspektívneho n-bodu (PNP) existuje v OpenCV viacero 
 
 \newpage
 \begin{lstlisting}[language=Python,label=src:translationVector,caption={rotačného a pozičného vektora}]
-    dist_coeffs = np.zeros((4, 1))  # Assuming no lens distortion
+    dist_coeffs = np.zeros((4, 1))
     rotation_vector, translation_vector = cv2.solvePnP(model_points_3d, image_points, camera_matrix, dist_coeffs, flags=cv2.SOLVEPNP_ITERATIVE)
     nose_end_point2D, jacobian = cv2.projectPoints(np.array([(0.0, 0.0, 1000.0)]), rotation_vector, translation_vector, camera_matrix, dist_coeffs)
 \end{lstlisting}

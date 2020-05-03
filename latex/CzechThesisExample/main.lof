@@ -31,7 +31,7 @@
 \contentsline {figure}{\numberline {25}{\ignorespaces Výsledok detekcie neurónovej siete\relax }}{52}{figure.caption.32}%
 \contentsline {figure}{\numberline {26}{\ignorespaces Ukážka hodnôt neurónovej siete - bez filtrácie(a), s použitou filtráciou (b)\relax }}{53}{figure.caption.33}%
 \contentsline {figure}{\numberline {27}{\ignorespaces Detekcia tváre pomocou landmarkov. Označenie bodov (a), detekcia na reálnej tvári vodiča (b)\relax }}{56}{figure.caption.35}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre v 3D(a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D(c)\relax }}{57}{figure.caption.36}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Detekcia tváre pomocou landmarkov. Znázornenie referenčných bodov tváre v 3D\cite {headmodel} (a), detekcia na reálnej tvári vodiča (b), výber referenčných bodov v 2D (c)\relax }}{57}{figure.caption.36}%
 \contentsline {figure}{\numberline {29}{\ignorespaces Výsledok detekcie orientácie tváre - pohľad vpravo (a), pohľad dolu (b), pohľad na vozovku (c), pohľad vľavo (d)\relax }}{60}{figure.caption.37}%
 \contentsline {figure}{\numberline {30}{\ignorespaces Orientácia hlavy vodiča s pomocnými limitmi\relax }}{61}{figure.caption.38}%
 \contentsline {figure}{\numberline {31}{\ignorespaces Výsledná detekcia pohyby hlavy a vyhodnotenie správania vodiča\relax }}{63}{figure.caption.39}%
