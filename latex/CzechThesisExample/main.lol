@@ -4,3 +4,4 @@
 \contentsline {lstlisting}{\numberline {4}Jednoduchý filter na odstránenie náhodných hodnôt s použitím prahovej hodnoty}{53}{lstlisting.4}%
 \contentsline {lstlisting}{\numberline {5}Výpočet matice kamery}{59}{lstlisting.5}%
 \contentsline {lstlisting}{\numberline {6}rotačného a pozičného vektora}{60}{lstlisting.6}%
+\contentsline {lstlisting}{\numberline {7}Spustenie programu}{68}{lstlisting.7}%

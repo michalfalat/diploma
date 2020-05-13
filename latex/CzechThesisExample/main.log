@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  3 MAY 2020 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.10)  13 MAY 2020 21:16
 entering extended mode
 **./main.tex
 (main.tex
@@ -919,7 +919,7 @@ File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figures/Assignment1.jpg, id=104, 957.5775pt x 1352.05125pt>
+<Figures/Assignment1.jpg, id=108, 957.5775pt x 1352.05125pt>
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 <use Figures/Assignment1.jpg>
 Package pdftex.def Info: Figures/Assignment1.jpg  used on input line 81.
@@ -962,7 +962,7 @@ Package pdftex.def Info: Figures/Assignment1.jpg  used on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figures/Declaration.png, id=109, 807.7678pt x 1142.01656pt>
+<Figures/Declaration.png, id=113, 807.7678pt x 1142.01656pt>
 File: Figures/Declaration.png Graphic file (type png)
 <use Figures/Declaration.png>
 Package pdftex.def Info: Figures/Declaration.png  used on input line 81.
@@ -1007,7 +1007,7 @@ Package pdftex.def Info: Figures/Declaration.png  used on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figures/CoopDeclaration.png, id=114, 805.50937pt x 1142.01656pt>
+<Figures/CoopDeclaration.png, id=118, 805.50937pt x 1142.01656pt>
 File: Figures/CoopDeclaration.png Graphic file (type png)
 <use Figures/CoopDeclaration.png>
 Package pdftex.def Info: Figures/CoopDeclaration.png  used on input line 81.
@@ -1110,13 +1110,13 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 [14
 
 ]
-<Figures/bmw.jpg, id=322, 624.83438pt x 327.47343pt>
+<Figures/bmw.jpg, id=331, 624.83438pt x 327.47343pt>
 File: Figures/bmw.jpg Graphic file (type jpg)
 <use Figures/bmw.jpg>
 Package pdftex.def Info: Figures/bmw.jpg  used on input line 104.
 (pdftex.def)             Requested size: 273.14923pt x 143.15935pt.
  [15 <./Figures/bmw.jpg>]
-<Figures/integralImage.png, id=334, 735.49782pt x 393.72093pt>
+<Figures/integralImage.png, id=343, 735.49782pt x 393.72093pt>
 File: Figures/integralImage.png Graphic file (type png)
 <use Figures/integralImage.png>
 Package pdftex.def Info: Figures/integralImage.png  used on input line 125.
@@ -1129,29 +1129,29 @@ Overfull \hbox (1.52519pt too wide) in paragraph at lines 140--141
  - po-rov-ná-vajú sumu ob-d¨º-ni-ko-vých ob-lastí, ktoré
  []
 
-<Figures/haar1.png, id=344, 749.80125pt x 674.52pt>
+<Figures/haar1.png, id=353, 749.80125pt x 674.52pt>
 File: Figures/haar1.png Graphic file (type png)
 <use Figures/haar1.png>
 Package pdftex.def Info: Figures/haar1.png  used on input line 146.
 (pdftex.def)             Requested size: 227.62206pt x 204.76596pt.
-<Figures/haar2.png, id=349, 335.75438pt x 213.79875pt>
+<Figures/haar2.png, id=358, 335.75438pt x 213.79875pt>
 File: Figures/haar2.png Graphic file (type png)
 <use Figures/haar2.png>
 Package pdftex.def Info: Figures/haar2.png  used on input line 155.
 (pdftex.def)             Requested size: 318.66948pt x 202.92169pt.
 [17 <./Figures/haar1.png>] [18 <./Figures/haar2.png>]
-<Figures/hog.png, id=372, 617.30624pt x 42.1575pt>
+<Figures/hog.png, id=381, 617.30624pt x 42.1575pt>
 File: Figures/hog.png Graphic file (type png)
 <use Figures/hog.png>
 Package pdftex.def Info: Figures/hog.png  used on input line 184.
 (pdftex.def)             Requested size: 455.24411pt x 31.09055pt.
-<Figures/hog3.png, id=376, 617.30624pt x 237.13594pt>
+<Figures/hog3.png, id=385, 617.30624pt x 237.13594pt>
 File: Figures/hog3.png Graphic file (type png)
 <use Figures/hog3.png>
 Package pdftex.def Info: Figures/hog3.png  used on input line 194.
 (pdftex.def)             Requested size: 455.24411pt x 174.88441pt.
  [19 <./Figures/hog.png> <./Figures/hog3.png>]
-<Figures/openposePipeline.png, id=389, 1286.8075pt x 286.06876pt>
+<Figures/openposePipeline.png, id=398, 1286.8075pt x 286.06876pt>
 File: Figures/openposePipeline.png Graphic file (type png)
 <use Figures/openposePipeline.png>
 Package pdftex.def Info: Figures/openposePipeline.png  used on input line 207.
@@ -1172,7 +1172,7 @@ LaTeX Warning: Command \v invalid in math mode on input line 228.
 
 LaTeX Warning: Command \' invalid in math mode on input line 228.
 
-<Figures/cocoDataset.png, id=406, 388.45125pt x 679.53876pt>
+<Figures/cocoDataset.png, id=415, 388.45125pt x 679.53876pt>
 File: Figures/cocoDataset.png Graphic file (type png)
 <use Figures/cocoDataset.png>
 Package pdftex.def Info: Figures/cocoDataset.png  used on input line 235.
@@ -1203,26 +1203,26 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
  ("C:\Users\Asus\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [22] [23]
-<Figures/tfPose1.png, id=435, 1065.9825pt x 521.69907pt>
+<Figures/tfPose1.png, id=444, 1065.9825pt x 521.69907pt>
 File: Figures/tfPose1.png Graphic file (type png)
 <use Figures/tfPose1.png>
 Package pdftex.def Info: Figures/tfPose1.png  used on input line 295.
 (pdftex.def)             Requested size: 455.24411pt x 222.7978pt.
  [24 <./Figures/tfPose1.png>]
-<Figures/alphaPoseRedundant.png, id=447, 846.91406pt x 472.76625pt>
+<Figures/alphaPoseRedundant.png, id=456, 846.91406pt x 472.76625pt>
 File: Figures/alphaPoseRedundant.png Graphic file (type png)
 <use Figures/alphaPoseRedundant.png>
 Package pdftex.def Info: Figures/alphaPoseRedundant.png  used on input line 309
 .
 (pdftex.def)             Requested size: 273.14923pt x 152.47856pt.
  [25 <./Figures/alphaPoseRedundant.png>] [26]
-<Figures/wrnchAI.png, id=467, 1004.25188pt x 527.72156pt>
+<Figures/wrnchAI.png, id=476, 1004.25188pt x 527.72156pt>
 File: Figures/wrnchAI.png Graphic file (type png)
 <use Figures/wrnchAI.png>
 Package pdftex.def Info: Figures/wrnchAI.png  used on input line 338.
 (pdftex.def)             Requested size: 409.71692pt x 215.30432pt.
  [27 <./Figures/wrnchAI.png>]
-<Figures/sphericalModel.png, id=475, 621.07031pt x 486.31688pt>
+<Figures/sphericalModel.png, id=484, 621.07031pt x 486.31688pt>
 File: Figures/sphericalModel.png Graphic file (type png)
 <use Figures/sphericalModel.png>
 Package pdftex.def Info: Figures/sphericalModel.png  used on input line 354.
@@ -1230,20 +1230,20 @@ Package pdftex.def Info: Figures/sphericalModel.png  used on input line 354.
  [28
 
  <./Figures/sphericalModel.png>] [29]
-<Figures/goproOmni.jpg, id=487, 803.0pt x 602.25pt>
+<Figures/goproOmni.jpg, id=496, 803.0pt x 602.25pt>
 File: Figures/goproOmni.jpg Graphic file (type jpg)
 <use Figures/goproOmni.jpg>
 Package pdftex.def Info: Figures/goproOmni.jpg  used on input line 379.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
 
 [30 <./Figures/goproOmni.jpg>]
-<Figures/sphericalModel2.png, id=494, 910.90312pt x 357.58594pt>
+<Figures/sphericalModel2.png, id=503, 910.90312pt x 357.58594pt>
 File: Figures/sphericalModel2.png Graphic file (type png)
 <use Figures/sphericalModel2.png>
 Package pdftex.def Info: Figures/sphericalModel2.png  used on input line 396.
 (pdftex.def)             Requested size: 455.24411pt x 178.71613pt.
  [31 <./Figures/sphericalModel2.png>]
-<Figures/cubemapVsEcti.png, id=501, 1549.28813pt x 590.95781pt>
+<Figures/cubemapVsEcti.png, id=510, 1549.28813pt x 590.95781pt>
 File: Figures/cubemapVsEcti.png Graphic file (type png)
 <use Figures/cubemapVsEcti.png>
 Package pdftex.def Info: Figures/cubemapVsEcti.png  used on input line 406.
@@ -1251,81 +1251,81 @@ Package pdftex.def Info: Figures/cubemapVsEcti.png  used on input line 406.
  [32 <./Figures/cubemapVsEcti.png>] [33
 
 ] [34] [35] [36]
-<Figures/camCompare.png, id=536, 1102.87032pt x 527.72156pt>
+<Figures/camCompare.png, id=545, 1102.87032pt x 527.72156pt>
 File: Figures/camCompare.png Graphic file (type png)
 <use Figures/camCompare.png>
 Package pdftex.def Info: Figures/camCompare.png  used on input line 483.
 (pdftex.def)             Requested size: 455.24411pt x 217.83276pt.
  [37 <./Figures/camCompare.png>]
 [38]
-<Figures/op_result.png, id=548, 1264.725pt x 413.29407pt>
+<Figures/op_result.png, id=557, 1264.725pt x 413.29407pt>
 File: Figures/op_result.png Graphic file (type png)
 <use Figures/op_result.png>
 Package pdftex.def Info: Figures/op_result.png  used on input line 507.
 (pdftex.def)             Requested size: 455.24411pt x 148.76682pt.
  [39 <./Figures/op_result.png>] [40]
-<Figures/tf_result.png, id=561, 1258.7025pt x 423.83344pt>
+<Figures/tf_result.png, id=570, 1258.7025pt x 423.83344pt>
 File: Figures/tf_result.png Graphic file (type png)
 <use Figures/tf_result.png>
 Package pdftex.def Info: Figures/tf_result.png  used on input line 530.
 (pdftex.def)             Requested size: 455.24411pt x 153.29129pt.
  [41 <./Figures/tf_result.png>]
 (SourceCodes/poseUnifier.py) [42] [43] [44] [45]
-<Figures/radioUsage.png, id=615, 924.45375pt x 490.83376pt>
+<Figures/radioUsage.png, id=624, 924.45375pt x 490.83376pt>
 File: Figures/radioUsage.png Graphic file (type png)
 <use Figures/radioUsage.png>
 Package pdftex.def Info: Figures/radioUsage.png  used on input line 644.
 (pdftex.def)             Requested size: 455.24411pt x 241.70895pt.
  [46] [47 <./Figures/radioUsage.png>]
-<Figures/NNsteering.png, id=629, 590.95781pt x 85.06781pt>
+<Figures/NNsteering.png, id=638, 590.95781pt x 85.06781pt>
 File: Figures/NNsteering.png Graphic file (type png)
 <use Figures/NNsteering.png>
 Package pdftex.def Info: Figures/NNsteering.png  used on input line 664.
 (pdftex.def)             Requested size: 455.24411pt x 65.53355pt.
-<Figures/NNShifting.png, id=630, 598.48593pt x 76.78688pt>
+<Figures/NNShifting.png, id=639, 598.48593pt x 76.78688pt>
 File: Figures/NNShifting.png Graphic file (type png)
 <use Figures/NNShifting.png>
 Package pdftex.def Info: Figures/NNShifting.png  used on input line 671.
 (pdftex.def)             Requested size: 455.24411pt x 58.41017pt.
-<Figures/NNWrong.png, id=631, 570.63188pt x 73.02281pt>
+<Figures/NNWrong.png, id=640, 570.63188pt x 73.02281pt>
 File: Figures/NNWrong.png Graphic file (type png)
 <use Figures/NNWrong.png>
 Package pdftex.def Info: Figures/NNWrong.png  used on input line 678.
 (pdftex.def)             Requested size: 455.24411pt x 58.25674pt.
  [48 <./Figures/NNsteering.png> <./Figures/NNShifting.png> <./Figures/NNWrong.p
 ng>] [49]
-<Figures/pooling.png, id=650, 523.20468pt x 182.93344pt>
+<Figures/pooling.png, id=659, 523.20468pt x 182.93344pt>
 File: Figures/pooling.png Graphic file (type png)
 <use Figures/pooling.png>
 Package pdftex.def Info: Figures/pooling.png  used on input line 726.
 (pdftex.def)             Requested size: 227.62206pt x 79.58377pt.
-<Figures/defaultModel.pdf, id=651, 91.09032pt x 372.64218pt>
+<Figures/defaultModel.pdf, id=660, 91.09032pt x 372.64218pt>
 File: Figures/defaultModel.pdf Graphic file (type pdf)
 <use Figures/defaultModel.pdf>
 Package pdftex.def Info: Figures/defaultModel.pdf  used on input line 736.
 (pdftex.def)             Requested size: 141.12456pt x 577.40176pt.
  [50 <./Figures/pooling.png>] [51 <./Figures/defaultModel.pdf>]
-<Figures/nnresult2.png, id=693, 1407.00656pt x 483.30562pt>
+<Figures/nnresult2.png, id=702, 1407.00656pt x 483.30562pt>
 File: Figures/nnresult2.png Graphic file (type png)
 <use Figures/nnresult2.png>
 Package pdftex.def Info: Figures/nnresult2.png  used on input line 747.
 (pdftex.def)             Requested size: 455.24411pt x 156.37187pt.
 
 [52 <./Figures/nnresult2.png>]
-<Figures/nnfiltertime.png, id=703, 1242.14063pt x 308.65312pt>
+<Figures/nnfiltertime.png, id=712, 1242.14063pt x 308.65312pt>
 File: Figures/nnfiltertime.png Graphic file (type png)
 <use Figures/nnfiltertime.png>
 Package pdftex.def Info: Figures/nnfiltertime.png  used on input line 777.
 (pdftex.def)             Requested size: 455.24411pt x 113.12135pt.
  [53 <./Figures/nnfiltertime.png>] [54]
-<Figures/landmarks.png, id=733, 759.58781pt x 337.26pt>
+<Figures/landmarks.png, id=742, 759.58781pt x 337.26pt>
 File: Figures/landmarks.png Graphic file (type png)
 <use Figures/landmarks.png>
 Package pdftex.def Info: Figures/landmarks.png  used on input line 817.
 (pdftex.def)             Requested size: 318.66948pt x 141.49384pt.
  [55]
 [56 <./Figures/landmarks.png>]
-<Figures/landmarkPoints.png, id=748, 953.81343pt x 417.05812pt>
+<Figures/landmarkPoints.png, id=757, 953.81343pt x 417.05812pt>
 File: Figures/landmarkPoints.png Graphic file (type png)
 <use Figures/landmarkPoints.png>
 Package pdftex.def Info: Figures/landmarkPoints.png  used on input line 845.
@@ -1351,20 +1351,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 935--937
  []
 
 [59]
-<Figures/faceRotation.png, id=789, 1320.43312pt x 392.96812pt>
+<Figures/faceRotation.png, id=798, 1320.43312pt x 392.96812pt>
 File: Figures/faceRotation.png Graphic file (type png)
 <use Figures/faceRotation.png>
 Package pdftex.def Info: Figures/faceRotation.png  used on input line 962.
 (pdftex.def)             Requested size: 455.24411pt x 135.48419pt.
  [60 <./Figures/faceRotation.png>]
-<Figures/headLimits1.png, id=800, 904.1278pt x 619.56468pt>
+<Figures/headLimits1.png, id=809, 904.1278pt x 619.56468pt>
 File: Figures/headLimits1.png Graphic file (type png)
 <use Figures/headLimits1.png>
 Package pdftex.def Info: Figures/headLimits1.png  used on input line 971.
 (pdftex.def)             Requested size: 455.24411pt x 311.95595pt.
  [61 <./Figures/headLimits1.png>]
 [62]
-<Figures/final.png, id=816, 846.91406pt x 578.91281pt>
+<Figures/final.png, id=825, 846.91406pt x 578.91281pt>
 File: Figures/final.png Graphic file (type png)
 <use Figures/final.png>
 Package pdftex.def Info: Figures/final.png  used on input line 989.
@@ -1409,27 +1409,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--162
 .95 https : / / www . learnopencv . com /
  []
 
-[66])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1005.
- [67]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1005.
+[66]) [67]
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1024
+[]|\T1/lmr/m/n/10.95 výber fra-me-worku (OP_POSE,
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 1038--1038
+[]|\T1/lmr/m/n/10.95 vypnutie prie-beº-ného vý-stupu prog-
+ []
+
+
+Overfull \hbox (4.68222pt too wide) in paragraph at lines 1020--1042
+ [][] 
+ []
+
+[68
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1053.
+ [69]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1053.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1005.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1005.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1053.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1053.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B8856E94398FD3472AEAD924514E180E;4059.
+(rerunfilecheck)             Checksum: F83AFB6B4E7C963C6FC1DC0E1CA949F0;4143.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1005.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1053.
  ) 
 Here is how much of TeX's memory you used:
- 20291 strings out of 481567
- 297388 string characters out of 2914666
- 890845 words of memory out of 3000000
- 34868 multiletter control sequences out of 15000+200000
+ 20314 strings out of 481567
+ 297626 string characters out of 2914666
+ 890974 words of memory out of 3000000
+ 34885 multiletter control sequences out of 15000+200000
  579187 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,18n,60p,3889b,2341s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1456,9 +1473,9 @@ TeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Asus/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Asus/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/lm/lmtto10.pfb><C:/Users/Asus/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (67 pages, 17414910 bytes).
+Output written on main.pdf (69 pages, 17420771 bytes).
 PDF statistics:
- 989 PDF objects out of 1000 (max. 8388607)
- 243 named destinations out of 1000 (max. 500000)
- 375 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1010 PDF objects out of 1200 (max. 8388607)
+ 249 named destinations out of 1000 (max. 500000)
+ 383 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -12,3 +12,4 @@
 \contentsline {table}{\numberline {6}{\ignorespaces Úspešnosť detekcie TF Pose Estimation, dataset \textit {mobilenet\_thin}, rozlíšenie trénovacieho vstupu 192$\times $144 pixelov\relax }}{45}{table.caption.24}%
 \contentsline {table}{\numberline {7}{\ignorespaces Počet trénovacích obrázkov pre jednotlivé triedy\relax }}{48}{table.caption.29}%
 \contentsline {table}{\numberline {8}{\ignorespaces Úspešnosť vyhodnotenia správania pomocou neurónovej siete\relax }}{54}{table.caption.34}%
+\contentsline {table}{\numberline {9}{\ignorespaces Zoznam parametrov programu\relax }}{68}{table.caption.41}%
