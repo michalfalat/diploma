@@ -20,7 +20,7 @@
 
 \EnglishThesisTitle{Driver Analysis Using Spherical Cameras}
 
-\SubmissionDate{30. apríla 2020}
+\SubmissionDate{15. mája 2020}
 
 % Pokud nechceme nikomu dekovat makro zapoznamkujeme.
 \Thanks{Rád by som poďakoval môjmu vedúcemu práce Ing. Radovanovi Fusekovi za pomoc a ochotu pri vypracovaní diplomovej práce.}
@@ -37,7 +37,6 @@
 
 % Zadame soubor s digitalizovanou podobou souhlasu spolupracujici prav. nebo fyz. osoby.
 % Pokud toto makro zapoznamkujeme sazi se cisty text souhlasu.
-\CooperatingPersonsDeclarationImageFile{Figures/CoopDeclaration.png}
 
 \CzechAbstract{Hlavnou témou diplomovej práce je analýza správania vodiča v aute pomocou detekcie obrazu. Táto práca je rozdelená do viacerých samostatných častí, ktoré na seba postupne nadväzujú. Prvá časť spočíva v preskúmaní existujúcich riešení na detekciu postáv vo vozidlách. Druhá časť je zameraná na detekciu a spracovanie obrazu pomocou sférických kamier, ktoré sú potrebné k nasnímaniu celého tela vodiča. Posledná kapitola je venovaná samotnému programu na vyhodnotenie správania vodiča vo vozidle v rôznych jazdných situáciách a porovnanie jednotlivých metód na detekciu. V závere je rozpísaná problematika takéhoto spôsobu detekcie a možnosti použitia v reálnych systémoch vozidla.}
 
@@ -138,9 +137,8 @@ ii(x,y)=\sum_{x^{\prime}\leq x,y^{\prime}\leq y}i(x^{\prime},y^{\prime}),
 \begin{itemize}
   \item \textbf{Dvoj-obdĺžnikové} (angl. two-rectangle) - porovnávajú sumu pixlov v obdĺžnikových oblastiach, ktoré sa nachádzajú vedľa seba, vodorovne, alebo zvislo.
   \item \textbf{Troj-obdĺžnikové} (angl. three-rectangle) - porovnávajú sumu obdĺžnikových oblastí, ktoré sa nachádzajú po oboch stranách aktuálnej oblasti a sumu aktuálnej oblasti.
-  \item \textbf{Štvor-obdĺžnikové} (angl. four-rectangle) - počítajú rozdiel medzi dvoma aktuálnymi obdĺžnikovými oblasťami, ktoré sa dotýkajú svojimi rohmi a obdĺžnikovými oblasťami medzi nimi.
-  
- \end{itemize}
+  \item \textbf{Štvor-obdĺžnikové} (angl. four-rectangle) - počítajú rozdiel medzi dvoma aktuálnymi obdĺžnikovými oblasťami, ktoré sa dotýkajú svojimi rohmi a obdĺžnikovými oblasťami medzi nimi.  
+\end{itemize}
    \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Figures/haar1.png}
@@ -788,7 +786,7 @@ P_i= \frac{r_i}{r_{total}} \times 100
 \label{eq:prediction}
 \end{equation}
 
-Meranie úspešnosti videa, ktoré obsahuje všetky typy pozícii nie je možné takýmto spôsobom vykonať. Práve z tohoto dôvodu bolo spracované manuálne. Meranie úspešnosti takýmto spôsobom je však časovo veľmi náročné a preto je vhodné ho použiť iba pri malej testovacej množine. Video je dlhé 98 sekúnd, čo predstavuje približne 5900 snímok celkovo, pretože bolo vytvorené pri použití 60FPS. Pri takomto meraní však treba brať do úvahy aj rôzne prechodné stavy, kedy vodič napríklad púšťa volant a rukou sa približuje ku riadiacej páke. Takýto stav nie je jednoznačný a preto nebol v meraní úspešnosti zohľadnený.
+Meranie úspešnosti videa, ktoré obsahuje všetky typy pozícii nie je možné takýmto spôsobom vykonať. Práve z tohoto dôvodu bolo spracované manuálne. Meranie úspešnosti takýmto spôsobom je však časovo veľmi náročné a preto je vhodné ho použiť iba pri malej testovacej množine. Video je dlhé 98 sekúnd, čo predstavuje približne 5900 snímok celkovo, pretože bolo vytvorené pri použití 60FPS. Pri takomto meraní však treba brať do úvahy aj rôzne prechodné stavy, kedy vodič napríklad púšťa volant a rukou sa približuje ku riadiacej páke. Takýto stav nie je jednoznačný a preto nebol v meraní úspešnosti zohľadnený. Výsledná úspešnosť je zhrnutá v tabuľke \ref{tab:neuronka}.
 
 \begin{table}[H]
 \begin{tabular}{|l|c|c|}
@@ -801,7 +799,7 @@ Meranie úspešnosti videa, ktoré obsahuje všetky typy pozícii nie je možné
 \end{tabular}
 
 	\caption{Úspešnosť vyhodnotenia správania pomocou neurónovej siete}
-	\label{tab:tf3}
+	\label{tab:neuronka}
 \end{table}
 
 Pri trénovaní a testovaní však treba brať do úvahy aj umiestnenie kamery. Ak by kamera zmenila umiestnenie napríklad ku dverám, detekcia polohy bude úspešná, ale  vyhodnotenie polohy neurónovou sieťou už úspešné nebude. V takom prípade je nutné sieť natrénovať odznovu.\par 
@@ -810,7 +808,7 @@ Analýzou pomocou tohto klasifikátora je možné zistiť typ polohy vodiča za 
 \newpage
 \subsection{Detekcia orientácie hlavy}
 \label{sec:headOrientation}
-Analýza správania vodiča za volantom je  veľmi rozsiahla komplexná téma. Okrem detekcie pozície vodiča za volantom, ktorá je spracovaná v predchádzajúcej kapitole je možnosť skúmať ľudské správanie aj z rôznych ďalších zdrojov. Samotná pozícia  síce napovedá, ako vodič sedí a či správne drží volant, avšak  stále z nej nie je možné odvodiť veľa dôležitých informácii.  Medzi najčastejšie príčiny nehôd v nočných hodinách patrí do vysokej miery mikrospánok. Podľa štúdii\cite{mccartt1996scope}, ktorú vykonali McCartt, Ribner, Pack a Hammer  v roku 1996 približne 55\% z 1000 opýtaných vodičov uviedlo, že jazdili s miernymi príznakmi mikrospánku a 23\% zaspalo dokonca na pár sekúnd počas jazdy. To potvrdzuje ďalšie zistenia, že ospalosť môže zohrávať významnú úlohu pri zrážkach, ktoré sú chybne pripisované iným príčinám. Vznik mikrospánku je zvyčajne spôsobený únavou ľudského tela  a človek si veľakrát ani nedokáže pripustiť, že je unavený. Takéto podcenenie situácie zvyčajne končí krátkodobým mikrospánkom  vodiča, ktoré je  veľmi nebezpečné aj pre ostatných účastníkov premávky.  Pri samotnom mikrospánku dochádza  k viacerým kľúčovým okolnostiam, ktoré je možné včas odhaliť. Okrem straty pozornosti a vnímania okolia často dochádza aj k zatvoreniu očných zreničiek alebo prudkému pohybu hlavy smerom nadol. Pred týmito udalosťami je možné napríklad detekovať  očné zreničky, alebo natočenie hlavy. Ľudské zreničky sú vzhľadom  k veľkosti tela veľmi malé. Obzvlášť pri použití širokouhlej alebo sférickej kamery nie je možné v obraze detekovať  zreničky s dostatočne vysokou presnosťou, či dokonca detekovať ich otvorenie a zatvorenie.  Skúmanie stavu zreničiek je špecifická téma a nie je predmetom tejto práce, aj keď môže slúžiť ako významný spôsob pre analýzu ľudského správania  a predikovania ospalosti vodiča. Sférickou kamerou je ale možné  zachytiť celú tvár v dostatočnej kvalite pre ďalšie spracovanie. Z týchto dôvodov je  táto kapitola  primárne na orientáciu a otáčanie hlavy. Pri prudkom otočení hlavy nadol je možné predikovať, že človek napríklad stratil vedomie alebo zaspal. Vodič sa zároveň často otáča do strán  hlavne pri cúvaní alebo pri  státí na križovatke pre získanie rozhľadu v okolí vozidla.  Pri priamej jazde však vodič nemá žiadny dôvod hlavou otáčať alebo výraznejšie meniť jej pozíciu. Z tohto dôvodu  do programu  bola pridaná detekcia na orientáciu hlavy vodiča. Hlavný spôsob spočíva v detekcii  kľúčových bodov tváre pomocou natrénovaných datasetov.  Tieto body (angl. landmarks) následne zodpovedajú pozíciám bodov v obraze. Na detekciu bol použitá funkcia z knižnice \textit{dlib}, ktorá je založená na použití histogramov orientovaných gradientov (kap. \ref{HOG}) s použitím SVM. Metóda sa značí vysokou rýchlosťou a presnosťou detekcie.  Hlavnou metódou detekcie je \textit{get\_frontal\_face\_detector()}, ktorá berie ako parameter cestu k natrénovanému datasetu. Pre túto implementáciu bol zvolený dataset \textit{shape\_predictor\_68\_face\_landmarks}, ktorý je dostupný na oficiálnych stránkach OpenCV. Tento dataset  umožňuje detekovať až 68 bodov tvoriacich tvár. Tieto body sú znázornené na obrázku \ref{fig:landmarks}. Výstup tejto detekcie je možné využiť viacerými spôsobmi. Jedným spôsobom je napríklad detekcia orientácie tváre vzhľadom na kameru. Pri správnej analýze je vo výsledku možné odhadnúť, či vodič sleduje vozovku, alebo jeho hlava je vytočená do inej strany. Aby bolo možné odhadnúť smerovanie tváre, je potrebné tvár transformovať do 3D súradníc.
+Analýza správania vodiča za volantom je  veľmi rozsiahla komplexná téma. Okrem detekcie pozície vodiča za volantom, ktorá je spracovaná v predchádzajúcej kapitole je možnosť skúmať ľudské správanie aj z rôznych ďalších zdrojov. Samotná pozícia  síce napovedá, ako vodič sedí a či správne drží volant, avšak  stále z nej nie je možné odvodiť veľa dôležitých informácii.  Medzi najčastejšie príčiny nehôd v nočných hodinách patrí do vysokej miery mikrospánok. Podľa štúdii\cite{mccartt1996scope}, ktorú vykonali McCartt, Ribner, Pack a Hammer  v roku 1996 približne 55\% z 1000 opýtaných vodičov uviedlo, že jazdili s miernymi príznakmi mikrospánku a 23\% zaspalo dokonca na pár sekúnd počas jazdy. To potvrdzuje ďalšie zistenia, že ospalosť môže zohrávať významnú úlohu pri zrážkach, ktoré sú chybne pripisované iným príčinám. Vznik mikrospánku je zvyčajne spôsobený únavou ľudského tela  a človek si veľakrát ani nedokáže pripustiť, že je unavený. Takéto podcenenie situácie zvyčajne končí krátkodobým mikrospánkom  vodiča, ktoré je  veľmi nebezpečné aj pre ostatných účastníkov premávky.  Pri samotnom mikrospánku dochádza  k viacerým kľúčovým okolnostiam, ktoré je možné včas odhaliť. Okrem straty pozornosti a vnímania okolia často dochádza aj k zatvoreniu očných zreničiek alebo prudkému pohybu hlavy smerom nadol. Pred týmito udalosťami je možné napríklad detekovať  očné zreničky, alebo natočenie hlavy. Ľudské zreničky sú vzhľadom  k veľkosti tela veľmi malé. Obzvlášť pri použití širokouhlej alebo sférickej kamery nie je možné v obraze detekovať  zreničky s dostatočne vysokou presnosťou, či dokonca detekovať ich otvorenie a zatvorenie.  Skúmanie stavu zreničiek je špecifická téma a nie je predmetom tejto práce, aj keď môže slúžiť ako významný spôsob pre analýzu ľudského správania  a predikovania ospalosti vodiča. Sférickou kamerou je ale možné  zachytiť celú tvár v dostatočnej kvalite pre ďalšie spracovanie. Z týchto dôvodov je  táto kapitola  primárne na orientáciu a otáčanie hlavy. Pri prudkom otočení hlavy nadol je možné predikovať, že človek napríklad stratil vedomie alebo zaspal. Vodič sa zároveň často otáča do strán  hlavne pri cúvaní alebo pri  státí na križovatke pre získanie rozhľadu v okolí vozidla.  Pri priamej jazde však vodič nemá žiadny dôvod hlavou otáčať alebo výraznejšie meniť jej pozíciu. Z tohto dôvodu  do programu  bola pridaná detekcia na orientáciu hlavy vodiča. Hlavný spôsob spočíva v detekcii  kľúčových bodov tváre pomocou natrénovaných modelov. Na detekciu bol použitá funkcia z knižnice \textit{dlib}, ktorá je založená na použití histogramov orientovaných gradientov (kap. \ref{HOG}) s použitím SVM. Metóda sa značí vysokou rýchlosťou a presnosťou detekcie.  Hlavnou metódou detekcie je \textit{get\_frontal\_face\_detector()} z knižnice dlib, ktorá slúži na detekciu tvárí. Pre túto implementáciu bol zvolený existujúci natrénovaný model \textit{shape\_predictor\_68\_face\_landmarks}, ktorý je dostupný na webovej stránke modelov knižnice dlib\cite{dlibModel}. Tento model umožňuje detekovať až 68 bodov tvoriacich tvár. Tieto body sú znázornené na obrázku \ref{fig:landmarks}. Výstup tejto detekcie je možné využiť viacerými spôsobmi. Jedným spôsobom je napríklad detekcia orientácie tváre vzhľadom na pozíciu kamery. Pri správnej analýze je vo výsledku možné odhadnúť, či vodič sleduje vozovku, alebo jeho hlava je vytočená do inej strany. Aby bolo možné odhadnúť smerovanie tváre, je potrebné tvár transformovať do 3D súradníc.
 
 \begin{figure}[H]
 	\centering
@@ -1043,6 +1041,17 @@ Program je navrhnutý tak, aby ho bolo možné spustiť cez príkazový riadok. 
 	\caption{Zoznam parametrov programu}
 	\label{tab:params}
 \end{table}
+
+Pre správne fungovanie programu je potrebné mať nainštalované všetky požadované nástroje a správne verzie knižníc. Počas práce boli použité nasledujúce verzie nástrojov a knižníc:
+\begin{itemize}
+  \item Python 3.3
+  \item OpenCV 3.4.3
+  \item Tensorflow 1.15
+  \item Keras 2.3.1
+  \item dlib 19.17
+  \item OpenPose 1.5.1
+  \item TF Pose Estimation
+\end{itemize}
 
 \subsection*{II. Prílohy v IS EDISON}
 Súčasťou odovzdanej práce je aj súbor, ktorý obsahuje nasledujúce zložky:

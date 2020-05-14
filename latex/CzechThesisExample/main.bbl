@@ -157,7 +157,7 @@ Paul Kruszewski.
 \bibitem{openposeVsWrnchAI}
 Vikas Gupta.
 \newblock Pose detection comparison : wrnchai vs openpose, 2019.
-\newblock [Online; Citované 03.03.2020 z
+\newblock Online; Citované 03.03.2020 z
   \url{https://www.learnopencv.com/pose-detection-comparison-wrnchai-vs-openpose/}.
 
 \bibitem{dlib09}
@@ -201,10 +201,16 @@ Anne~T McCartt, Stephen~A Ribner, Allan~I Pack, and Mark~C Hammer.
 \newblock The scope and nature of the drowsy driving problem in new york state.
 \newblock {\em Accident Analysis \& Prevention}, 28(4):511--517, 1996.
 
+\bibitem{dlibModel}
+Davis King.
+\newblock Trained model files for dlib example programs.
+\newblock Online \url{https://github.com/davisking/dlib-models}.
+
 \bibitem{mallick}
 SATYA MALLICK.
-\newblock Head pose estimation using opencv and dlib.
-\newblock 2016.
+\newblock Head pose estimation using opencv and dlib, 2016.
+\newblock Online; Citované 02.03.2020 z
+  \url{https://www.learnopencv.com/head-pose-estimation-using-opencv-and-dlib/}.
 
 \bibitem{lourakis2005levenberg}
 MLA Lourakis and Antonis~A Argyros.

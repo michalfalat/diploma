@@ -74,8 +74,6 @@
 \Dipl@AuthorDeclarationImageFile={}
 \newtoks\Dipl@CooperatingPersonsDeclaration
 \Dipl@CooperatingPersonsDeclaration={}
-\newtoks\Dipl@CooperatingPersonsDeclarationImageFile
-\Dipl@CooperatingPersonsDeclarationImageFile={}
 \newtoks\Dipl@Thanks
 \Dipl@Thanks={}
 \newtoks\Dipl@CzechAbstract
@@ -245,7 +243,6 @@
 \newcommand{\SubmissionDate}[1]{\Dipl@SubmissionDate={#1}}
 \newcommand{\ThesisAssignmentImagePath}[1]{\Dipl@ThesisAssignmentImagePath={#1}}
 \newcommand{\AuthorDeclarationImageFile}[1]{\Dipl@AuthorDeclarationImageFile={#1}}
-\newcommand{\CooperatingPersonsDeclarationImageFile}[1]{\Dipl@CooperatingPersonsDeclarationImageFile={#1}}
 \newcommand{\Thanks}[1]{\Dipl@Thanks={#1}}
 \newcommand{\CzechAbstract}[1]{\Dipl@CzechAbstract={#1}}
 \newcommand{\CzechKeywords}[1]{\Dipl@CzechKeywords={#1}}
@@ -258,7 +255,6 @@
 \Dipl@TitlePage
 \Dipl@ThesisAssignmentPage
 \Dipl@AuthorDeclarationPage
-\Dipl@CooperatingPersonsDeclarationPage
 \Dipl@WriteThanksPage
 \Dipl@AbstractsKeywordsPage
 \pagestyle{plain}
@@ -346,27 +342,6 @@
 \Dipl@InsertFullPageImage{\the\Dipl@AuthorDeclarationImageFile}
 }
 \cleardoublepage
-}
-\newcommand{\Dipl@CooperatingPersonsDeclarationPage}
-{
-\ifthenelse{\boolean{Dipl@PrintCooperatingPersonsDeclaration}}
-{
-\ifthenelse{\equal{\the\Dipl@CooperatingPersonsDeclarationImageFile}{\empty}}
-{
-\mbox{}
-\vfill
-\noindent
-\the\Dipl@CooperatingPersonsDeclaration
-\par
-\vspace{15mm}
-\noindent\Dipl@LanguageDependentText{V Ostravě}{V Ostrave}{Ostrava,}~\the\Dipl@SubmissionDate\hfill\hbox to50mm{\dotfill}
-}
-{
-\Dipl@InsertFullPageImage{\the\Dipl@CooperatingPersonsDeclarationImageFile}
-}
-\cleardoublepage
-}
-{\relax}
 }
 \newcommand{\Dipl@WriteThanksPage}
 {
